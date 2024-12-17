@@ -1,0 +1,100 @@
+﻿@{
+    ViewData["Title"] = "Sign Up Page";
+}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Sign Up Page</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css" />
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <section class="overlay">
+        <h1>Sign Up</h1>
+        <p>Create an account:</p>
+        <form id="signupForm" method="post">
+            <label for="email">Email:</label>
+            <br>
+            <input id="email" name="email" type="email" required minlength="3" maxlength="50">
+            <br>
+            <label for="pw">Password:</label>
+            <br>
+            <input id="pw" name="pw" type="password" required minlength="8" maxlength="20">
+            <br>
+            <label>
+                <input id="Radio1" name="role" type="radio" value="A" />
+                Admin
+            </label>
+            <br>
+            <label>
+                <input id="Radio2" name="role" type="radio" value="L" />
+                Learner
+            </label>
+            <br>
+            <label>
+                <input id="Radio3" name="role" type="radio" value="I" />
+                Instructor
+            </label>
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+        <div id="successModal" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Success</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Sign up successful!</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" id="redirectButton">OK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        $(document).ready(function () {
+            $('#signupForm').submit(function (event) {
+                event.preventDefault();
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("Index2", "Signup")',
+                    data: $(this).serialize(),
+                    success: function (response) {
+                        if (response.success) {
+                            $('#successModal').modal('show');
+                            $('#redirectButton').click(function () {
+                                var redirectUrl = '';
+                                switch (response.role) {
+                                    case 'A':
+                                        redirectUrl = '@Url.Action("Page", "Admin")';
+                                        break;
+                                    case 'L':
+                                        redirectUrl = '@Url.Action("Values", "LI")';
+                                        break;
+                                    case 'I':
+                                        redirectUrl = '@Url.Action("Info", "IN")';
+                                        break;
+                                }
+                                window.location.href = redirectUrl;
+                            });
+                        } else {
+                            alert(response.message);
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Instructor Values";
+}
+    <section class="overlay">
+        <h1>Instructor Values</h1>
+        <p>Email: @ViewBag.Email</p>
+        <form asp-controller="IN" asp-action="Values" method="post">
+            <label for="name">Name:</label>
+            <br>
+            <input id="name" name="name" type="text" required>
+            <br>
+            <label for="latestQualification">Latest Qualification:</label>
+            <br>
+            <input id="latestQualification" name="latestQualification" type="text" required>
+            <br>
+            <label for="expertiseArea">Expertise Area:</label>
+            <br>
+            <input id="expertiseArea" name="expertiseArea" type="text" required>
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+    </section>

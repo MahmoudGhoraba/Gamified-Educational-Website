@@ -1,0 +1,51 @@
+﻿@{
+    ViewData["Title"] = "Create Path";
+    var message = TempData["Message"] as string;
+    var messageType = TempData["MessageType"] as string;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Create Path</h2>
+
+        @if (!string.IsNullOrEmpty(message))
+        {
+            <div class="alert @(messageType == "success" ? "alert-success" : "alert-danger")">
+                @message
+            </div>
+        }
+
+        <form method="post" asp-action="CreatePath">
+            <div class="form-group">
+                <label for="learnerID">Learner ID</label>
+                <input type="number" class="form-control" id="learnerID" name="learnerID" required />
+            </div>
+            <div class="form-group">
+                <label for="profileID">Profile ID</label>
+                <input type="number" class="form-control" id="profileID" name="profileID" required />
+            </div>
+            <div class="form-group">
+                <label for="completionStatus">Completion Status</label>
+                <input type="text" class="form-control" id="completionStatus" name="completionStatus" required />
+            </div>
+            <div class="form-group">
+                <label for="customContent">Custom Content</label>
+                <input type="text" class="form-control" id="customContent" name="customContent" required />
+            </div>
+            <div class="form-group">
+                <label for="adaptiveRules">Adaptive Rules</label>
+                <input type="text" class="form-control" id="adaptiveRules" name="adaptiveRules" required />
+            </div>
+            <button type="submit" class="btn btn-primary">Create Path</button>
+        </form>
+    </div>
+</body>
+</html>

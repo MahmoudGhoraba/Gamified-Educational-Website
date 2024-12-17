@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "Instructor Dashboard";
+}
+
+<h1>Instructor Dashboard</h1>
+
+<form asp-controller="InstructorDash" asp-action="UpdateInstructor" method="post">
+    <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" class="form-control" id="name" name="name" required />
+    </div>
+    <div class="form-group">
+        <label for="latest_qualifications">Latest Qualifications:</label>
+        <input type="text" class="form-control" id="latest_qualifications" name="latest_qualifications" required />
+    </div>
+    <div class="form-group">
+        <label for="expertise_area">Expertise Area:</label>
+        <input type="text" class="form-control" id="expertise_area" name="expertise_area" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Update</button>
+</form>
+
+<form asp-controller="InstructorDash" asp-action="ShowProfile" method="get">
+    <button type="submit" class="btn btn-secondary">Show Profile</button>
+</form>
+
+<form asp-controller="InstructorDash" asp-action="CreatePathRedirect" method="get">
+    <button type="submit" class="btn btn-success">New Path</button>
+</form>
+
+<!-- New button to redirect to InstructorPost controller -->
+<form asp-controller="InstructorDash" asp-action="RedirectToInstructorPost" method="get">
+    <button type="submit" class="btn btn-warning">Add Post</button>
+</form>
+
+
+

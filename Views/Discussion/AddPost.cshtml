@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Add Post";
+    var message = ViewBag.Message as string;
+    var messageType = ViewBag.MessageType as string;
+}
+
+<h1>Add Post</h1>
+
+@if (!string.IsNullOrEmpty(message))
+{
+    <div class="alert @(messageType == "success" ? "alert-success" : "alert-danger")">
+        @message
+    </div>
+}
+
+<form asp-controller="Discussion" asp-action="AddPost" method="post">
+    <div class="form-group">
+        <label for="discussionID">Discussion ID:</label>
+        <input type="number" class="form-control" id="discussionID" name="discussionID" required />
+    </div>
+    <div class="form-group">
+        <label for="postContent">Post Content:</label>
+        <textarea class="form-control" id="postContent" name="postContent" rows="5" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

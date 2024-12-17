@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Spaghetti.Models.LearningPath>
+
+@{
+    ViewData["Title"] = "Current Paths";
+}
+
+<h2>Current Paths</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>PathID</th>
+            <th>LearnerID</th>
+            <th>ProfileID</th>
+            <th>Completion Status</th>
+            <th>Custom Content</th>
+            <th>Adaptive Rules</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var path in Model)
+        {
+            <tr>
+                <td>@path.PathId</td>
+                <td>@path.LearnerId</td>
+                <td>@path.ProfileId</td>
+                <td>@path.CompletionStatus</td>
+                <td>@path.CustomContent</td>
+                <td>@path.AdaptiveRules</td>
+            </tr>
+        }
+    </tbody>
+</table>

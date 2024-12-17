@@ -1,0 +1,417 @@
+﻿@{
+    ViewData["Title"] = "Admin Page";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .button-link {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: #fff;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 9px #999;
+        }
+
+            .button-link:hover {
+                background-color: #3e8e41
+            }
+
+            .button-link:active {
+                background-color: #3e8e41;
+                box-shadow: 0 5px #666;
+                transform: translateY(4px);
+            }
+    </style>
+    <script>
+        async function deleteProfile(event) {
+            event.preventDefault();
+            const form = event.target;
+            const formData = new FormData(form);
+            const response = await fetch(form.action, {
+                method: form.method,
+                body: formData
+            });
+            const result = await response.json();
+            alert(result.message);
+        }
+
+        async function deleteInstructorAccount(event) {
+            event.preventDefault();
+            const form = event.target;
+            const formData = new FormData(form);
+            const response = await fetch(form.action, {
+                method: form.method,
+                body: formData
+            });
+            const result = await response.json();
+            alert(result.message);
+        }
+
+        async function deleteLearnerAccount(event) {
+            event.preventDefault();
+            const form = event.target;
+            const formData = new FormData(form);
+            const response = await fetch(form.action, {
+                method: form.method,
+                body: formData
+            });
+            const result = await response.json();
+            alert(result.message);
+        }
+
+        async function addActivity(event) {
+            event.preventDefault();
+            const form = event.target;
+            const formData = new FormData(form);
+            const response = await fetch(form.action, {
+                method: form.method,
+                body: formData
+            });
+            const result = await response.json();
+            alert(result.message);
+        }
+
+        async function viewModules(event) {
+            event.preventDefault();
+            const form = event.target;
+            const formData = new FormData(form);
+            const response = await fetch(form.action, {
+                method: form.method,
+                body: formData
+            });
+            const result = await response.json();
+            if (result.success) {
+                const table = document.getElementById('modulesTable');
+                table.innerHTML = '<tr><th>Module ID</th><th>Course ID</th><th>Title</th><th>Difficulty</th><th>Content URL</th></tr>';
+                result.data.forEach(module => {
+                    const row = table.insertRow();
+                    const cell1 = row.insertCell(0);
+                    const cell2 = row.insertCell(1);
+                    const cell3 = row.insertCell(2);
+                    const cell4 = row.insertCell(3);
+                    const cell5 = row.insertCell(4);
+                    cell1.innerHTML = module.moduleID;
+                    cell2.innerHTML = module.courseID;
+                    cell3.innerHTML = module.title;
+                    cell4.innerHTML = module.difficulty;
+                    cell5.innerHTML = module.content_URL;
+                });
+            } else {
+                alert(result.message);
+            }
+        }
+
+        async function viewEnrolledCourses(event) {
+            event.preventDefault();
+            const form = event.target;
+            const formData = new FormData(form);
+            const response = await fetch(form.action, {
+                method: form.method,
+                body: formData
+            });
+            const result = await response.json();
+            if (result.success) {
+                const table = document.getElementById('enrolledCoursesTable');
+                table.innerHTML = '<tr><th>Course ID</th><th>Title</th><th>Learning Objective</th><th>Credit Points</th><th>Difficulty Level</th><th>Description</th></tr>';
+                result.data.forEach(course => {
+                    const row = table.insertRow();
+                    const cell1 = row.insertCell(0);
+                    const cell2 = row.insertCell(1);
+                    const cell3 = row.insertCell(2);
+                    const cell4 = row.insertCell(3);
+                    const cell5 = row.insertCell(4);
+                    const cell6 = row.insertCell(5);
+                    cell1.innerHTML = course.courseID;
+                    cell2.innerHTML = course.title;
+                    cell3.innerHTML = course.learning_Objective;
+                    cell4.innerHTML = course.credit_Points;
+                    cell5.innerHTML = course.difficulty_Level;
+                    cell6.innerHTML = course.description;
+                });
+            } else {
+                alert(result.message);
+            }
+        }
+
+        async function viewPreviousCourses(event) {
+            event.preventDefault();
+            const form = event.target;
+            const formData = new FormData(form);
+            const response = await fetch(form.action, {
+                method: form.method,
+                body: formData
+            });
+            const result = await response.json();
+            if (result.success) {
+                const table = document.getElementById('previousCoursesTable');
+                table.innerHTML = '<tr><th>Course ID</th><th>Title</th><th>Learning Objective</th><th>Credit Points</th><th>Difficulty Level</th><th>Description</th></tr>';
+                result.data.forEach(course => {
+                    const row = table.insertRow();
+                    const cell1 = row.insertCell(0);
+                    const cell2 = row.insertCell(1);
+                    const cell3 = row.insertCell(2);
+                    const cell4 = row.insertCell(3);
+                    const cell5 = row.insertCell(4);
+                    const cell6 = row.insertCell(5);
+                    cell1.innerHTML = course.courseID;
+                    cell2.innerHTML = course.title;
+                    cell3.innerHTML = course.learning_Objective;
+                    cell4.innerHTML = course.credit_Points;
+                    cell5.innerHTML = course.difficulty_Level;
+                    cell6.innerHTML = course.description;
+                });
+            } else {
+                alert(result.message);
+            }
+        }
+
+        async function checkPrerequisites(event) {
+            event.preventDefault();
+            const form = event.target;
+            const formData = new FormData(form);
+            const response = await fetch(form.action, {
+                method: form.method,
+                body: formData
+            });
+            const result = await response.json();
+            if (result.success) {
+                alert("Prerequisites met.");
+            } else {
+                alert(result.message);
+            }
+        }
+
+        async function registerCourse(event) {
+            event.preventDefault();
+            const form = event.target;
+            const formData = new FormData(form);
+            const response = await fetch(form.action, {
+                method: form.method,
+                body: formData
+            });
+            const result = await response.json();
+            alert(result.message);
+        }
+
+        async function removeCourse(event) {
+            event.preventDefault();
+            const form = event.target;
+            const formData = new FormData(form);
+            const response = await fetch(form.action, {
+                method: form.method,
+                body: formData
+            });
+            const result = await response.json();
+            alert(result.message);
+        }
+
+        async function addAssessment(event) {
+            event.preventDefault();
+            const form = event.target;
+            const formData = new FormData(form);
+            const response = await fetch(form.action, {
+                method: form.method,
+                body: formData
+            });
+            const result = await response.json();
+            alert(result.message);
+        }
+    </script>
+</head>
+<body>
+    <h1>Delete Profile</h1>
+
+    <form asp-controller="Lakshy" asp-action="Delete" method="post" onsubmit="deleteProfile(event)">
+        <label for="learnerId">Learner ID:</label>
+        <input type="text" id="learnerId" name="learnerId" required />
+        <label for="deleteId">Profile ID to Delete:</label>
+        <input type="text" id="deleteId" name="id" required />
+        <button type="submit">Delete Profile</button>
+    </form>
+
+    <h1>Delete Instructor Account</h1>
+
+    <form asp-controller="Lakshy" asp-action="DeleteInstructorAccount" method="post" onsubmit="deleteInstructorAccount(event)">
+        <label for="instructorId">Instructor ID:</label>
+        <input type="text" id="instructorId" name="instructorId" required />
+        <button type="submit">Delete Instructor Account</button>
+    </form>
+
+    <h1>Delete Learner Account</h1>
+
+    <form asp-controller="Lakshy" asp-action="DeleteLearnerAccount" method="post" onsubmit="deleteLearnerAccount(event)">
+        <label for="learnerAccountId">Learner ID:</label>
+        <input type="text" id="learnerAccountId" name="learnerAccountId" required />
+        <button type="submit">Delete Learner Account</button>
+    </form>
+
+    <h1>Add Activity</h1>
+
+    <form asp-controller="Lakshy" asp-action="AddActivity" method="post" onsubmit="addActivity(event)">
+        <label for="courseId">Course ID:</label>
+        <input type="text" id="courseId" name="courseId" required />
+        <label for="moduleId">Module ID:</label>
+        <input type="text" id="moduleId" name="moduleId" required />
+        <label for="activityType">Activity Type:</label>
+        <input type="text" id="activityType" name="activityType" required />
+        <label for="details">Details:</label>
+        <input type="text" id="details" name="details" required />
+        <button type="submit">Add</button>
+        <label for="maxPoints">Max Points:</label>
+        <input type="text" id="maxPoints" name="maxPoints" required />
+        <button type="submit">Add</button>
+    </form>
+
+    <h1>View Modules</h1>
+
+    <form asp-controller="Lakshy" asp-action="ViewModules" method="post" onsubmit="viewModules(event)">
+        <label for="courseId">Course ID:</label>
+        <input type="text" id="courseId" name="courseId" required />
+        <button type="submit">View Modules</button>
+    </form>
+
+    <table id="modulesTable" border="1">
+        <tr>
+            <th>Module ID</th>
+            <th>Course ID</th>
+            <th>Title</th>
+            <th>Difficulty</th>
+            <th>Content URL</th>
+        </tr>
+    </table>
+
+    <h1>View Enrolled Courses</h1>
+
+    <form asp-controller="Lakshy" asp-action="ViewEnrolledCourses" method="post" onsubmit="viewEnrolledCourses(event)">
+        <label for="learnerId">Learner ID:</label>
+        <input type="text" id="learnerId" name="learnerId" required />
+        <button type="submit">View Enrolled Courses</button>
+    </form>
+
+    <table id="enrolledCoursesTable" border="1">
+        <tr>
+            <th>Course ID</th>
+            <th>Title</th>
+            <th>Learning Objective</th>
+            <th>Credit Points</th>
+            <th>Difficulty Level</th>
+            <th>Description</th>
+        </tr>
+    </table>
+
+    <h1>Previous Courses</h1>
+
+    <form asp-controller="Lakshy" asp-action="ViewPreviousCourses" method="post" onsubmit="viewPreviousCourses(event)">
+        <label for="learnerId">Learner ID:</label>
+        <input type="text" id="learnerId" name="learnerId" required />
+        <button type="submit">View Previous Courses</button>
+    </form>
+
+    <table id="previousCoursesTable" border="1">
+        <tr>
+            <th>Course ID</th>
+            <th>Title</th>
+            <th>Learning Objective</th>
+            <th>Credit Points</th>
+            <th>Difficulty Level</th>
+            <th>Description</th>
+        </tr>
+    </table>
+
+    <h1>Check Prerequisites</h1>
+
+    <form asp-controller="Lakshy" asp-action="CheckPrerequisites" method="post" onsubmit="checkPrerequisites(event)">
+        <label for="learnerId">Learner ID:</label>
+        <input type="text" id="learnerId" name="learnerId" required />
+        <label for="courseId">Course ID:</label>
+        <input type="text" id="courseId" name="courseId" required />
+        <button type="submit">Check Prerequisites</button>
+    </form>
+
+    <h1>Register Course</h1>
+
+    <form asp-controller="Lakshy" asp-action="RegisterCourse" method="post" onsubmit="registerCourse(event)">
+        <label for="learnerId">Learner ID:</label>
+        <input type="text" id="learnerId" name="learnerId" required />
+        <label for="courseId">Course ID:</label>
+        <input type="text" id="courseId" name="courseId" required />
+        <button type="submit">Register Course</button>
+    </form>
+
+    <h1>Remove Course</h1>
+
+    <form asp-controller="Lakshy" asp-action="RemoveCourse" method="post" onsubmit="removeCourse(event)">
+        <label for="courseId">Course ID:</label>
+        <input type="text" id="courseId" name="courseId" required />
+        <button type="submit">Remove Course</button>
+    </form>
+
+    @if (ViewBag.ErrorMessage != null)
+    {
+        <div class="error-message">
+            <p>@ViewBag.ErrorMessage</p>
+        </div>
+    }
+
+    <h1>Add Assessment</h1>
+
+    <form asp-controller="Lakshy" asp-action="AddAssessment" method="post" onsubmit="addAssessment(event)">
+        <label for="moduleId">Module ID:</label>
+        <input type="text" id="moduleId" name="moduleId" required />
+        <label for="courseId">Course ID:</label>
+        <input type="text" id="courseId" name="courseId" required />
+        <label for="type">Type:</label>
+        <input type="text" id="type" name="type" required />
+        <label for="totalMarks">Total Marks:</label>
+        <input type="text" id="totalMarks" name="totalMarks" required />
+        <label for="passingMarks">Passing Marks:</label>
+        <input type="text" id="passingMarks" name="passingMarks" required />
+        <label for="criteria">Criteria:</label>
+        <input type="text" id="criteria" name="criteria" required />
+        <label for="weightage">Weightage:</label>
+        <input type="text" id="weightage" name="weightage" required />
+        <label for="description">Description:</label>
+        <input type="text" id="description" name="description" required />
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" required />
+        <button type="submit">Add Assessment</button>
+    </form>
+
+    @if (ViewBag.ErrorMessage != null)
+    {
+        <div class="error-message">
+            <p>@ViewBag.ErrorMessage</p>
+        </div>
+    }
+</body>
+</html>

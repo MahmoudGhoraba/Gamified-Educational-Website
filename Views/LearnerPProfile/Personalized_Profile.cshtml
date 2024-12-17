@@ -1,0 +1,42 @@
+﻿@{
+    ViewData["Title"] = "Personalized Profile";
+    var message = ViewBag.Message as string;
+    var messageType = ViewBag.MessageType as string;
+}
+
+<h1>Personalized Profile</h1>
+
+@if (!string.IsNullOrEmpty(message))
+{
+    <div class="alert @(messageType == "success" ? "alert-success" : "alert-danger")">
+        @message
+    </div>
+}
+
+<form asp-controller="LearnerPProfile" asp-action="AddGoal" method="post">
+    <div class="form-group">
+        <label for="goalId">Goal ID:</label>
+        <input type="number" class="form-control" id="goalId" name="goalId" required />
+    </div>
+    <div class="form-group">
+        <label for="goalValue">Goal Value:</label>
+        <input type="text" class="form-control" id="goalValue" name="goalValue" required />
+    </div>
+    <div class="form-group">
+        <label for="status">Status:</label>
+        <input type="text" class="form-control" id="status" name="status" required />
+    </div>
+    <div class="form-group">
+        <label for="deadline">Deadline:</label>
+        <input type="date" class="form-control" id="deadline" name="deadline" required />
+    </div>
+    <div class="form-group">
+        <label for="description">Description:</label>
+        <textarea class="form-control" id="description" name="description" rows="3" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Add Goal</button>
+</form>
+
+<form asp-controller="LearnerPProfile" asp-action="ProfileDetails" method="post">
+    <button type="submit" class="btn btn-info">Profile Details</button>
+</form>
