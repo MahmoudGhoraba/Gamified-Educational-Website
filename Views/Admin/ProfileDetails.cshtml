@@ -1,0 +1,35 @@
+﻿@model Spaghetti.Models.Admin
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div>
+    <h4>Admin Profile</h4>
+    <hr />
+    <div class="text-center mb-3">
+        <img src="@(@Model.ProfilePicture ?? "/uploads/default.jpg")" alt="Profile Picture" 
+             style="width: 150px; height: 150px; border-radius: 50%; border: 1px solid #ddd;" />
+    </div>
+
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Gender)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Gender)
+        </dd>
+    </dl>
+</div>

@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Spaghetti.Models.TakenAssessment>
+
+@{
+    ViewData["Title"] = "Review Assessments";
+}
+
+<h1>Review Assessments</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Assessment ID</th>
+            <th>Learner ID</th>
+            <th>Scored Points</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var assessment in Model)
+        {
+            <tr>
+                <td>@assessment.AssessmentId</td>
+                <td>@assessment.LearnerId</td>
+                <td>@assessment.ScoredPoints</td>
+            </tr>
+        }
+    </tbody>
+</table>

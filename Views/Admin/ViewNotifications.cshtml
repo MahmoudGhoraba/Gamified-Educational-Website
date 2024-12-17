@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Spaghetti.Models.Notification>
+
+@{
+    ViewData["Title"] = "Notifications";
+    var learnerId = ViewBag.LearnerID;
+}
+
+<h1>Notifications</h1>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>NotificationID</th>
+        <th>Message</th>
+        <th>Timestamp</th>
+        <th>ReadStatus</th>
+        <th>UrgencyLevel</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var notification in Model)
+    {
+        <tr>
+            <td>@notification.Id</td>
+            <td>@notification.Message</td>
+            <td>@notification.Timestamp</td>
+            <td>@(notification.ReadStatus == false ? "Unread" : "Read")</td>
+            <td>@notification.UrgencyLevel</td>
+            <td>
+                @if (notification.ReadStatus==true)
+                {
+                    <button class="btn btn-secondary" disabled>Read</button>
+                }
+                else
+                {
+                    <form asp-controller="Admin" asp-action="MarkasRead" method="post">
+                        <input type="hidden" name="learnerId" value="@learnerId"/>
+                        <input type="hidden" name="notificationId" value="@notification.Id"/>
+                        <button type="submit" class="btn btn-primary">Read</button>
+                    </form>
+                }
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

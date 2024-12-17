@@ -51,9 +51,12 @@ namespace Spaghetti.Controllers
                 Role = role
             };
 
+            TempData["Email"] = email;
+            
             _context.SignupPages.Add(newUser);
             await _context.SaveChangesAsync();
-            TempData["Email"] = email;
+            
+
 
             // Create claims and sign in the user
             var claims = new List<Claim>

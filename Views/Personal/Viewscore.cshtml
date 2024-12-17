@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "View Score";
+}
+
+<h2>View Score</h2>
+
+@if (ViewData["Error"] != null)
+{
+    <div class="alert alert-danger">
+        @ViewData["Error"]
+    </div>
+}
+else if (ViewData["Score"] != null)
+{
+    <div class="alert alert-success">
+        <p>Your score is: @ViewData["Score"]</p>
+    </div>
+}
+else
+{
+    <div class="alert alert-info">
+        <p>No assessment found for the given IDs.</p>
+    </div>
+}

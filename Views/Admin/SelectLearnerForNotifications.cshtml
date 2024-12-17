@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Select Learner for Notifications";
+}
+
+<h1>Select Learner for Notifications</h1>
+
+<p>Please enter the Learner ID to view their notifications.</p>
+
+<form asp-controller="Admin" asp-action="ViewNotifications" method="post">
+    <div class="form-group">
+        <label for="learnerId">Learner ID</label>
+        <input type="number" name="learnerId" id="learnerId" class="form-control" placeholder="Enter Learner ID" required>
+    </div>
+    <button type="submit" class="btn btn-primary mt-2">View Notifications</button>
+</form>
+
+@if (ViewData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger mt-3">
+        @ViewData["ErrorMessage"]
+    </div>
+}

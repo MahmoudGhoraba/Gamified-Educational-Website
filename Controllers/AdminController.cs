@@ -23,6 +23,90 @@ namespace Spaghetti.Controllers
             return View();
         }
 
+        [HttpGet]
+        public IActionResult Create()
+        {
+            var email = TempData.Peek("Email") as string; // Use Peek to keep TempData for the next request
+            if (email != null)
+            {
+                _logger.LogError("dsfhdsjsbjdf.");
+                ViewBag.Email = email;
+            }
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> Create(string firstName, string lastName, string gender,IFormFile? profilePictureFile)
+        {
+            var email = TempData["Email"] as string; // Retrieve TempData
+
+            if (string.IsNullOrEmpty(email))
+            {
+                return View("Error");
+            }
+
+            var admin = new Admin
+            {
+                FirstName = firstName,
+                LastName = lastName,
+                Gender = gender,
+                Email = email
+            };
+
+            if (ModelState.IsValid)
+            {
+
+                string profilePicture = null;
+
+                if (profilePictureFile != null && profilePictureFile.Length > 0)
+                {
+                    var allowedExtensions = new[] { ".jpg", ".jpeg", ".png", ".gif" };
+
+                    var fileExtension = Path.GetExtension(profilePictureFile.FileName).ToLower();
+                    if (!allowedExtensions.Contains(fileExtension))
+                    {
+                        ModelState.AddModelError("ProfilePicture",
+                            "Only images (.jpg, .jpeg, .png, .gif) are allowed.");
+                        return View(admin);
+                    }
+
+                    var uploadsFolder = Path.Combine("wwwroot", "uploads");
+                    if (!Directory.Exists(uploadsFolder)) Directory.CreateDirectory(uploadsFolder);
+
+                    var uniqueFileName = Guid.NewGuid().ToString() + "_" + profilePictureFile.FileName;
+                    var filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+                    using (var fileStream = new FileStream(filePath, FileMode.Create))
+                    {
+                        await profilePictureFile.CopyToAsync(fileStream);
+                    }
+
+                    profilePicture = "/uploads/" + uniqueFileName;
+                }
+
+                admin.ProfilePicture = profilePicture;
+            }
+
+            try
+            {
+                _context.Admins.Add(admin);
+                await _context.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "An error occurred while saving the learner.");
+                return View("Error");
+            }
+
+            var adminId = admin.AdminId;
+
+            // You can now use the learnerId as needed
+            HttpContext.Session.SetInt32("AdminID", admin.AdminId);
+
+
+            HttpContext.Session.SetString("UserRole", "A" );
+            return RedirectToAction("Page", "Admin");
+        }
+
         [HttpPost]
         public async Task<IActionResult> Delete(string learnerId, string id)
         {
@@ -99,6 +183,57 @@ namespace Spaghetti.Controllers
 
             return Json(new { success = true, message = "Learner account deleted successfully." });
         }
+
+        
+        [HttpPost]
+        public async Task<IActionResult> ProfileDetails()
+        {
+            var adminId = HttpContext.Session.GetInt32("AdminID");
+            if (adminId == null)
+            {
+                return BadRequest("AdminId is not provided.");
+            }
+
+            var admin = await _context.Admins.FindAsync(adminId.Value);
+            
+            if (admin == null)
+            {
+                return NotFound();
+            }
+            return View(admin);
+        }
+        
+        public IActionResult SelectLearnerForNotifications()
+        {
+            return View();
+        }
+
+        public async Task<IActionResult> ViewNotifications(int learnerId)
+        {
+            // Fetch notifications for the specific learner using raw SQL
+            var notifications = await _context.Notifications
+                .FromSqlRaw("Exec ViewNot @LearnerID = {0}", learnerId)
+                .ToListAsync();
+
+            ViewBag.LearnerID = learnerId;
+            // Pass the list of notifications to the view
+            return View(notifications);
+        }
+        
+        [HttpPost]
+        public async Task<IActionResult> MarkasRead(int? learnerId,int notificationId)
+        {
+            if (learnerId == null)
+            {
+                return View("Error");
+            }
+            // Fetch notifications for the specific learner using raw SQL
+            var notifications = await _context.Database
+                .ExecuteSqlRawAsync("EXEC NotificationUpdate @LearnerID = {0} , @NotificationID = {1} , @ReadStatus = 1", learnerId , notificationId);
+
+            return RedirectToAction("SelectLearnerForNotifications", "Admin");
+        }
+        
         public IActionResult Error()
         {
             var errorViewModel = new ErrorViewModel

@@ -146,17 +146,14 @@ public partial class HelpmeContext : DbContext
             entity.Property(e => e.FirstName)
                 .HasMaxLength(100)
                 .IsUnicode(false)
-                .HasColumnName("First_name");
+                .HasColumnName("FirstName");
             entity.Property(e => e.Gender)
                 .HasMaxLength(30)
                 .IsUnicode(false);
             entity.Property(e => e.LastName)
                 .HasMaxLength(100)
                 .IsUnicode(false)
-                .HasColumnName("Last_name");
-            entity.Property(e => e.Password)
-                .HasMaxLength(50)
-                .IsUnicode(false);
+                .HasColumnName("LastName");
             entity.Property(e => e.ProfilePicture).IsUnicode(false);
         });
 

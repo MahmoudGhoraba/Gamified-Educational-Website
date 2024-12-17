@@ -1,0 +1,18 @@
+﻿@{
+    ViewData["Title"] = "Reminder";
+}
+
+<h2>Reminder</h2>
+
+@if (ViewData["Error"] != null)
+{
+    <div class="alert alert-danger">
+        @ViewData["Error"]
+    </div>
+}
+else
+{
+    <div class="alert alert-info">
+        <p>@ViewData["Noti"]</p>
+    </div>
+}

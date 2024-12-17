@@ -19,6 +19,16 @@ namespace Spaghetti.Controllers
             _context = context;
             _logger = logger;
         }
+        public IActionResult AddAssesment()
+{
+    return RedirectToAction("AddAssesment", "InstructorPost");
+}
+
+
+public IActionResult RedirectToInstructorCreateFourm()
+{
+    return RedirectToAction("CreateFourm", "InstructorPost");
+}
 
         [HttpPost]
         public async Task<IActionResult> UpdateInstructor(string name, string latest_qualifications, string expertise_area)
@@ -71,6 +81,19 @@ namespace Spaghetti.Controllers
         {
             return RedirectToAction("AddPost", "InstructorPost");
         }
+        
+        [HttpGet]
+        public IActionResult ReviewAssessments()
+        {
+            // Retrieve all taken assessments from the database
+            var takenAssessments = _context.TakenAssessments
+                .Include(ta => ta.Assessment)
+                .Include(ta => ta.Learner)
+                .ToList();
+
+            return View(takenAssessments);
+        }
+
         public IActionResult Error()
         {
             var errorViewModel = new ErrorViewModel

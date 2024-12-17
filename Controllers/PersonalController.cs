@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using System.Data;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System.Diagnostics;
 using System.Threading.Tasks;
+using Microsoft.Data.SqlClient;
 using Spaghetti.Models;
 
 namespace Spaghetti.Controllers
@@ -168,8 +170,46 @@ namespace Spaghetti.Controllers
 
             return RedirectToAction("PersonalChoose");
         }
-
+        
         [HttpPost]
+        public async Task<IActionResult> ViewScore( int AssessmentID)
+        {
+            var learnerId =HttpContext.Session.GetInt32("LearnerID");
+            if (learnerId == null)
+            {
+                return View("Error");
+            }
+            var scoreParam = new SqlParameter("@score", SqlDbType.Int)
+                { Direction = ParameterDirection.Output };
+            await _context.Database.ExecuteSqlRawAsync(
+                "EXEC ViewScore @LearnerID = {0}, @AssessmentID = {1}, @score = {2} OUTPUT", learnerId, AssessmentID, scoreParam);
+            
+            if (scoreParam.Value != DBNull.Value)
+            {
+                ViewData["Score"] = scoreParam.Value;
+                return View();
+            }
+            else
+            {
+                return View();
+            }
+        }
+        
+        [HttpGet]
+        public async Task<IActionResult> AssessmentAnalysis()
+        {
+            var learnerId = HttpContext.Session.GetInt32("LearnerID");
+            if (learnerId == null)
+            {
+                return View("Error");
+            }
+
+            var results = await _context.TakenAssessments
+                .FromSqlRaw("Exec AssessmentAnalysis @LearnerID = {0}", learnerId)
+                .ToListAsync();
+            return View(results);
+        }
+
         [HttpPost]
         public async Task<IActionResult> UpdateLearnerInfo(string firstName, string lastName, DateTime birthDate, string country)
         {
@@ -223,6 +263,70 @@ namespace Spaghetti.Controllers
         public IActionResult GoSuccess()
         {
             return View();
+        }
+        
+        public async Task<IActionResult> CheckUpcomingGoals()
+        {
+            var learnerId = HttpContext.Session.GetInt32("LearnerID");
+            if (learnerId == null)
+            {
+                ViewBag.noti = "LearnerID is not provided.";
+                return View("Error");
+            }
+            
+            int rowsAffected = await _context.Database.ExecuteSqlRawAsync("EXEC GoalReminder @LearnerID = {0}", learnerId);
+            
+            ViewData["Noti"] = rowsAffected > 0 
+                ? "Reminder notification sent successfully for your upcoming learning goals." 
+                : "All is fine! You are on track with your learning goals.";
+            
+            return View();
+        }
+        
+        public async Task<IActionResult> ViewNotifications()
+        {
+            var learnerId = HttpContext.Session.GetInt32("LearnerID");
+            // Fetch notifications for the specific learner using raw SQL
+            var notifications = await _context.Notifications
+                .FromSqlRaw("Exec ViewNot @LearnerID = {0}", learnerId)
+                .ToListAsync();
+
+            // Pass the list of notifications to the view
+            return View(notifications);
+        }
+        
+        [HttpPost]
+        public async Task<IActionResult> MarkasRead(int notificationId)
+        {
+            
+            var learnerId = HttpContext.Session.GetInt32("LearnerID");
+
+            if (learnerId == null)
+            {
+                return View("Error");
+            }
+            // Fetch notifications for the specific learner using raw SQL
+            var notifications = await _context.Database
+                .ExecuteSqlRawAsync("EXEC NotificationUpdate @LearnerID = {0} , @NotificationID = {1} , @ReadStatus = 1", learnerId , notificationId);
+
+            return RedirectToAction("ViewNotifications", "Personal");
+        }
+        
+        [HttpGet]
+        public async Task<IActionResult> Review()
+        {
+            var learnerId = HttpContext.Session.GetInt32("LearnerID");
+            if (learnerId == null)
+            {
+                return View("Error");
+            }
+
+            var takenAssessments = await _context.TakenAssessments
+                .Where(ta => ta.LearnerId == learnerId.Value)
+                .Include(ta => ta.Assessment)
+                .ToListAsync();
+
+            return View(takenAssessments);
         }
     }
 }

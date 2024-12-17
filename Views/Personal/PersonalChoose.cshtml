@@ -3,6 +3,7 @@
     var learnerId = ViewBag.LearnerID as int?;
     var message = ViewBag.Message as string;
     var messageType = ViewBag.MessageType as string;
+    var noti = ViewBag.noti as string;
 }
 
 <h1>Personal Choose</h1>
@@ -10,6 +11,12 @@
 @if (learnerId.HasValue)
 {
     <p><strong>Learner ID:</strong> @learnerId</p>
+}
+@if (!string.IsNullOrEmpty(noti))
+{
+    <div class="alert">
+        @message
+    </div>
 }
 
 @if (!string.IsNullOrEmpty(message))
@@ -73,3 +80,17 @@
 <form asp-controller="LakshyLearner" asp-action="LearnerLaksh" method="get">
     <button type="submit" class="btn btn-secondary">Courses</button>
 </form>
+<form asp-controller="Personal" asp-action="AssessmentAnalysis" method="get">
+    <button type="submit" class="btn btn-secondary">View Assessment Analysis</button>
+</form>
+<form asp-controller="Personal" asp-action="ViewScore" method="post">
+    <div class="form-group">
+        <label for="ViewScoreAssessmentID">Assessment ID:</label>
+        <input type="text" class="form-control" id="ViewScoreAssessmentID" name="AssessmentID" required />
+    </div>
+    <button type="submit" class="btn btn-info">View Score</button>
+</form>
+<a asp-controller="Personal" asp-action="Review" class="btn btn-primary">Review My Assessments</a>
+<a asp-controller="Personal" asp-action="CheckUpcomingGoals" class="btn btn-primary">check for Upcoming Goals</a>
+<a asp-controller="personal" asp-action="ViewNotifications" class="btn btn-primary">View Notifications</a>
+

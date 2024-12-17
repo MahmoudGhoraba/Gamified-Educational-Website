@@ -47,37 +47,46 @@
     </script>
 </head>
 <body>
-    <h1>Delete Profile</h1>
+<h1>Delete Profile</h1>
 
-    <form asp-controller="Admin" asp-action="Delete" method="post" onsubmit="deleteProfile(event)">
-        <label for="learnerId">Learner ID:</label>
-        <input type="text" id="learnerId" name="learnerId" required />
-        <label for="deleteId">Profile ID to Delete:</label>
-        <input type="text" id="deleteId" name="id" required />
-        <button type="submit">Delete Profile</button>
-    </form>
+<form asp-controller="Admin" asp-action="Delete" method="post" onsubmit="deleteProfile(event)">
+    <label for="learnerId">Learner ID:</label>
+    <input type="text" id="learnerId" name="learnerId" required />
+    <label for="deleteId">Profile ID to Delete:</label>
+    <input type="text" id="deleteId" name="id" required />
+    <button type="submit">Delete Profile</button>
+</form>
 
-    <h1>Delete Instructor Account</h1>
+<h1>Delete Instructor Account</h1>
 
-    <form asp-controller="Admin" asp-action="DeleteInstructorAccount" method="post" onsubmit="deleteInstructorAccount(event)">
-        <label for="instructorId">Instructor ID:</label>
-        <input type="text" id="instructorId" name="instructorId" required />
-        <button type="submit">Delete Instructor Account</button>
-    </form>
+<form asp-controller="Admin" asp-action="DeleteInstructorAccount" method="post" onsubmit="deleteInstructorAccount(event)">
+    <label for="instructorId">Instructor ID:</label>
+    <input type="text" id="instructorId" name="instructorId" required />
+    <button type="submit">Delete Instructor Account</button>
+</form>
 
-    <h1>Delete Learner Account</h1>
+<h1>Delete Learner Account</h1>
 
-    <form asp-controller="Admin" asp-action="DeleteLearnerAccount" method="post" onsubmit="deleteLearnerAccount(event)">
-        <label for="learnerAccountId">Learner ID:</label>
-        <input type="text" id="learnerAccountId" name="learnerAccountId" required />
-        <button type="submit">Delete Learner Account</button>
-    </form>
+<form asp-controller="Admin" asp-action="DeleteLearnerAccount" method="post" onsubmit="deleteLearnerAccount(event)">
+    <label for="learnerAccountId">Learner ID:</label>
+    <input type="text" id="learnerAccountId" name="learnerAccountId" required />
+    <button type="submit">Delete Learner Account</button>
+</form>
 
-    @if (ViewBag.ErrorMessage != null)
-    {
-        <div class="error-message">
-            <p>@ViewBag.ErrorMessage</p>
-        </div>
-    }
+<form asp-controller="Admin" asp-action="ProfileDetails" method="post">
+    <button type="submit" class="btn btn-info">Profile</button>
+</form>
+
+<a asp-controller="Admin" asp-action="SelectLearnerForNotifications" class="btn btn-primary">View Notifications</a>
+
+
+@if (ViewBag.ErrorMessage != null)
+{
+    <div class="error-message">
+        <p>@ViewBag.ErrorMessage</p>
+    </div>
+}
 </body>
+
+
 </html>

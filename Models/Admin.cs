@@ -16,8 +16,6 @@ public partial class Admin
     public string? LastName { get; set; }
 
     public string? Gender { get; set; }
-
-    public string? Password { get; set; }
-
+    
     public virtual ICollection<SignupPage> SignupPages { get; set; } = new List<SignupPage>();
 }

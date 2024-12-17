@@ -32,8 +32,24 @@ build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTGFrc2h5SW5zdHJ1Y3Rvci9JbnN0
 build_metadata.AdditionalFiles.CssScope = 
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/Views/Admin/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/Views/Admin/Page.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vUGFnZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/Views/Admin/ProfileDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vUHJvZmlsZURldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/Views/Admin/SelectLearnerForNotifications.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vU2VsZWN0TGVhcm5lckZvck5vdGlmaWNhdGlvbnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/Views/Admin/ViewNotifications.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vVmlld05vdGlmaWNhdGlvbnMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/Views/Discussion/AddPost.cshtml]
@@ -56,6 +72,18 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSW5zdHJ1Y3RvckRhc2gvSURhc2guY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/Views/InstructorDash/ReviewAssessments.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSW5zdHJ1Y3RvckRhc2gvUmV2aWV3QXNzZXNzbWVudHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/Views/InstructorPost/AddAssesment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSW5zdHJ1Y3RvclBvc3QvQWRkQXNzZXNtZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/Views/InstructorPost/CreateFourm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSW5zdHJ1Y3RvclBvc3QvQ3JlYXRlRm91cm0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/Views/InstructorPost/Post.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSW5zdHJ1Y3RvclBvc3QvUG9zdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -70,6 +98,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/Views/LakshyLearner/LearnerLaksh.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTGFrc2h5TGVhcm5lci9MZWFybmVyTGFrc2guY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/Views/LearnerAssessments/Review.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTGVhcm5lckFzc2Vzc21lbnRzL1Jldmlldy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/Views/LearnerPProfile/Personalized_Profile.cshtml]
@@ -88,8 +120,32 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTEkvVmFsdWVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/Views/Notifications/ViewNotifications.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTm90aWZpY2F0aW9ucy9WaWV3Tm90aWZpY2F0aW9ucy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/Views/Personal/AssessmentAnalysis.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGVyc29uYWwvQXNzZXNzbWVudEFuYWx5c2lzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/Views/Personal/CheckUpcomingGoals.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGVyc29uYWwvQ2hlY2tVcGNvbWluZ0dvYWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/Views/Personal/PersonalChoose.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGVyc29uYWwvUGVyc29uYWxDaG9vc2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/Views/Personal/Review.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGVyc29uYWwvUmV2aWV3LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/Views/Personal/ViewNotifications.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGVyc29uYWwvVmlld05vdGlmaWNhdGlvbnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/Views/Personal/Viewscore.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGVyc29uYWwvVmlld3Njb3JlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/Views/Shared/Error.cshtml]
