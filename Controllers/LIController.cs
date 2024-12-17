@@ -36,13 +36,13 @@ namespace Spaghetti.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Values(string firstName, string lastName, string gender, DateTime birthDate, string country)
+        public async Task<IActionResult> Values(string firstName, string lastName, string gender, DateTime birthDate, string country ,  IFormFile? profilePictureFile)
         {
             var email = TempData["Email"] as string; // Retrieve TempData
-
+            
             if (string.IsNullOrEmpty(email))
             {
-                return View("Home");
+                return View("Error");
             }
 
             var learner = new Learner
@@ -54,6 +54,39 @@ namespace Spaghetti.Controllers
                 Country = country,
                 Email = email
             };
+
+            if (ModelState.IsValid)
+            {
+
+                string profilePicture = null;
+
+                if (profilePictureFile != null && profilePictureFile.Length > 0)
+                {
+                    var allowedExtensions = new[] { ".jpg", ".jpeg", ".png", ".gif" };
+
+                    var fileExtension = Path.GetExtension(profilePictureFile.FileName).ToLower();
+                    if (!allowedExtensions.Contains(fileExtension))
+                    {
+                        ModelState.AddModelError("ProfilePicture",
+                            "Only images (.jpg, .jpeg, .png, .gif) are allowed.");
+                        return View(learner);
+                    }
+
+                    var uploadsFolder = Path.Combine("wwwroot", "uploads");
+                    if (!Directory.Exists(uploadsFolder)) Directory.CreateDirectory(uploadsFolder);
+
+                    var uniqueFileName = Guid.NewGuid().ToString() + "_" + profilePictureFile.FileName;
+                    var filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+                    using (var fileStream = new FileStream(filePath, FileMode.Create))
+                    {
+                        await profilePictureFile.CopyToAsync(fileStream);
+                    }
+
+                    profilePicture = "/uploads/" + uniqueFileName;
+                }
+                learner.ProfilePicture = profilePicture;
+            }
 
             try
             {
@@ -75,6 +108,7 @@ namespace Spaghetti.Controllers
             HttpContext.Session.SetString("UserRole", "L");
             return RedirectToAction("PersonalChoose", "Personal");
         }
+            
         public IActionResult Error()
         {
             var errorViewModel = new ErrorViewModel

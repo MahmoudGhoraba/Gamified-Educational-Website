@@ -26,6 +26,12 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = /Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti
 build_property._RazorSourceGeneratorDebug = 
 
+[/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/Views/LakshyInstructor/InstructorLaksh.cshtml]
+build_metadata.AdditionalFiles.TargetPath = 
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTGFrc2h5SW5zdHJ1Y3Rvci9JbnN0cnVjdG9yTGFrc2guY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/Views/Admin/Page.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vUGFnZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -62,8 +68,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSVBhdGgvUGF0aENyZWF0aW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/Views/Lakshy/LearnerComp2.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTGFrc2h5L0xlYXJuZXJDb21wMi5jc2h0bWw=
+[/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/Views/LakshyLearner/LearnerLaksh.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTGFrc2h5TGVhcm5lci9MZWFybmVyTGFrc2guY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/Views/LearnerPProfile/Personalized_Profile.cshtml]

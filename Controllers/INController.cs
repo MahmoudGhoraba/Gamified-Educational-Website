@@ -32,7 +32,7 @@ namespace Spaghetti.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Values(string name, string latestQualification, string expertiseArea)
+        public async Task<IActionResult> Values(string name, string latestQualification, string expertiseArea ,  IFormFile? profilePictureFile)
         {
             var tempEmail = TempData["Email"] as string; // Retrieve TempData
             if (string.IsNullOrEmpty(tempEmail))
@@ -46,6 +46,39 @@ namespace Spaghetti.Controllers
                 ExpertiseArea = expertiseArea,
                 Email = tempEmail
             };
+            if (ModelState.IsValid)
+            {
+                string profilePicture = null;
+
+                if (profilePictureFile != null && profilePictureFile.Length > 0)
+                {
+                    var allowedExtensions = new[] { ".jpg", ".jpeg", ".png", ".gif" };
+
+                    var fileExtension = Path.GetExtension(profilePictureFile.FileName).ToLower();
+                    if (!allowedExtensions.Contains(fileExtension))
+                    {
+                        ModelState.AddModelError("ProfilePicture",
+                            "Only images (.jpg, .jpeg, .png, .gif) are allowed.");
+                        return View(instructor);
+                    }
+
+                    var uploadsFolder = Path.Combine("wwwroot", "uploads");
+                    if (!Directory.Exists(uploadsFolder)) Directory.CreateDirectory(uploadsFolder);
+
+                    var uniqueFileName = Guid.NewGuid().ToString() + "_" + profilePictureFile.FileName;
+                    var filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+                    using (var fileStream = new FileStream(filePath, FileMode.Create))
+                    {
+                        await profilePictureFile.CopyToAsync(fileStream);
+                    }
+
+                    profilePicture = "/uploads/" + uniqueFileName;
+                    instructor.ProfilePicture = profilePicture;
+
+                }
+            }
+
             try
             {
                 _context.Instructors.Add(instructor);

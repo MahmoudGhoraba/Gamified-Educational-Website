@@ -1,22 +1,43 @@
-﻿@{
-    ViewData["Title"] = "Instructor Values";
+﻿@model Spaghetti.Models.Instructor
+
+@{
+    ViewData["Title"] = "Create";
 }
-    <section class="overlay">
-        <h1>Instructor Values</h1>
-        <p>Email: @ViewBag.Email</p>
-        <form asp-controller="IN" asp-action="Values" method="post">
-            <label for="name">Name:</label>
-            <br>
-            <input id="name" name="name" type="text" required>
-            <br>
-            <label for="latestQualification">Latest Qualification:</label>
-            <br>
-            <input id="latestQualification" name="latestQualification" type="text" required>
-            <br>
-            <label for="expertiseArea">Expertise Area:</label>
-            <br>
-            <input id="expertiseArea" name="expertiseArea" type="text" required>
-            <br>
-            <input type="submit" value="Submit">
+
+<h1>Create</h1>
+
+<h4>Instructor</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Values" method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LatestQualification" class="control-label"></label>
+                <input asp-for="LatestQualification" class="form-control" />
+                <span asp-validation-for="LatestQualification" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ExpertiseArea" class="control-label"></label>
+                <input asp-for="ExpertiseArea" class="form-control" />
+                <span asp-validation-for="ExpertiseArea" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="ProfilePictureFile">Profile Picture</label>
+                <input type="file" class="form-control" id="ProfilePictureFile" name="ProfilePictureFile" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Values" class="btn btn-primary" />
+            </div>
         </form>
-    </section>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

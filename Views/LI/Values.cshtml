@@ -1,42 +1,53 @@
-﻿@{
-    ViewData["Title"] = "Values";
+﻿@model Spaghetti.Models.Learner
+
+@{
+    ViewData["Title"] = "Create";
 }
 
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-<head>
-    <meta charset="utf-8">
-    <title>@ViewData["Title"]</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
-</head>
-<body>
-    <section class="overlay">
-        <h1>Values</h1>
-        <p>Email: @ViewBag.Email</p>
-        <form asp-action="Values" method="post">
-            <label for="firstName">First Name:</label>
-            <br>
-            <input id="firstName" name="firstName" type="text" required>
-            <br>
-            <label for="lastName">Last Name:</label>
-            <br>
-            <input id="lastName" name="lastName" type="text" required>
-            <br>
-            <label for="gender">Gender:</label>
-            <br>
-            <input id="gender" name="gender" type="text" required>
-            <br>
-            <label for="birthDate">Birth Date:</label>
-            <br>
-            <input id="birthDate" name="birthDate" type="date" required>
-            <br>
-            <label for="country">Country:</label>
-            <br>
-            <input id="country" name="country" type="text" required>
-            <br>
-            <input type="submit" value="Submit">
+<h1>Create</h1>
+
+<h4>Learner</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Values" method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="FirstName" class="control-label"></label>
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastName" class="control-label"></label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Gender" class="control-label"></label>
+                <input asp-for="Gender" class="form-control" />
+                <span asp-validation-for="Gender" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BirthDate" class="control-label"></label>
+                <input asp-for="BirthDate" class="form-control" />
+                <span asp-validation-for="BirthDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Country" class="control-label"></label>
+                <input asp-for="Country" class="form-control" />
+                <span asp-validation-for="Country" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="ProfilePictureFile">Profile Picture</label>
+                <input type="file" class="form-control" id="ProfilePictureFile" name="ProfilePictureFile" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Values" class="btn btn-primary" />
+            </div>
         </form>
-    </section>
-</body>
-</html>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -174,3 +174,4 @@
 /Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/obj/Debug/net8.0/Spaghetti.RazorAssemblyInfo.cs
 /Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/obj/Debug/net8.0/scopedcss/Views/Shared/_Layout.cshtml.rz.scp.css
 /Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/obj/Debug/net8.0/scopedcss/projectbundle/Spaghetti.bundle.scp.css
+/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/obj/Debug/net8.0/Spaghetti.sourcelink.json

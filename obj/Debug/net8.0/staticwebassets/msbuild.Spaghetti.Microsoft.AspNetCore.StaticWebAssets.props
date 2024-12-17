@@ -976,5 +976,101 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Spaghetti.bundle.scp.css))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\20e211ea-05f0-4d6b-9dcf-5c97102d8d82_1520128073704.jpeg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Spaghetti</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Spaghetti</BasePath>
+      <RelativePath>uploads/20e211ea-05f0-4d6b-9dcf-5c97102d8d82_1520128073704.jpeg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\20e211ea-05f0-4d6b-9dcf-5c97102d8d82_1520128073704.jpeg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\55722f1d-1289-40e9-8ac9-76b8295cd263_migration-MutualRespectIMGT.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Spaghetti</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Spaghetti</BasePath>
+      <RelativePath>uploads/55722f1d-1289-40e9-8ac9-76b8295cd263_migration-MutualRespectIMGT.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\55722f1d-1289-40e9-8ac9-76b8295cd263_migration-MutualRespectIMGT.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\66c8fe6e-02c6-4830-80b7-8db5016eae34_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Spaghetti</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Spaghetti</BasePath>
+      <RelativePath>uploads/66c8fe6e-02c6-4830-80b7-8db5016eae34_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\66c8fe6e-02c6-4830-80b7-8db5016eae34_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\95a97994-36e4-40df-bc5c-dd973279d34f_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Spaghetti</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Spaghetti</BasePath>
+      <RelativePath>uploads/95a97994-36e4-40df-bc5c-dd973279d34f_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\95a97994-36e4-40df-bc5c-dd973279d34f_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\9eb71d6a-e5dc-4872-b369-b59effb32113_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Spaghetti</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Spaghetti</BasePath>
+      <RelativePath>uploads/9eb71d6a-e5dc-4872-b369-b59effb32113_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\9eb71d6a-e5dc-4872-b369-b59effb32113_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\dee15de7-5907-4a33-9fa3-cec7fd253e80_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>Spaghetti</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Spaghetti</BasePath>
+      <RelativePath>uploads/dee15de7-5907-4a33-9fa3-cec7fd253e80_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\dee15de7-5907-4a33-9fa3-cec7fd253e80_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
   </ItemGroup>
 </Project>

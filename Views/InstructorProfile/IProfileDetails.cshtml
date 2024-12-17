@@ -1,9 +1,34 @@
 ﻿@model Spaghetti.Models.Instructor
 
+@{
+    ViewData["Title"] = "Details";
+}
+
 <div>
-    <h2>Instructor Profile Details</h2>
-    <p><strong>Name:</strong> @Model.Name</p>
-    <p><strong>Latest Qualifications:</strong> @Model.LatestQualification</p>
-    <p><strong>Expertise Area:</strong> @Model.ExpertiseArea</p>
-    <p><strong>Email:</strong> @Model.Email</p>
+    <h4>Instructor Profile</h4>
+    <hr />
+    <div class="text-center mb-3">
+        <img src="@(@Model.ProfilePicture ?? "/uploads/default.jpg")" alt="Profile Picture"
+             style="width: 150px; height: 150px; border-radius: 50%; border: 1px solid #ddd;" />
+    </div>
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LatestQualification)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LatestQualification)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ExpertiseArea)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ExpertiseArea)
+        </dd>
+    </dl>
 </div>

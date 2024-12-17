@@ -22,4 +22,12 @@
       <_ContentIncludedByDefault Remove="Views\LearnerAssessments\Review.cshtml" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="wwwroot\uploads\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <AdditionalFiles Include="Views\LakshyInstructor\InstructorLaksh.cshtml" />
+    </ItemGroup>
+
 </Project>

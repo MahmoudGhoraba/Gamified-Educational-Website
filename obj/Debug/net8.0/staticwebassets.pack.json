@@ -245,6 +245,30 @@
       "PackagePath": "staticwebassets/lib/jquery/dist/jquery.min.map"
     },
     {
+      "Id": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/uploads/20e211ea-05f0-4d6b-9dcf-5c97102d8d82_1520128073704.jpeg",
+      "PackagePath": "staticwebassets/uploads/20e211ea-05f0-4d6b-9dcf-5c97102d8d82_1520128073704.jpeg"
+    },
+    {
+      "Id": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/uploads/55722f1d-1289-40e9-8ac9-76b8295cd263_migration-MutualRespectIMGT.jpg",
+      "PackagePath": "staticwebassets/uploads/55722f1d-1289-40e9-8ac9-76b8295cd263_migration-MutualRespectIMGT.jpg"
+    },
+    {
+      "Id": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/uploads/66c8fe6e-02c6-4830-80b7-8db5016eae34_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
+      "PackagePath": "staticwebassets/uploads/66c8fe6e-02c6-4830-80b7-8db5016eae34_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg"
+    },
+    {
+      "Id": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/uploads/95a97994-36e4-40df-bc5c-dd973279d34f_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
+      "PackagePath": "staticwebassets/uploads/95a97994-36e4-40df-bc5c-dd973279d34f_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg"
+    },
+    {
+      "Id": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/uploads/9eb71d6a-e5dc-4872-b369-b59effb32113_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
+      "PackagePath": "staticwebassets/uploads/9eb71d6a-e5dc-4872-b369-b59effb32113_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg"
+    },
+    {
+      "Id": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/uploads/dee15de7-5907-4a33-9fa3-cec7fd253e80_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
+      "PackagePath": "staticwebassets/uploads/dee15de7-5907-4a33-9fa3-cec7fd253e80_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg"
+    },
+    {
       "Id": "obj/Debug/net8.0/staticwebassets/msbuild.Spaghetti.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },
