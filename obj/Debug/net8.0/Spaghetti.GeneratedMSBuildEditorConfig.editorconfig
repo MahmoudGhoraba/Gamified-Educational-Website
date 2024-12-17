@@ -32,6 +32,34 @@ build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTGFrc2h5SW5zdHJ1Y3Rvci9JbnN0
 build_metadata.AdditionalFiles.CssScope = 
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/Views/Achievements/addAchievement.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNoaWV2ZW1lbnRzL2FkZEFjaGlldmVtZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/Views/Achievements/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNoaWV2ZW1lbnRzL0NyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/Views/Achievements/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNoaWV2ZW1lbnRzL0RlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/Views/Achievements/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNoaWV2ZW1lbnRzL0RldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/Views/Achievements/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNoaWV2ZW1lbnRzL0VkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/Views/Achievements/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNoaWV2ZW1lbnRzL0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/Views/Achievements/TrackAchievements.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNoaWV2ZW1lbnRzL1RyYWNrQWNoaWV2ZW1lbnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/Views/Admin/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -60,6 +88,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGlzY3Vzc2lvbi9BZGRQb3N0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/Views/HighestGradeInstructor/HighestGrades.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSGlnaGVzdEdyYWRlSW5zdHJ1Y3Rvci9IaWdoZXN0R3JhZGVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/Views/HighestGradeLearner/HighestGrades.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSGlnaGVzdEdyYWRlTGVhcm5lci9IaWdoZXN0R3JhZGVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -72,6 +108,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSU4vSW5mby5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/Views/InstructorDash/AddDeadline.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSW5zdHJ1Y3RvckRhc2gvQWRkRGVhZGxpbmUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/Views/InstructorDash/AssessmentAnalyticsResult.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSW5zdHJ1Y3RvckRhc2gvQXNzZXNzbWVudEFuYWx5dGljc1Jlc3VsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/Views/InstructorDash/EmotionalTrendAnalysis.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSW5zdHJ1Y3RvckRhc2gvRW1vdGlvbmFsVHJlbmRBbmFseXNpcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -82,6 +126,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/Views/InstructorDash/ReviewAssessments.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSW5zdHJ1Y3RvckRhc2gvUmV2aWV3QXNzZXNzbWVudHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/Views/InstructorDash/UpdateGrade.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSW5zdHJ1Y3RvckRhc2gvVXBkYXRlR3JhZGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/Views/InstructorPost/AddAssesment.cshtml]
@@ -158,6 +206,58 @@ build_metadata.AdditionalFiles.CssScope =
 
 [/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/Views/Personal/Viewscore.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGVyc29uYWwvVmlld3Njb3JlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/Views/Quests/ActiveQuests.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUXVlc3RzL0FjdGl2ZVF1ZXN0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/Views/Quests/AllQuests.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUXVlc3RzL0FsbFF1ZXN0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/Views/Quests/AllQuests2.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUXVlc3RzL0FsbFF1ZXN0czIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/Views/Quests/AvailableQuests.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUXVlc3RzL0F2YWlsYWJsZVF1ZXN0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/Views/Quests/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUXVlc3RzL0NyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/Views/Quests/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUXVlc3RzL0RlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/Views/Quests/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUXVlc3RzL0RldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/Views/Quests/DetailsForInstructor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUXVlc3RzL0RldGFpbHNGb3JJbnN0cnVjdG9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/Views/Quests/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUXVlc3RzL0VkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/Views/Quests/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUXVlc3RzL0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/Views/Quests/ManageQuests.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUXVlc3RzL01hbmFnZVF1ZXN0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/Views/Quests/Participants.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUXVlc3RzL1BhcnRpY2lwYW50cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/Views/Quests/TrackQuest.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUXVlc3RzL1RyYWNrUXVlc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/Views/Shared/Error.cshtml]

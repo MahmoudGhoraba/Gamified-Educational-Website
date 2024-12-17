@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewData["Title"] = "Assessment Analytics Result";
+}
+
+<h1>Assessment Analytics Result</h1>
+
+@if (ViewBag.ErrorMessage != null)
+{
+    <div class="alert alert-danger">
+        @ViewBag.ErrorMessage
+    </div>
+}
+else
+{
+    <div class="alert alert-success">
+        <p> Average score is: @ViewBag.integer</p>
+    </div>
+}

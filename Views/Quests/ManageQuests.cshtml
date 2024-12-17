@@ -1,0 +1,20 @@
+﻿@model IEnumerable<Spaghetti.Models.Quest>
+
+@{
+    ViewData["Title"] = "Manage Quests";
+}
+
+<h2>Manage Quests</h2>
+
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-success">@TempData["Message"]</div>
+}
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">@TempData["Error"]</div>
+}
+
+
+
+

@@ -13,7 +13,7 @@ public partial class Achievement
 
     public string? Description { get; set; }
 
-    public DateOnly? DateEarned { get; set; }
+    public DateTime? DateEarned { get; set; }
 
     public string? Type { get; set; }
 

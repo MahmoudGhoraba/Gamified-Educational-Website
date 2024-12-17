@@ -47,6 +47,42 @@
     <button type="submit" class="btn btn-warning">Add Assesment</button>
 </form>
 
+<form asp-controller="InstructorDash" asp-action="UpdateGrade" method="get">
+    <div class="form-group">
+        <label for="learnerId">Learner ID</label>
+        <input type="number" class="form-control" id="learnerId" name="learnerId" required />
+    </div>
+    <div class="form-group">
+        <label for="assessmentId">Assessment ID</label>
+        <input type="number" class="form-control" id="assessmentId" name="assessmentId" required />
+    </div>
+    <div class="form-group">
+        <label for="points">New Score</label>
+        <input type="number" class="form-control" id="points" name="points" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Update</button>
+</form>
+<form asp-controller="InstructorDash" asp-action="AssessmentNot" method="post">
+    <div class="form-group">
+        <label for="NotificationID">Notification ID:</label>
+        <input type="number" class="form-control" id="NotificationID" name="NotificationID" required />
+    </div>
+    <div class="form-group">
+        <label for="message">Message:</label>
+        <input type="text" class="form-control" id="message" name="message" required />
+    </div>
+    <div class="form-group">
+        <label for="urgencylevel">Urgency Level:</label>
+        <input type="text" class="form-control" id="urgencylevel" name="urgencylevel" required />
+    </div>
+    <div class="form-group">
+        <label for="LearnerID">Learner ID:</label>
+        <input type="number" class="form-control" id="LearnerID" name="LearnerID" required />
+    </div>
+    <button type="submit" class="btn btn-warning">Send Notification</button>
+</form>
+<a asp-controller="HighestGradeInstructor" asp-action="HighestGrades" class="btn btn-primary mb-2">View Highest Grades</a>
+<a asp-controller="InstructorDash" asp-action="AssessmentAnalyticsResult" class="btn btn-primary">Assessment Analytics</a>
 <form asp-controller="InstructorDash" asp-action="EmotionalTrendAnalysis" method="post">
     <div class="form-group">
         <label for="courseID">Course ID</label>
@@ -62,4 +98,37 @@
     </div>
     <button type="submit" class="btn btn-primary">Get Emotional Trend Analysis</button>
 </form>
+
+<div class="mt-4">
+    <h4>Actions</h4>
+<div class="btn-group d-flex flex-wrap justify-content-start">
+
+    <!-- Add New Quest Button -->
+    <a asp-controller="Quests" asp-action="Create" class="btn btn-success mx-2 mb-2">
+        <i class="bi bi-plus-circle"></i> Add New Quest
+    </a>
+
+    <!-- All Quests Button -->
+    <a asp-controller="Quests" asp-action="AllQuests" method="get" class="d-inline-block mb-2">
+        <button type="button" class="btn btn-primary mx-2">
+            <i class="bi bi-list"></i> Delete by Criteria
+        </button>
+    </a>
+
+    <a asp-controller="Quests"  asp-action="AllQuests2" method="get" class="d-inline-block mb-2">
+        <button type="button" class="btn btn-primary mx-2">
+            <i class="bi bi-list"></i> View All Quests
+        </button>
+    </a>
+
+    <!-- Add Achievement Button -->
+    <a asp-controller="Achievements"  asp-action="AddAchievement" method="get" class="d-inline-block mb-2">
+        <button type="button" class="btn btn-primary mx-2">
+            <i class="bi bi-trophy"></i> Add Achievement
+        </button>
+    </a>
+
+</div>
+</div>
+
 

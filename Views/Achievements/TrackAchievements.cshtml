@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Spaghetti.Models.Achievement>
+
+<h2>Your Achievements</h2>
+
+@if (TempData["Error"] != null)
+{
+        <div class="alert alert-danger">@TempData["Error"]</div>
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Badge</th>
+            <th>Description</th>
+            <th>Points</th>
+            <th>Date Earned</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var achievement in Model)
+        {
+            <tr>
+                <td>@achievement.Badge?.Title ?? "No Badge"</td>
+                <td>@achievement.Description</td>
+                <td>@achievement.Badge?.Points ?? 0</td>
+                <td>@achievement.DateEarned?.ToString("MM/dd/yyyy")</td>
+            </tr>
+        }
+    </tbody>
+</table>

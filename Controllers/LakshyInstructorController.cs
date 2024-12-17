@@ -171,7 +171,7 @@ namespace Spaghetti.Controllers
                 var resultMessage = new SqlParameter("@ResultMessage", SqlDbType.VarChar, 100) { Direction = ParameterDirection.Output };
 
                 var result = await _context.Database.ExecuteSqlRawAsync(
-                    "EXEC AddAssessment @ModuleID = {0}, @CourseID = {1}, @Type = {2}, @TotalMarks = {3}, @PassingMarks = {4}, @Criteria = {5}, @Weightage = {6}, @Description = {7}, @Title = {8}, @ResultMessage = {9} OUTPUT",
+                    "EXEC addAssesment @ModuleID = {0}, @CourseID = {1}, @Type = {2}, @Total_Marks = {3}, @Passing_Marks = {4}, @Criteria = {5}, @Weightage = {6}, @Description = {7}, @Title = {8}, @R = {9} OUTPUT",
                     moduleID, courseID, type, total_Marks, passing_Marks, criteria, weightage, description, title, resultMessage);
                 
                 if (result > 0)

@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Spaghetti.Models.Achievement>
+
+@{
+    ViewData["Title"] = "Achievements";
+}
+
+<h1 class="text-center my-4">@ViewData["Title"]</h1>
+
+<p>
+    <a class="btn btn-success" asp-action="Create">Create New Achievement</a>
+</p>
+
+<div class="table-responsive">
+    <table class="table table-bordered table-striped table-hover">
+        <thead class="table-dark">
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Description)</th>
+                <th>@Html.DisplayNameFor(model => model.DateEarned)</th>
+                <th>@Html.DisplayNameFor(model => model.Type)</th>
+                <th>@Html.DisplayNameFor(model => model.Badge)</th>
+                <th>@Html.DisplayNameFor(model => model.Learner)</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.Description)</td>
+                    <td>@Html.DisplayFor(modelItem => item.DateEarned)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Type)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Badge.Title)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Learner.FirstName)</td>
+                    <td>
+                        <a class="btn btn-primary btn-sm" asp-action="Edit" asp-route-id="@item.AchievementId">Edit</a>
+                        <a class="btn btn-info btn-sm" asp-action="Details" asp-route-id="@item.AchievementId">Details</a>
+                        <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@item.AchievementId" onclick="return confirm('Are you sure you want to delete this achievement?');">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Spaghetti.Models.Quest>
+
+@{
+    ViewData["Title"] = "Quests";
+}
+
+<h1>List of Collaborative Quests</h1>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Difficulty Level</th>
+            <th>Criteria</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var quest in Model)
+        {
+            <tr>
+                <td>@quest.Title</td>
+                <td>@quest.Description</td>
+                <td>@quest.DifficultyLevel</td>
+                <td>@quest.Criteria</td>
+                <td>
+                    @if (ViewBag.JoinedQuests.Contains(quest.QuestId))  // Check if learner has joined
+                    {
+                        <span class="text-success">You have joined this quest!</span>
+                    }
+                    else
+                    {
+                        <form asp-action="JoinQuest" method="post">
+                            <input type="hidden" name="learnerId" value="@ViewBag.LearnerID" />
+                            <input type="hidden" name="questId" value="@quest.QuestId" />
+                            <button type="submit" class="btn btn-primary">Join Quest</button>
+                        </form>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<!-- Display success or error message -->
+@if (TempData["Message"] != null)
+{
+    <p class="text-success">@TempData["Message"]</p>
+}
+
+@if (TempData["Error"] != null)
+{
+    <p class="text-danger">@TempData["Error"]</p>
+}

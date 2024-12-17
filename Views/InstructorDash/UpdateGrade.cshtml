@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Update Grade";
+}
+
+<h2>Update Grade</h2>
+
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["Message"]
+    </div>
+}
+
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["Error"]
+    </div>
+}

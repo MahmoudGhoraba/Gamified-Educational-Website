@@ -1,0 +1,55 @@
+﻿@model Spaghetti.Models.Quest
+
+@{
+    ViewData["Title"] = "Quest Details - Instructor";
+}
+
+<h1>Quest Details</h1>
+
+<div>
+    <h4>Quest</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DifficultyLevel)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DifficultyLevel)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Criteria)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Criteria)
+        </dd>
+
+        <!-- Display the Deadline for Collaborative Quest -->
+        @if (Model.Collaborative != null)
+        {
+            <dt class="col-sm-2">
+                Deadline
+            </dt>
+            <dd class="col-sm-10">
+                @Model.Collaborative.Deadline.ToString("yyyy-MM-dd HH:mm")
+            </dd>
+        }
+    </dl>
+</div>
+
+<div>
+    <a asp-action="AllQuests2" asp-controller="Quests" asp-route-instructorID="@TempData["InstructorID"]" class="btn btn-secondary">
+        Back to All Quests
+    </a>
+</div>

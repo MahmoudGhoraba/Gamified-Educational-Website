@@ -1,0 +1,31 @@
+﻿@model Spaghetti.Models.Achievement
+
+@{
+    ViewData["Title"] = "Add Achievement";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label for="Description">Description</label>
+        <input type="text" class="form-control" id="Description" name="Description" required />
+    </div>
+
+    <div class="form-group">
+        <label for="Type">Type</label>
+        <input type="text" class="form-control" id="Type" name="Type" required />
+    </div>
+
+    <div class="form-group">
+        <label for="BadgeID">Badge</label>
+        <select id="BadgeID" name="BadgeID" class="form-control">
+            @foreach (var badge in ViewData["Badges"] as List<Spaghetti.Models.Badge>)
+            {
+                <option value="@badge.BadgeId">@badge.Title</option>
+            }
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Add Achievement</button>
+</form>

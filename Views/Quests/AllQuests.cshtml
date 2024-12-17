@@ -1,0 +1,186 @@
+﻿@{
+    ViewData["Title"] = "All Quests";
+}
+
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f9f9f9;
+        padding: 20px;
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 36px;
+        margin-bottom: 40px;
+        color: #333;
+    }
+
+    .category-header {
+        font-size: 28px;
+        margin-top: 30px;
+        font-weight: bold;
+        color: #0056b3;
+    }
+
+    .quest-item {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .quest-details {
+        font-size: 16px;
+        color: #555;
+    }
+
+    .quest-buttons {
+        display: flex;
+        gap: 10px;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-align: center;
+    }
+
+    .btn-delete {
+        background-color: #f44336;
+        color: #fff;
+        font-size: 14px;
+    }
+
+    .btn-details {
+        background-color: #2196F3;
+        color: #fff;
+        font-size: 14px;
+    }
+
+    .btn-add-deadline {
+        background-color: #FF9800;
+        color: #fff;
+        font-size: 14px;
+    }
+
+    .btn:hover {
+        opacity: 0.8;
+    }
+
+    .quest-title {
+        font-size: 20px;
+        font-weight: bold;
+        color: #333;
+    }
+
+    .quest-description {
+        font-size: 14px;
+        color: #777;
+    }
+
+    .filter-container {
+        margin-bottom: 20px;
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+    }
+
+        .filter-container input, .filter-container select {
+            padding: 10px;
+            font-size: 14px;
+            border-radius: 5px;
+        }
+
+    .btn-filter {
+        background-color: #4CAF50;
+        color: #fff;
+        font-size: 14px;
+    }
+
+        .btn-filter:hover {
+            opacity: 0.8;
+        }
+
+    .checkbox-delete {
+        margin-right: 10px;
+    }
+</style>
+<h1>Delete by Criteria</h1>
+
+<!-- Search Form -->
+<form asp-action="SearchQuests" method="get" class="filter-container">
+    <input type="text" name="searchQuery" placeholder="Search by title or criteria" class="form-control" />
+    <button type="submit" class="btn btn-filter">Search</button>
+</form>
+
+<!-- Display Filtered Quests -->
+<div>
+    @if (ViewBag.AllQuests != null && ((List<Quest>)ViewBag.AllQuests).Any())
+    {
+        foreach (var quest in ViewBag.AllQuests as List<Quest>)
+        {
+            <div class="quest-item">
+                <div>
+                    <div class="quest-title">@quest.Title</div>
+                    <div class="quest-criteria">@quest.Criteria</div>
+                </div>
+                
+                <div class="quest-buttons">
+                    <form asp-action="DeleteQuest" method="post">
+                        <input type="hidden" name="questId" value="@quest.QuestId" />
+                        <button type="submit" class="btn btn-delete">Delete</button>
+                    </form>
+
+                  
+                
+                </div>
+            </div>
+        }
+    }
+    else
+    {
+        <p>No quests found that match the search criteria.</p>
+    }
+</div>
+
+<!-- Bulk Delete Section -->
+<form asp-action="DeleteSelected" method="post">
+    @if (ViewBag.AllQuests != null)
+    {
+        @foreach (var quest in ViewBag.AllQuests as List<Quest>)
+        {
+            <div class="quest-item">
+
+                <div class="quest-item">
+                    <div class="quest-title">
+                        <strong>Title:</strong> @quest.Title
+                    </div>
+                    <div class="quest-description">
+                        <strong>Description:</strong> @quest.Description
+                    </div>
+                    <div class="quest-criteria">
+                        <strong>Criteria:</strong> @quest.Criteria
+                    </div>
+                    <div class="quest-difficulty">
+                        <strong>Difficulty Level:</strong> @quest.DifficultyLevel
+                    </div>
+                </div>
+
+                </div>
+           
+        }
+    }
+    else
+    {
+        <p>No quests available.</p>
+    }
+</form>
+
+

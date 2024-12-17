@@ -90,6 +90,16 @@
     </div>
     <button type="submit" class="btn btn-info">View Score</button>
 </form>
+<a asp-action="AvailableQuests" asp-controller="Quests" class="btn btn-success">View Quests</a>
+<div class="mt-4 text-center">
+    <a href="@Url.Action("TrackAchievements", "Achievements")" class="btn btn-primary">
+        Track My Achievements
+    </a>
+
+</div>
+
+<a asp-controller="HighestGradeLearner" asp-action="HighestGrades" class="btn btn-primary">View Highest Grades</a>
+
 <a asp-controller="Personal" asp-action="Review" class="btn btn-primary">Review My Assessments</a>
 <a asp-controller="Personal" asp-action="CheckUpcomingGoals" class="btn btn-primary">check for Upcoming Goals</a>
 <a asp-controller="personal" asp-action="ViewNotifications" class="btn btn-primary">View Notifications</a>

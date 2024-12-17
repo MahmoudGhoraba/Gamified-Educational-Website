@@ -1,0 +1,206 @@
+﻿@{
+    ViewData["Title"] = "All Quests";
+}
+
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f9f9f9;
+        padding: 20px;
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 36px;
+        margin-bottom: 40px;
+        color: #333;
+    }
+
+    .category-header {
+        font-size: 28px;
+        margin-top: 30px;
+        font-weight: bold;
+        color: #0056b3;
+    }
+
+    .quest-item {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .quest-details {
+        font-size: 16px;
+        color: #555;
+    }
+
+    .quest-buttons {
+        display: flex;
+        gap: 10px;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-align: center;
+    }
+
+    .btn-delete {
+        background-color: #f44336;
+        color: #fff;
+        font-size: 14px;
+    }
+
+    .btn-details {
+        background-color: #2196F3;
+        color: #fff;
+        font-size: 14px;
+    }
+
+    .btn-add-deadline {
+        background-color: #FF9800;
+        color: #fff;
+        font-size: 14px;
+    }
+
+    .btn:hover {
+        opacity: 0.8;
+    }
+
+    .quest-title {
+        font-size: 20px;
+        font-weight: bold;
+        color: #333;
+    }
+
+    .quest-description {
+        font-size: 14px;
+        color: #777;
+    }
+
+    .filter-container {
+        margin-bottom: 20px;
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+    }
+
+        .filter-container input, .filter-container select {
+            padding: 10px;
+            font-size: 14px;
+            border-radius: 5px;
+        }
+
+    .btn-filter {
+        background-color: #4CAF50;
+        color: #fff;
+        font-size: 14px;
+    }
+
+        .btn-filter:hover {
+            opacity: 0.8;
+        }
+
+    .checkbox-delete {
+        margin-right: 10px;
+    }
+</style>
+
+
+<h1>All Quests</h1>
+
+
+<!-- Display Filtered Quests -->
+<div>
+    <div class="category-header">Collaborative Quests</div>
+    <div>
+        @foreach (var quest in ViewBag.CollaborativeQuests as List<Quest>)
+        {
+            <div class="quest-item">
+                <div>
+                    <div class="quest-title">@quest.Title</div>
+                    <div class="quest-criteria">@quest.Criteria</div>
+                </div>
+                <div class="quest-buttons">
+                    <form asp-action="DeleteQuest" method="post">
+                        <input type="hidden" name="questId" value="@quest.QuestId" />
+                        <button type="submit" class="btn btn-delete">Delete</button>
+                    </form>
+
+                    <a asp-action="DetailsForInstructor" asp-controller="Quests"asp-route-questId="@quest.QuestId"asp-route-instructorID="@ViewBag.InstructorID"
+                       class="btn btn-details">
+                        Details
+                    </a>
+
+                    <!-- Add Deadline Button -->
+                    <a asp-action="AddDeadline"
+                       asp-controller="InstructorDash"
+                       asp-route-questId="@quest.QuestId"
+                       class="btn btn-add-deadline">
+                        Add Deadline
+                    </a>
+
+                </div>
+            </div>
+        }
+    </div>
+
+    <div class="category-header">Skill Mastery Quests</div>
+    <div>
+        @foreach (var quest in ViewBag.SkillMasteryQuests as List<Quest>)
+        {
+            <div class="quest-item">
+                <div>
+                    <div class="quest-title">@quest.Title</div>
+                    <div class="quest-description">@quest.Description</div>
+                </div>
+                <div class="quest-buttons">
+                    <form asp-action="DeleteQuest" method="post">
+                        <input type="hidden" name="questId" value="@quest.QuestId" />
+                        <button type="submit" class="btn btn-delete">Delete</button>
+                    </form>
+
+                    <a asp-action="DetailsForInstructor"
+                       asp-controller="Quests"
+                       asp-route-questId="@quest.QuestId"
+                       asp-route-instructorID="@ViewBag.InstructorID"
+                       class="btn btn-details">
+                        Details
+                    </a>
+
+
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<!-- Bulk Delete Section -->
+<form asp-action="DeleteSelected" method="post">
+    @if (ViewBag.AllQuests != null)
+    {
+        @foreach (var quest in ViewBag.AllQuests as List<Quest>)
+        {
+            <div class="quest-item">
+                <input type="checkbox" name="questIds" value="@quest.QuestId" class="checkbox-delete" />
+                <div>
+                    <div class="quest-title">@quest.Title</div>
+                    <div class="quest-description">@quest.Description</div>
+                </div>
+            </div>
+        }
+    }
+    else
+    {
+        <p>No quests available.</p>
+    }
+</form>
+
+

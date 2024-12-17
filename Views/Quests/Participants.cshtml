@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Spaghetti.Models.Learner>
+@{
+    ViewData["Title"] = "Participants";
+    var questId = ViewBag.QuestID;
+}
+
+<h2>Participants</h2>
+
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">@TempData["Error"]</div>
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var learner in Model)
+        {
+            <tr>
+                <td>@learner.FirstName @learner.LastName</td>
+                <td>@learner.Email</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="AvailableQuests" asp-controller="Quests" asp-route-learnerId="@ViewBag.LearnerID" class="btn btn-secondary">Back to Active Quests</a>
+
+
+

@@ -1,0 +1,61 @@
+﻿@model Spaghetti.Models.Quest
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Quest</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DifficultyLevel)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DifficultyLevel)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Criteria)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Criteria)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="QuestId" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>
+@{
+    ViewData["Title"] = "Quest Details";
+}
+
+<h1>Quest Details</h1>
+
+<div>
+    <h4>Quest: @Model.Title</h4>
+    <p><strong>Difficulty Level:</strong> @Model.DifficultyLevel</p>
+    <p><strong>Criteria:</strong> @Model.Criteria</p>
+    <p><strong>Description:</strong> @Model.Description</p>
+</div>
+
+<div>
+    <a asp-action="AllQuests" class="btn btn-secondary">Back to All Quests</a>
+</div>

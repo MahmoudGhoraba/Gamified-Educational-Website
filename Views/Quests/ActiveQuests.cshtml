@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Spaghetti.Models.Quest>
+@{
+    ViewData["Title"] = "Available Quests";
+    var learnerId = ViewBag.LearnerID;
+    var joinedQuestIds = ViewBag.JoinedQuestIds as List<int>;
+}
+
+<h2>Available Quests</h2>
+
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">@TempData["Error"]</div>
+}
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-success">@TempData["Message"]</div>
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Action</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var quest in Model)
+        {
+            <tr>
+                <td>@quest.Title</td>
+                <td>@quest.Description</td>
+                <td>
+                    @if (joinedQuestIds != null && joinedQuestIds.Contains(quest.QuestId))
+                    {
+                        <button class="btn btn-success" disabled>Joined</button>
+                    }
+                    else
+                    {
+                        <form asp-action="JoinQuest" method="post">
+                            <input type="hidden" name="learnerId" value="@learnerId" />
+                            <input type="hidden" name="questId" value="@quest.QuestId" />
+                            <button type="submit" class="btn btn-primary">Join</button>
+                            
+                        </form>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

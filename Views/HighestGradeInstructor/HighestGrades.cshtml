@@ -1,0 +1,41 @@
+﻿@model List<Spaghetti.Models.Assessment>
+
+@{
+    ViewData["Title"] = "Highest Grades";
+}
+
+<h2>Highest Grades</h2>
+
+<table class="table table-striped table-bordered">
+    <thead class="thead-dark">
+        <tr>
+            <th>ID</th>
+            <th>Module ID</th>
+            <th>Course ID</th>
+            <th>Type</th>
+            <th>Total Marks</th>
+            <th>Passing Marks</th>
+            <th>Criteria</th>
+            <th>Weightage</th>
+            <th>Description</th>
+            <th>Title</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var grade in Model)
+        {
+            <tr>
+                <td>@grade.Id</td>
+                <td>@grade.ModuleId</td>
+                <td>@grade.CourseId</td>
+                <td>@grade.Type</td>
+                <td>@grade.TotalMarks</td>
+                <td>@grade.PassingMarks</td>
+                <td>@grade.Criteria</td>
+                <td>@grade.Weightage</td>
+                <td>@grade.Description</td>
+                <td>@grade.Title</td>
+            </tr>
+        }
+    </tbody>
+</table>
