@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Spaghetti.Models.EmotionalFeedback>
+
+@{
+    ViewData["Title"] = "Activity";
+}
+
+<h1>Trends</h1>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>LearnerID</th>
+        <th>State</th>
+        <th>Timestamp</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var activity in Model)
+    {
+        <tr>
+            <td>@activity.LearnerId</td>
+            <td>@activity.EmotionalState</td>
+            <td>@activity.Timestamp</td>
+        </tr>
+    }
+    </tbody>
+</table>

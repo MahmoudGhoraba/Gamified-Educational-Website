@@ -79,6 +79,21 @@
 
 <a asp-controller="Admin" asp-action="SelectLearnerForNotifications" class="btn btn-primary">View Notifications</a>
 
+<form asp-controller="Admin" asp-action="EmotionalTrendAnalysis" method="post">
+    <div class="form-group">
+        <label for="courseID">Course ID</label>
+        <input type="number" class="form-control" id="courseID" name="courseID" required />
+    </div>
+    <div class="form-group">
+        <label for="moduleID">Module ID</label>
+        <input type="number" class="form-control" id="moduleID" name="moduleID" required />
+    </div>
+    <div class="form-group">
+        <label for="timePeriod">Time Period</label>
+        <input type="datetime-local" class="form-control" id="timePeriod" name="timePeriod" required="" />
+    </div>
+    <button type="submit" class="btn btn-primary">Get Emotional Trend Analysis</button>
+</form>
 
 @if (ViewBag.ErrorMessage != null)
 {

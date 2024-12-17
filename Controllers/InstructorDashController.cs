@@ -94,6 +94,25 @@ public IActionResult RedirectToInstructorCreateFourm()
             return View(takenAssessments);
         }
 
+        [HttpPost]
+        public async Task<IActionResult> EmotionalTrendAnalysis(int courseID, int moduleID, DateTime timePeriod)
+        {
+            
+            var instructorId = HttpContext.Session.GetInt32("InstructorID");
+            if (instructorId == null)
+            {
+                return View("Error");
+            }
+            
+            var results = await _context.EmotionalFeedbacks.FromSqlRaw(
+                "EXEC EmotionalTrendAnalysisIns @CourseID = {0}, @ModuleID = {1}, @TimePeriod = {2}, @InstructorID = {3}",
+                courseID, moduleID, timePeriod,instructorId).ToListAsync();
+                
+
+            return View(results);  // Pass the results to your view
+            
+        }
+
         public IActionResult Error()
         {
             var errorViewModel = new ErrorViewModel

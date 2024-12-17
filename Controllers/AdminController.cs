@@ -207,6 +207,7 @@ namespace Spaghetti.Controllers
         {
             return View();
         }
+        
 
         public async Task<IActionResult> ViewNotifications(int learnerId)
         {
@@ -233,6 +234,20 @@ namespace Spaghetti.Controllers
 
             return RedirectToAction("SelectLearnerForNotifications", "Admin");
         }
+        
+        [HttpPost]
+        public async Task<IActionResult> EmotionalTrendAnalysis(int courseID, int moduleID, DateTime timePeriod)
+        {
+            
+                var results = await _context.EmotionalFeedbacks.FromSqlRaw(
+                    "EXEC EmotionalTrendAnalysis @CourseID = {0}, @ModuleID = {1}, @TimePeriod = {2}",
+                    courseID, moduleID, timePeriod).ToListAsync();
+                
+
+                return View(results);  // Pass the results to your view
+            
+        }
+
         
         public IActionResult Error()
         {

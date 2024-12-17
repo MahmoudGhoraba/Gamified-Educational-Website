@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Select Activity for share";
+}
+
+<h1>Select Activity for Share</h1>
+
+<p>Please enter the activity ID .</p>
+
+<form asp-controller="Personal" asp-action="SubmitEmotionalFeedback" method="post">
+    <div class="form-group">
+        <label for="activityId">Activity ID</label>
+        <input type="number" name="activity" id="activityId" class="form-control" placeholder="Enter activity ID" required>
+    </div>
+    <div class="form-group">
+        <label for="emotionalState">How do you feel about this activity?</label>
+        <input type ="text" name="emotionalState" id="emotionalState" class="form-control" placeholder="Enter state" required/>
+    </div>
+    <button type="submit" class="btn btn-primary mt-2">share</button>
+</form>
+
+@if (ViewData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger mt-3">
+        @ViewData["ErrorMessage"]
+    </div>
+}

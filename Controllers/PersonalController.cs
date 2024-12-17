@@ -328,6 +328,53 @@ namespace Spaghetti.Controllers
 
             return View(takenAssessments);
         }
+        
+        public IActionResult SelectActivityForShare()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> SubmitEmotionalFeedback(int activityId, string emotionalState)
+        {
+            // Get the LearnerID from the session
+            var learnerId = HttpContext.Session.GetInt32("LearnerID");
+    
+            if (learnerId == null)
+            {
+                ViewBag.ErrorMessage = "You must be logged in as a learner to submit feedback.";
+                return View("PersonalChoose");
+            }
+
+            if (string.IsNullOrEmpty(emotionalState))
+            {
+                ViewBag.ErrorMessage = "Please select an emotional state.";
+                return View("SelectActivityForShare");
+            }
+
+            try
+            {
+                // Call the stored procedure
+                await _context.Database.ExecuteSqlRawAsync(
+                    "EXEC ActivityEmotionalFeedback @ActivityID = {0}, @LearnerID = {1}, @Timestamp = {2}, @EmotionalState = {3}",
+                    activityId, 
+                    learnerId.Value, 
+                    DateTime.Now, 
+                    emotionalState
+                );
+
+                TempData["SuccessMessage"] = "Emotional feedback submitted successfully!";
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "An error occurred while submitting feedback.");
+                ViewBag.ErrorMessage = "An error occurred while submitting your feedback. Please try again.";
+                return View("PersonalChoose","Personal");
+            }
+
+            return RedirectToAction("PersonalChoose", "Personal");
+        }
+
     }
 }
 /* this is what i understand 

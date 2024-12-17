@@ -36,6 +36,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/Views/Admin/EmotionalTrendAnalysis.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vRW1vdGlvbmFsVHJlbmRBbmFseXNpcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/Views/Admin/Page.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vUGFnZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -66,6 +70,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/Views/IN/Info.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSU4vSW5mby5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/Views/InstructorDash/EmotionalTrendAnalysis.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSW5zdHJ1Y3RvckRhc2gvRW1vdGlvbmFsVHJlbmRBbmFseXNpcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/Views/InstructorDash/IDash.cshtml]
@@ -138,6 +146,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/Views/Personal/Review.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGVyc29uYWwvUmV2aWV3LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/Views/Personal/SelectActivityForShare.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGVyc29uYWwvU2VsZWN0QWN0aXZpdHlGb3JTaGFyZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/Views/Personal/ViewNotifications.cshtml]
