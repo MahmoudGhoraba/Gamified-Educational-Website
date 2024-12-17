@@ -6,13 +6,13 @@
 
 <h1>Add Deadline</h1>
 
-<form asp-action="AddDeadline" method="post">
+<form asp-action="AddDeadline" method="get">
     <div class="form-group">
         <label for="deadline">Deadline</label>
         <input type="datetime-local" id="deadline" name="deadline" class="form-control" required />
     </div>
-
-    <input type="hidden" name="questId" value="@Model.QuestId" />
-
-    <button type="submit" class="btn btn-primary">Save Deadline</button>
+    <button type="submit" class="btn btn-primary" formmethod="post">Save Deadline</button>
+</form>
+<form asp-action="AddDeadline" method="post">
+    <text>Mahmoud did it</text>
 </form>

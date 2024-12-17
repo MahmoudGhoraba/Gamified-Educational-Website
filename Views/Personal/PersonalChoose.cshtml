@@ -100,8 +100,18 @@
 
 <a asp-controller="HighestGradeLearner" asp-action="HighestGrades" class="btn btn-primary">View Highest Grades</a>
 
+<a asp-controller="personal" asp-action="LeaderboardFilter" class="btn btn-primary">filter your leaderboard</a>
+
 <a asp-controller="Personal" asp-action="Review" class="btn btn-primary">Review My Assessments</a>
 <a asp-controller="Personal" asp-action="CheckUpcomingGoals" class="btn btn-primary">check for Upcoming Goals</a>
 <a asp-controller="personal" asp-action="ViewNotifications" class="btn btn-primary">View Notifications</a>
 
 <a asp-controller="Personal" asp-action="SelectActivityForShare" class="btn btn-info">share Feedback</a>
+
+<form asp-controller="Leaderboards" asp-action="LeaderboardRank" method="post">
+    <div class="form-group">
+        <label for="LeaderboardID">LeaderBoard ID</label>
+        <input type="number" class="form-control" id="LeaderboardID" name="leaderboardID" required />
+    </div>
+    <button type="submit" class="btn btn-primary">get Rank</button>
+</form>

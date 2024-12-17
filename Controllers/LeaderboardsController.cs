@@ -7,7 +7,6 @@ using System.Diagnostics;
 
 namespace Spaghetti.Controllers
 {
-    [Authorize(Roles = "I")]
 
     public class LeaderboardsController : Controller
     {
@@ -20,9 +19,9 @@ namespace Spaghetti.Controllers
             _logger = logger;
         }
 
-        public async Task<IActionResult> LeaderboardRank(int id)
+        public async Task<IActionResult> LeaderboardRank(int LeaderboardID)
         {
-            var leaderboards = await _context.Assessments.FromSqlRaw("Exec LeaderboardRank @LeaderboardID = {0}", id)
+            var leaderboards = await _context.Rankings.FromSqlRaw("Exec LeaderboardRank @LeaderboardID = {0}", LeaderboardID)
                 .ToListAsync();
             return View(leaderboards);
         }

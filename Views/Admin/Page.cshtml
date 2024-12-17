@@ -77,6 +77,10 @@
     <button type="submit" class="btn btn-info">Profile</button>
 </form>
 
+<form asp-controller="Admin" asp-action="RedirectToAdminCreateFourm" method="get">
+    <button type="submit" class="btn btn-warning">Create Fourm</button>
+</form>
+
 <a asp-controller="Admin" asp-action="SelectLearnerForNotifications" class="btn btn-primary">View Notifications</a>
 
 <form asp-controller="Admin" asp-action="EmotionalTrendAnalysis" method="post">
@@ -95,6 +99,13 @@
     <button type="submit" class="btn btn-primary">Get Emotional Trend Analysis</button>
 </form>
 
+<form asp-controller="Leaderboards" asp-action="LeaderboardRank" method="post">
+    <div class="form-group">
+        <label for="LeaderboardID">LeaderBoard ID</label>
+        <input type="number" class="form-control" id="LeaderboardID" name="leaderboardID" required />
+    </div>
+    <button type="submit" class="btn btn-primary">get Rank</button>
+</form>
 @if (ViewBag.ErrorMessage != null)
 {
     <div class="error-message">

@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Spaghetti.Models.Ranking>
+
+@{
+    ViewData["Title"] = "rank";
+}
+
+<h1>Leaderboard</h1>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>BoardID</th>
+        <th>LearnerID</th>
+        <th>CourseID</th>
+        <th>rank</th>
+        <th>total points</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var rank in Model)
+    {
+        <tr>
+            <td>@rank.BoardId</td>
+            <td>@rank.LearnerId</td>
+            <td>@rank.CourseId</td>
+            <td>@rank.Rank</td>
+            <td>@rank.TotalPoints</td>
+        </tr>
+    }
+    </tbody>
+</table>

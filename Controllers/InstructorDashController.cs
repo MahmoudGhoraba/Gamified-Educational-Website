@@ -113,6 +113,31 @@ public IActionResult RedirectToInstructorCreateFourm()
 
             return View(takenAssessments);
         }
+        
+        [HttpPost]
+        public async Task<IActionResult> AddAssessmentToModule(int moduleId, int assessmentId)
+        {
+            try
+            {
+                var result = await _context.Database.ExecuteSqlRawAsync(
+                    "EXEC AddAssessmentToModule @ModuleID = {0}, @AssessmentID = {1}",
+                    moduleId, assessmentId);
+
+                if (result > 0)
+                {
+                    return Json(new { success = true, message = "Assessment added to module successfully." });
+                }
+                else
+                {
+                    return Json(new { success = false, message = "Failed to add assessment to module." });
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "An error occurred while adding the assessment to the module.");
+                return Json(new { success = false, message = "An error occurred." });
+            }
+        }
 
         public async Task<IActionResult> AssessmentAnalyticsResult(int moduleId, int courseId)
         {
@@ -163,7 +188,7 @@ public IActionResult RedirectToInstructorCreateFourm()
             return View(results);  // Pass the results to your view
             
         }
-        
+
         [HttpPost]
         public IActionResult AddDeadline(int questId, DateTime deadline)
         {

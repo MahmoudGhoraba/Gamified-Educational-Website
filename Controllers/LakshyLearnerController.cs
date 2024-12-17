@@ -29,7 +29,7 @@ namespace Spaghetti.Controllers
             {
                 // Call the stored procedure
                 var modules = await _context.Modules
-                    .FromSqlRaw("EXEC GetModuleDetails @CourseID = {0}", courseId)
+                    .FromSqlRaw("EXEC ModuleDifficulty @CourseID = {0}", courseId)
                     .ToListAsync();
                 
                 if (modules != null && modules.Count > 0)
@@ -94,10 +94,11 @@ namespace Spaghetti.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> ViewPreviousCourses(int learnerId)
+        public async Task<IActionResult> ViewPreviousCourses()
         {
             try
             {
+                var learnerId = HttpContext.Session.GetInt32("LearnerID");
                 // Call the stored procedure
                 var courses = await _context.Courses
                     .FromSqlRaw("EXEC EnrolledCoursesPrevious @LearnerID = {0}", learnerId)
@@ -129,11 +130,11 @@ namespace Spaghetti.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CheckPrerequisites(int learnerId, int courseId)
+        public async Task<IActionResult> CheckPrerequisites( int courseId)
         {
             try
             {
-                // Call the stored procedure to check prerequisites
+                var learnerId = HttpContext.Session.GetInt32("LearnerID");
                 var messageParam = new SqlParameter("@message", SqlDbType.VarChar, 100)
                     { Direction = ParameterDirection.Output };
                 var result = await _context.Database.ExecuteSqlRawAsync("EXEC PrerequisitesString @LearnerID = {0}, @CourseID = {1}, @message = {2} OUTPUT",
@@ -149,10 +150,11 @@ namespace Spaghetti.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> RegisterCourse(int learnerId, int courseId)
+        public async Task<IActionResult> RegisterCourse( int courseId)
         {
             try
             {
+                var learnerId = HttpContext.Session.GetInt32("LearnerID");
                 // Call the stored procedure to register the learner to the course
                 var result = await _context.Database.ExecuteSqlRawAsync(
                     "EXEC RegisterLearnerToCourse @LearnerID = {0}, @CourseID = {1}", learnerId, courseId);

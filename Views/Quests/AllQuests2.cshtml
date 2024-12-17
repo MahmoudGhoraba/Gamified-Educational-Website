@@ -142,8 +142,8 @@
                     <!-- Add Deadline Button -->
                     <a asp-action="AddDeadline"
                        asp-controller="InstructorDash"
-                       asp-route-questId="@quest.QuestId"
                        class="btn btn-add-deadline">
+                        <input type ="hidden" name ="questId" value="@quest.QuestId"/>
                         Add Deadline
                     </a>
 

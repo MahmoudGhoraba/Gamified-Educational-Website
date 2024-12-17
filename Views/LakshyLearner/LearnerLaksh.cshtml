@@ -218,8 +218,6 @@
     <h1>Previous Courses</h1>
 
     <form asp-controller="LakshyLearner" asp-action="ViewPreviousCourses" method="post" onsubmit="viewPreviousCourses(event)">
-        <label for="learnerId">Learner ID:</label>
-        <input type="text" id="learnerId" name="learnerId" required />
         <button type="submit">View Previous Courses</button>
     </form>
 
@@ -237,8 +235,6 @@
     <h1>Check Prerequisites</h1>
 
     <form asp-controller="LakshyLearner" asp-action="CheckPrerequisites" method="post" onsubmit="checkPrerequisites(event)">
-        <label for="learnerId">Learner ID:</label>
-        <input type="text" id="learnerId" name="learnerId" required />
         <label for="courseId">Course ID:</label>
         <input type="text" id="courseId" name="courseId" required />
         <button type="submit">Check Prerequisites</button>
@@ -247,8 +243,6 @@
     <h1>Register Course</h1>
 
     <form asp-controller="LakshyLearner" asp-action="RegisterCourse" method="post" onsubmit="registerCourse(event)">
-        <label for="learnerId">Learner ID:</label>
-        <input type="text" id="learnerId" name="learnerId" required />
         <label for="courseId">Course ID:</label>
         <input type="text" id="courseId" name="courseId" required />
         <button type="submit">Register Course</button>

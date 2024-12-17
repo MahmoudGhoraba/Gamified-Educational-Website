@@ -67,24 +67,22 @@ namespace Spaghetti.Controllers
 
             try
             {
-                // Call the stored procedure to add the post
+                // Call the stored procedure to create the discussion
                 await _context.Database.ExecuteSqlRawAsync("EXEC CreateDiscussion @ModuleID = {0}, @CourseID = {1}, @Title = {2}, @Description = {3}",
                     ModuleID, CourseID, title, description);
-
-                TempData["Message"] = "Post added successfully.";
+                TempData["Message"] = "Forum created successfully.";
                 TempData["MessageType"] = "success";
             }
             catch (Exception ex)
             {
                 // Log the error
-                _logger.LogError(ex, "An error occurred while adding the post.");
-                TempData["Message"] = "An error occurred while adding the post.";
+                _logger.LogError(ex, "An error occurred while creating the forum.");
+                TempData["Message"] = "An error occurred while creating the forum.";
                 TempData["MessageType"] = "error";
             }
 
-            return RedirectToAction("CreateFourm");
+            return RedirectToAction("IDash", "InstructorDash");
         }
-
 
 
         [HttpPost]

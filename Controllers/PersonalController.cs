@@ -374,6 +374,19 @@ namespace Spaghetti.Controllers
 
             return RedirectToAction("PersonalChoose", "Personal");
         }
+        public async Task<IActionResult> LeaderboardFilter()
+        {
+            var learnerId = HttpContext.Session.GetInt32("LearnerID");
+            if (learnerId == null)
+            {
+                return View("Error");
+            }
+            
+            var leaderboard = await _context.Rankings
+                .FromSqlRaw("EXEC LeaderboardFilter @LearnerID = {0}", learnerId)
+                .ToListAsync();
+            return View(leaderboard);
+        }
 
     }
 }

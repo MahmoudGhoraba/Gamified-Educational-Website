@@ -39,8 +39,36 @@
 
 <a asp-controller="InstructorDash" asp-action="ReviewAssessments" class="btn btn-primary">Review All Assessments</a>
 
-<form asp-controller="InstructorDash" asp-action="RedirectToInstructorCreateFourm" method="get">
-    <button type="submit" class="btn btn-warning">Create Fourm</button>
+<form method="post" asp-controller="InstructorPost" asp-action="CreateFourm">
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <label for="ModuleID">Module ID</label>
+            <input type="number" class="form-control" id="ModuleID" name="ModuleID" required />
+        </div>
+        <div class="form-group col-md-4">
+            <label for="CourseID">Course ID</label>
+            <input type="number" class="form-control" id="CourseID" name="CourseID" required />
+        </div>
+        <div class="form-group col-md-4">
+            <label for="title">Title</label>
+            <input type="text" class="form-control" id="title" name="title" required />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="description">Description</label>
+        <textarea class="form-control" id="description" name="description" rows="5" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Create Forum</button>
+</form>
+<form asp-controller="InstructorDash" asp-action="AddAssesment" method="get">
+    <button type="submit" class="btn btn-warning">Add Assesment</button>
+</form>
+<form asp-controller="Leaderboards" asp-action="LeaderboardRank" method="post">
+    <div class="form-group">
+        <label for="LeaderboardID">LeaderBoard ID</label>
+        <input type="number" class="form-control" id="LeaderboardID" name="leaderboardID" required />
+    </div>
+    <button type="submit" class="btn btn-primary">get Rank</button>
 </form>
 
 <form asp-controller="InstructorDash" asp-action="AddAssesment" method="get">

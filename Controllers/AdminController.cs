@@ -208,6 +208,11 @@ namespace Spaghetti.Controllers
             return View();
         }
         
+        public IActionResult RedirectToAdminCreateFourm()
+        {
+            _logger.LogError("dsfhdsjsbjdf.");
+            return RedirectToAction("CreateForum", "AdminPost");
+        }
 
         public async Task<IActionResult> ViewNotifications(int learnerId)
         {

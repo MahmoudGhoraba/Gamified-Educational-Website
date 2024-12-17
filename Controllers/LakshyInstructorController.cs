@@ -29,7 +29,7 @@ namespace Spaghetti.Controllers
             {
                 // Call the stored procedure
                 var result = await _context.Database.ExecuteSqlRawAsync(
-                    "EXEC AddActivity @CourseID = {0}, @ModuleID = {1}, @ActivityType = {2}, @Details = {3}, @MaxPoints = {4}",
+                    "EXEC NewActivity @CourseID = {0}, @ModuleID = {1}, @activitytype = {2}, @instructiondetails = {3}, @maxpoints = {4}",
                     courseId, moduleId, activityType, details, maxPoints);
                 
                 if (result > 0)
@@ -55,7 +55,7 @@ namespace Spaghetti.Controllers
             {
                 // Call the stored procedure
                 var modules = await _context.Modules
-                    .FromSqlRaw("EXEC GetModuleDetails @CourseID = {0}", courseId)
+                    .FromSqlRaw("EXEC ModuleDifficulty @CourseID = {0}", courseId)
                     .ToListAsync();
                 
                 if (modules != null && modules.Count > 0)

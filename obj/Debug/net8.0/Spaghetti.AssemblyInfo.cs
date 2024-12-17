@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Spaghetti")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8f0315865a89d78dedf89c56d59f601bcab04627")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+82bf5ff72f17e7ae485c52cdd3dd9618c0bcbf0f")]
 [assembly: System.Reflection.AssemblyProductAttribute("Spaghetti")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Spaghetti")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

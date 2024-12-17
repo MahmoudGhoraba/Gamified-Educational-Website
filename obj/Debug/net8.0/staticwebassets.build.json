@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "nzPPBaafZWm/immMKa0arbQfreAYsUyMra8ASmvRteA=",
+  "Hash": "LJzbWI8yjuR56N0S36B3iufI02/mqE+WdLcB+tYs+9c=",
   "Source": "Spaghetti",
   "BasePath": "_content/Spaghetti",
   "Mode": "Default",
@@ -1461,6 +1461,25 @@
       "OriginalItemSpec": "wwwroot/uploads/5771093f-c214-47ce-a612-11f45123c3a0_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg"
     },
     {
+      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/uploads/6195446d-29d2-4c35-bf9e-76deab5b6f8a_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
+      "SourceId": "Spaghetti",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "BasePath": "_content/Spaghetti",
+      "RelativePath": "uploads/6195446d-29d2-4c35-bf9e-76deab5b6f8a_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/uploads/6195446d-29d2-4c35-bf9e-76deab5b6f8a_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg"
+    },
+    {
       "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/uploads/66c8fe6e-02c6-4830-80b7-8db5016eae34_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
@@ -1611,6 +1630,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/uploads/aab070ae-02e5-44a2-bd2e-fb3eeae99891_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg"
+    },
+    {
+      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/uploads/bbcc6728-7267-4d79-b7f8-046c2c14ab86_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
+      "SourceId": "Spaghetti",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "BasePath": "_content/Spaghetti",
+      "RelativePath": "uploads/bbcc6728-7267-4d79-b7f8-046c2c14ab86_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/uploads/bbcc6728-7267-4d79-b7f8-046c2c14ab86_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg"
     },
     {
       "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/uploads/d39d348a-3da0-4111-9f42-85ab55dfc340_1675842278201.jpeg",
