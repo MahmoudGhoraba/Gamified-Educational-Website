@@ -72,11 +72,11 @@
                     const cell3 = row.insertCell(2);
                     const cell4 = row.insertCell(3);
                     const cell5 = row.insertCell(4);
-                    cell1.innerHTML = module.moduleID;
-                    cell2.innerHTML = module.courseID;
+                    cell1.innerHTML = module.moduleId;
+                    cell2.innerHTML = module.courseId;
                     cell3.innerHTML = module.title;
                     cell4.innerHTML = module.difficulty;
-                    cell5.innerHTML = module.content_URL;
+                    cell5.innerHTML = module.contentUrl;
                 });
             } else {
                 alert(result.message);
@@ -103,11 +103,11 @@
                     const cell4 = row.insertCell(3);
                     const cell5 = row.insertCell(4);
                     const cell6 = row.insertCell(5);
-                    cell1.innerHTML = course.courseID;
+                    cell1.innerHTML = course.courseId;
                     cell2.innerHTML = course.title;
-                    cell3.innerHTML = course.learning_Objective;
-                    cell4.innerHTML = course.credit_Points;
-                    cell5.innerHTML = course.difficulty_Level;
+                    cell3.innerHTML = course.learningObjective;
+                    cell4.innerHTML = course.creditPoints;
+                    cell5.innerHTML = course.difficultyLevel;
                     cell6.innerHTML = course.description;
                 });
             } else {
@@ -135,11 +135,11 @@
                     const cell4 = row.insertCell(3);
                     const cell5 = row.insertCell(4);
                     const cell6 = row.insertCell(5);
-                    cell1.innerHTML = course.courseID;
+                    cell1.innerHTML = course.courseId;
                     cell2.innerHTML = course.title;
-                    cell3.innerHTML = course.learning_Objective;
-                    cell4.innerHTML = course.credit_Points;
-                    cell5.innerHTML = course.difficulty_Level;
+                    cell3.innerHTML = course.learningObjective;
+                    cell4.innerHTML = course.creditPoints;
+                    cell5.innerHTML = course.difficultyLevel;
                     cell6.innerHTML = course.description;
                 });
             } else {
@@ -199,8 +199,7 @@
     <h1>View Enrolled Courses</h1>
 
     <form asp-controller="LakshyLearner" asp-action="ViewEnrolledCourses" method="post" onsubmit="viewEnrolledCourses(event)">
-        <label for="learnerId">Learner ID:</label>
-        <input type="text" id="learnerId" name="learnerId" required />
+        
         <button type="submit">View Enrolled Courses</button>
     </form>
 

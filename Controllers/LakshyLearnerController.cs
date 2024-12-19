@@ -58,11 +58,12 @@ namespace Spaghetti.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> ViewEnrolledCourses(int learnerId)
+        public async Task<IActionResult> ViewEnrolledCourses()
         {
             try
             {
                 // Call the stored procedure
+                var learnerId = HttpContext.Session.GetInt32("LearnerID");
                 var courses = await _context.Courses
                     .FromSqlRaw("EXEC EnrolledCourses @LearnerID = {0}", learnerId)
                     .ToListAsync();
@@ -130,7 +131,7 @@ namespace Spaghetti.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CheckPrerequisites( int courseId)
+        public async Task<IActionResult> CheckPrerequisites(int courseId)
         {
             try
             {
@@ -157,7 +158,7 @@ namespace Spaghetti.Controllers
                 var learnerId = HttpContext.Session.GetInt32("LearnerID");
                 // Call the stored procedure to register the learner to the course
                 var result = await _context.Database.ExecuteSqlRawAsync(
-                    "EXEC RegisterLearnerToCourse @LearnerID = {0}, @CourseID = {1}", learnerId, courseId);
+                    "EXEC Courseregister @LearnerID = {0}, @CourseID = {1}", learnerId, courseId);
                 if (result > 0)
                 {
                     return Json(new { success = true, message = "Learner registered to the course successfully." });

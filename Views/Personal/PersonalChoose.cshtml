@@ -70,10 +70,12 @@
     <button type="submit" class="btn btn-info">Profile</button>
 </form>
 
-<form asp-controller="LearnersPaths" asp-action="AllPaths" method="get">
-    <button type="submit" class="btn btn-success">View Current Paths</button>
+<form asp-controller="Personal" asp-action="GoUpdate" method="get">
+    <button type="submit" class="btn btn-success">go update</button>
 </form>
-
+<form asp-controller="Discussion" asp-action="AddPost" method="get">
+    <button type="submit" class="btn btn-warning">Add Post</button>
+</form>
 <form asp-controller="Discussion" asp-action="AddPost" method="get">
     <button type="submit" class="btn btn-warning">Add Post</button>
 </form>

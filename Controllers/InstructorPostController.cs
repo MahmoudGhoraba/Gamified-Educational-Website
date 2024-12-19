@@ -83,37 +83,5 @@ namespace Spaghetti.Controllers
 
             return RedirectToAction("IDash", "InstructorDash");
         }
-
-
-        [HttpPost]
-        public async Task<IActionResult> AddAssesment(int ModuleID, int CourseID, string Type, int Total_Marks, int Passing_Marks, string Criteria, float Weightage, string Description, string Title)
-        {
-            var instructorId = HttpContext.Session.GetInt32("InstructorID");
-            if (instructorId == null)
-            {
-                return View("Error");
-            }
-
-            _logger.LogInformation("AddAssesment method called with parameters: ModuleID={ModuleID}, CourseID={CourseID}, Type={Type}, Total_Marks={Total_Marks}, Passing_Marks={Passing_Marks}, Criteria={Criteria}, Weightage={Weightage}, Description={Description}, Title={Title}", ModuleID, CourseID, Type, Total_Marks, Passing_Marks, Criteria, Weightage, Description, Title);
-
-            try
-            {
-                // Call the stored procedure to add the assessment
-                await _context.Database.ExecuteSqlRawAsync("EXEC AddAssessment @ModuleID = {0}, @CourseID = {1}, @Type = {2}, @Total_Marks = {3}, @Passing_Marks = {4}, @Criteria = {5}, @Weightage = {6}, @Description = {7}, @Title = {8}",
-                    ModuleID, CourseID, Type, Total_Marks, Passing_Marks, Criteria, Weightage, Description, Title);
-
-                TempData["Message"] = "Assessment added successfully.";
-                TempData["MessageType"] = "success";
-            }
-            catch (Exception ex)
-            {
-                // Log the error
-                _logger.LogError(ex, "An error occurred while adding the assessment.");
-                TempData["Message"] = "An error occurred while adding the assessment.";
-                TempData["MessageType"] = "error";
-            }
-
-            return RedirectToAction("AddAssesment");
-        }
     }
 }

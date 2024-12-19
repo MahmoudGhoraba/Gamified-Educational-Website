@@ -36,7 +36,7 @@ namespace Spaghetti.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Values(string firstName, string lastName, string gender, DateTime birthDate, string country ,  IFormFile? profilePictureFile)
+        public async Task<IActionResult> Values(string firstName, string lastName, string gender, DateTime birthDate, string country, string CulturalBackground ,  IFormFile? profilePictureFile)
         {
             var email = TempData["Email"] as string; // Retrieve TempData
             
@@ -52,6 +52,7 @@ namespace Spaghetti.Controllers
                 Gender = gender,
                 BirthDate = birthDate,
                 Country = country,
+                CulturalBackground = CulturalBackground,
                 Email = email
             };
 

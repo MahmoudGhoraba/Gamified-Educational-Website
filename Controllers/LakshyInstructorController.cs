@@ -21,9 +21,11 @@ namespace Spaghetti.Controllers
         {
             return View();
         }
+
         // Add the following action methods here to complete the controller class max points missing
         [HttpPost]
-        public async Task<IActionResult> AddActivity(int courseId, int moduleId, string activityType, string details , int maxPoints)
+        public async Task<IActionResult> AddActivity(int courseId, int moduleId, string activityType, string details,
+            int maxPoints)
         {
             try
             {
@@ -31,7 +33,7 @@ namespace Spaghetti.Controllers
                 var result = await _context.Database.ExecuteSqlRawAsync(
                     "EXEC NewActivity @CourseID = {0}, @ModuleID = {1}, @activitytype = {2}, @instructiondetails = {3}, @maxpoints = {4}",
                     courseId, moduleId, activityType, details, maxPoints);
-                
+
                 if (result > 0)
                 {
                     return Json(new { success = true, message = "Activity added successfully." });
@@ -57,7 +59,7 @@ namespace Spaghetti.Controllers
                 var modules = await _context.Modules
                     .FromSqlRaw("EXEC ModuleDifficulty @CourseID = {0}", courseId)
                     .ToListAsync();
-                
+
                 if (modules != null && modules.Count > 0)
                 {
                     var moduleData = modules.Select(m => new
@@ -82,6 +84,7 @@ namespace Spaghetti.Controllers
                 return Json(new { success = false, message = "An error occurred." });
             }
         }
+
         [HttpPost]
         public async Task<IActionResult> ViewPreviousCourses(int learnerId)
         {
@@ -125,7 +128,8 @@ namespace Spaghetti.Controllers
                 // Call the stored procedure to check prerequisites
                 var messageParam = new SqlParameter("@message", SqlDbType.VarChar, 100)
                     { Direction = ParameterDirection.Output };
-                var result = await _context.Database.ExecuteSqlRawAsync("EXEC PrerequisitesString @LearnerID = {0}, @CourseID = {1}, @message = {2} OUTPUT",
+                var result = await _context.Database.ExecuteSqlRawAsync(
+                    "EXEC PrerequisitesString @LearnerID = {0}, @CourseID = {1}, @message = {2} OUTPUT",
                     learnerId, courseId, messageParam);
 
                 return Json(new { success = result > 0, message = messageParam.Value });
@@ -144,7 +148,7 @@ namespace Spaghetti.Controllers
             {
                 // Call the stored procedure to remove the course
                 var result = await _context.Database.ExecuteSqlRawAsync(
-                    "EXEC RemoveCourse @CourseID = {0}", courseId);
+                    "EXEC CourseRemoveHelp @CourseID = {0}", courseId);
 
                 if (result > 0)
                 {
@@ -158,34 +162,6 @@ namespace Spaghetti.Controllers
             catch (Exception ex)
             {
                 _logger.LogError(ex, "An error occurred while removing the course.");
-                return Json(new { success = false, message = "An error occurred." });
-            }
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> AddAssessment(int moduleID, int courseID, string type, int total_Marks, int passing_Marks, string criteria, float weightage, string description, string title)
-        {
-            try
-            {
-                
-                var resultMessage = new SqlParameter("@ResultMessage", SqlDbType.VarChar, 100) { Direction = ParameterDirection.Output };
-
-                var result = await _context.Database.ExecuteSqlRawAsync(
-                    "EXEC addAssesment @ModuleID = {0}, @CourseID = {1}, @Type = {2}, @Total_Marks = {3}, @Passing_Marks = {4}, @Criteria = {5}, @Weightage = {6}, @Description = {7}, @Title = {8}, @R = {9} OUTPUT",
-                    moduleID, courseID, type, total_Marks, passing_Marks, criteria, weightage, description, title, resultMessage);
-                
-                if (result > 0)
-                {
-                    return Json(new { success = true, message = resultMessage.Value });
-                }
-                else
-                {
-                    return Json(new { success = false, message = "Failed to add assessment." });
-                }
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "An error occurred while adding the assessment.");
                 return Json(new { success = false, message = "An error occurred." });
             }
         }

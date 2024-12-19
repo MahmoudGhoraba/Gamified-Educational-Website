@@ -211,7 +211,7 @@ namespace Spaghetti.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> UpdateLearnerInfo(string firstName, string lastName, DateTime birthDate, string country)
+        public async Task<IActionResult> GoUpdate(string firstName, string lastName, DateTime birthDate, string country, string CulturalBackground)
         {
             var learnerId = HttpContext.Session.GetInt32("LearnerID");
             if (learnerId == null)
@@ -221,8 +221,8 @@ namespace Spaghetti.Controllers
 
             // Call the stored procedure to update learner info
             var result = await _context.Database.ExecuteSqlRawAsync(
-                "EXEC ProfileUpdate @LearnerID = {0}, @FirstName = {1}, @LastName = {2}, @BirthDate = {3}, @Country = {4}",
-                learnerId.Value, firstName, lastName, birthDate, country);
+                "EXEC  @LearnerID = {0}, @FirstName = {1}, @LastName = {2}, @BirthDate = {3}, @Country = {4}",
+                learnerId.Value, firstName, lastName, birthDate, country,CulturalBackground);
 
             if (result == 0)
             {
@@ -263,6 +263,11 @@ namespace Spaghetti.Controllers
         public IActionResult GoSuccess()
         {
             return View();
+        }
+        public IActionResult GoUpdate()
+        {
+            return View();
+
         }
         
         public async Task<IActionResult> CheckUpcomingGoals()

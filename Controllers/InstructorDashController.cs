@@ -21,16 +21,42 @@ namespace Spaghetti.Controllers
             _context = context;
             _logger = logger;
         }
-        public IActionResult AddAssesment()
-{
-    return RedirectToAction("AddAssesment", "InstructorPost");
-}
+        
+        [HttpPost]
+        public async Task<IActionResult> AddAssessment(int moduleID, int courseID, string type, int total_Marks, int passing_Marks, string criteria, float weightage, string description, string title)
+        {
+            try
+            {
+                
+                var resultMessage = new SqlParameter("@ResultMessage", SqlDbType.VarChar, 100) { Direction = ParameterDirection.Output };
 
+                var result = await _context.Database.ExecuteSqlRawAsync(
+                    "EXEC addAssesment @ModuleID = {0}, @CourseID = {1}, @Type = {2}, @Total_Marks = {3}, @Passing_Marks = {4}, @Criteria = {5}, @Weightage = {6}, @Description = {7}, @Title = {8}, @R = {9} OUTPUT",
+                    moduleID, courseID, type, total_Marks, passing_Marks, criteria, weightage, description, title, resultMessage);
+                
+                if (result > 0)
+                {
+                    ViewBag.Message = "Assessment added successfully.";
+                    return View();
+                }
+                else
+                {
+                    ViewBag.Message = "Failed to add assessment.";
+                    return View();
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "An error occurred while adding the assessment.");
+                return Json(new { success = false, message = "An error occurred." });
+            }
+        }
+    
 
-public IActionResult RedirectToInstructorCreateFourm()
-{
-    return RedirectToAction("CreateFourm", "InstructorPost");
-}
+        public IActionResult RedirectToInstructorCreateFourm()
+        {
+            return RedirectToAction("CreateFourm", "InstructorPost");
+        }
 
         [HttpPost]
         public async Task<IActionResult> UpdateInstructor(string name, string latest_qualifications, string expertise_area)
@@ -67,19 +93,28 @@ public IActionResult RedirectToInstructorCreateFourm()
         public async Task<IActionResult> AssessmentNot(int? NotificationID, string message, string urgencylevel, int? LearnerID)
         {
             DateTime s = DateTime.Now;
-            var result = await _context.Database.ExecuteSqlRawAsync(
-                "EXEC AssessmentNot @NotificationID = {0},@Timestamp = {1},@Message = {2}, @UrgencyLevel = {3}, @LearnerID = {4}",
-                NotificationID, s, message, urgencylevel, LearnerID);
+            try
+            {
+                var result = await _context.Database.ExecuteSqlRawAsync(
+                    "EXEC AssessmentNot @NotificationID = {0},@Timestamp = {1},@Message = {2}, @UrgencyLevel = {3}, @LearnerID = {4}",
+                    NotificationID, s, message, urgencylevel, LearnerID);
 
-            if (result > 0)
-            {
-                TempData["Message"] = "Notification sent successfully.";
-                return View("IDash");
+                if (result > 0)
+                {
+                    ViewBag.Message = "Notification sent successfully.";
+                    return View();
+                }
+                else
+                {
+                    ViewBag.Message = "Notification not sent successfully.";
+                    return View();
+                }
             }
-            else
+            catch (Exception ex)
             {
-                TempData["Message"] = "Notification not sent successfully.";
-                return View("IDash");
+                _logger.LogError(ex, "An error occurred while sending the notification.");
+                ViewBag.Message = "An error occurred. (The system will never forgive you)";
+                return View();
             }
         }
         public IActionResult ShowProfile()
@@ -146,7 +181,11 @@ public IActionResult RedirectToInstructorCreateFourm()
             var result = await _context.Database.ExecuteSqlRawAsync("Exec AssessmentAnalytics @CourseID = {0}, @ModuleID = {1}, @AverageScore = {2} OUTPUT",
                 courseId, moduleId, messageParam);
 
-            ViewBag.integer = messageParam.Value;
+            if(messageParam.Value != DBNull.Value){
+                ViewBag.integer = messageParam.Value;            }
+            else{
+                ViewBag.ErrorMessage = "Failed to get the assessment analytics result.";
+            }
             return View();
         }
         

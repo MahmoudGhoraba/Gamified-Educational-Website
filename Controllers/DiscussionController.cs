@@ -43,18 +43,21 @@ namespace Spaghetti.Controllers
                 var learnerId = HttpContext.Session.GetInt32("LearnerID");
 
                 // Call the stored procedure to add the post
-                await _context.Database.ExecuteSqlRawAsync($"EXEC Post @LearnerID = {learnerId} , @DiscussionID = {discussionId} , @Post = {postContent}");
+                var r  =await _context.Database.ExecuteSqlRawAsync($"EXEC Post @LearnerID = {learnerId} , @DiscussionID = {discussionId} , @Post = {postContent}");
 
-                
-                HttpContext.Session.SetString("Message", "Post added successfully.");
-                HttpContext.Session.SetString("MessageType", "success");
+                if (r > 0)
+                {
+                    HttpContext.Session.SetString("Message", "Post added successfully.");
+                    HttpContext.Session.SetString("MessageType", "success");
+                }
+                else
+                {
+                    HttpContext.Session.SetString("Message", "An error occurred while adding the post.");
+                    HttpContext.Session.SetString("MessageType", "error");
+                }
             }
             catch (Exception ex)
             {
-                // Log the error
-                _logger.LogError(ex, "An error occurred while adding the post.");
-                HttpContext.Session.SetString("Message", "An error occurred while adding the post.");
-                HttpContext.Session.SetString("MessageType", "error");
             }
 
             return RedirectToAction("AddPost");
