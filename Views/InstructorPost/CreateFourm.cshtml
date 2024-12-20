@@ -4,16 +4,16 @@
 
 <h2>Update Grade</h2>
 
-@if (TempData["Message"] != null)
+@if (ViewBag.m != null)
 {
     <div class="alert alert-success">
-        @TempData["Message"]
+        @ViewBag.m
     </div>
 }
 
 @if (TempData["Error"] != null)
 {
     <div class="alert alert-danger">
-        @TempData["Error"]
+        @ViewBag.m
     </div>
 }

@@ -39,10 +39,17 @@ namespace Spaghetti.Controllers
             try
             {
                 // Call the stored procedure to add the post
-                await _context.Database.ExecuteSqlRawAsync($"EXEC Post2 @InstructorID = {instructorId} , @DiscussionID = {discussionID} , @Post = '{postContent}'");
-                
-                TempData["Message"] = "Post added successfully.";
-                TempData["MessageType"] = "success";
+                int res = await _context.Database.ExecuteSqlRawAsync("EXEC Post2 @InstructorID = {0} , @DiscussionID = {1} , @Post = {2}", instructorId, discussionID, postContent);
+                if (res > 0)
+                {
+                    TempData["Message"] = "Post added successfully.";
+                    TempData["MessageType"] = "success";
+                }
+                else
+                {
+                    TempData["Message"] = "Post not added successfully.";
+                    TempData["MessageType"] = "success";
+                }
             }
             catch (Exception ex)
             {
@@ -70,18 +77,18 @@ namespace Spaghetti.Controllers
                 // Call the stored procedure to create the discussion
                 await _context.Database.ExecuteSqlRawAsync("EXEC CreateDiscussion @ModuleID = {0}, @CourseID = {1}, @Title = {2}, @Description = {3}",
                     ModuleID, CourseID, title, description);
-                TempData["Message"] = "Forum created successfully.";
+                ViewBag.m = "Forum created successfully.";
                 TempData["MessageType"] = "success";
             }
             catch (Exception ex)
             {
                 // Log the error
                 _logger.LogError(ex, "An error occurred while creating the forum.");
-                TempData["Message"] = "An error occurred while creating the forum.";
+                ViewBag.m = "An error occurred while creating the forum.";
                 TempData["MessageType"] = "error";
             }
 
-            return RedirectToAction("IDash", "InstructorDash");
+            return View();
         }
     }
 }

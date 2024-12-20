@@ -1,0 +1,33 @@
+@model IEnumerable<Spaghetti.Models.Module>
+
+<h2>Modules</h2>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Difficulty</th>
+        <th>Content URL</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var module in Model)
+    {
+        
+        <tr>
+            <td>@module.Title</td>
+            <td>@module.Difficulty</td>
+            <td>@module.ContentUrl</td>
+            <td>
+                <a asp-action="AddAssessments"
+                   asp-controller="InstructorDash">
+                    <input type ="hidden" name ="questId" value="@module.ModuleId"/>
+                    <input type="hidden" name="questId" value="@module.CourseId"/>
+                    <button type="submit" class="btn btn-primary">Add Assessment</button>
+                </a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

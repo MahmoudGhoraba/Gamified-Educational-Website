@@ -40,7 +40,7 @@ public class IPathController : Controller
         try
         {
             // Call the NewPathAsync method
-            await _context.Database.ExecuteSqlRawAsync($"EXEC NewPath @LearnerID = {learnerID} , @ProfileID = {profileID} , @completion_status = {completionStatus} , @custom_content = {customContent} , @adaptiverules = {adaptiveRules}");
+            await _context.Database.ExecuteSqlRawAsync($"EXEC NewPath @LearnerID = {learnerID} , @ProfileID = {profileID} , @completion_status = '{completionStatus}' , @custom_content = '{customContent}' , @adaptiverules = '{adaptiveRules}'");
 
             ViewBag.Message = "Path created successfully.";
             ViewBag.type = "success";

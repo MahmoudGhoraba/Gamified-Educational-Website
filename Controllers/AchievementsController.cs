@@ -187,7 +187,7 @@ namespace Spaghetti.Controllers
                 // Add the achievement to the database
                 _context.Add(achievement);
                 await _context.SaveChangesAsync();
-
+                
                 // Redirect or show a confirmation message
                 return RedirectToAction("Index", "Achievements");  // Redirect to a list of achievements
             }

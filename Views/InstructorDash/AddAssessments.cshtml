@@ -1,0 +1,56 @@
+@model Spaghetti.Models.Assessment
+
+<h2>Create New Assessment</h2>
+
+<form asp-action="AddAssessments" method="post">
+    <input type="hidden" asp-for="ModuleId" value="@ViewBag.ModuleID" />
+    <input type="hidden" asp-for="CourseId" value="@ViewBag.CourseID" />
+    <div class="form-group">
+        <label asp-for="Title"></label>
+        <input asp-for="Title" class="form-control" required/>
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Type"></label>
+        <input asp-for="Type" class="form-control" required/>
+        <span asp-validation-for="Type" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="TotalMarks"></label>
+        <input asp-for="TotalMarks" type="number" class="form-control" required/>
+        <span asp-validation-for="TotalMarks" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="PassingMarks"></label>
+        <input asp-for="PassingMarks" type="number" class="form-control" required/>
+        <span asp-validation-for="PassingMarks" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Criteria"></label>
+        <input asp-for="Criteria" class="form-control"/>
+        <span asp-validation-for="Criteria" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Weightage"></label>
+        <input asp-for="Weightage" type="number" step="0.01" class="form-control" required/>
+        <span asp-validation-for="Weightage" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Description"></label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>
+
+<form asp-controller="InstructorDash"  asp-action="Modules" method="post" class="d-inline-block mb-2">
+    <button type="submit" class="btn btn-primary">Modules</button>
+</form>

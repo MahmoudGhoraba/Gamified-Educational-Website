@@ -165,7 +165,7 @@ namespace Spaghetti.Controllers
                 }
                 else
                 {
-                    return Json(new { success = false, message = "Failed to register learner to the course." });
+                    return Json(new { success = false, message = "Failed to register learner to the course or Already enrolled." });
                 }
             }
             catch (Exception ex)
