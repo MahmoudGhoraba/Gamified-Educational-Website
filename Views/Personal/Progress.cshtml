@@ -1,0 +1,46 @@
+﻿@{
+    ViewData["Title"] = "Progress";
+    var list = ViewBag.list as List<Spaghetti.Models.QuestsPro>;
+    var badges = ViewBag.Badges as List<Spaghetti.Models.BadgesPro>;
+}
+
+<h2>Progress</h2>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>QuestID</th>
+        <th>Title</th>
+        <th>Completion Status</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var a in list)
+    {
+        <tr>
+            <td>@a.ID</td>
+            <td>@a.Title</td>
+            <td>@a.Status</td>
+        </tr>
+    }
+    </tbody>
+</table>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>BadgeID</th>
+        <th>Title</th>
+        <th>Completion Status</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var a in badges)
+    {
+        <tr>
+            <td>@a.ID</td>
+            <td>@a.Title</td>
+            <td>@a.Status</td>
+        </tr>
+    }
+    </tbody>
+</table>
