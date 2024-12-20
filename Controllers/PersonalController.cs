@@ -37,6 +37,38 @@ namespace Spaghetti.Controllers
         }
 
         [HttpPost]
+        public async Task<IActionResult> UpdateLearner(string? firstname, string? lastname, string? country, string? cultural_background)
+        {
+            var learnerId = HttpContext.Session.GetInt32("LearnerID");
+            if (learnerId == null)
+            {
+                return View("Error");
+            }
+
+            var learner = await _context.Learners.FindAsync(learnerId.Value);
+            if (learner == null)
+            {
+                ViewBag.ErrorMessage = "Learner not found.";
+                return View("PersonalChoose");
+            }
+            if(firstname != null)
+                learner.FirstName = firstname;
+            if (lastname != null)
+                learner.LastName = lastname;
+            if(country != null)
+                learner.Country = country;
+            if(cultural_background != null)
+                learner.CulturalBackground = cultural_background;
+            
+            
+            _context.Learners.Update(learner);
+            await _context.SaveChangesAsync();
+
+            TempData["Message"] = "Learner info updated successfully.";
+            return RedirectToAction("PersonalChoose");
+        }
+        
+        [HttpPost]
         public async Task<IActionResult> Create(string id, string field1, string field2, string field3)
         {
             if (!int.TryParse(id, out int profileId))
@@ -78,7 +110,7 @@ namespace Spaghetti.Controllers
             _context.PersonalizationProfiles.Add(newProfile);
             await _context.SaveChangesAsync();
 
-            return RedirectToAction("CreateSuccess");
+            return RedirectToAction("Personalized_Profile","LearnerPProfile");
         }
 
         [HttpPost]
@@ -110,7 +142,7 @@ namespace Spaghetti.Controllers
             _context.PersonalizationProfiles.Remove(existingProfile);
             await _context.SaveChangesAsync();
 
-            return RedirectToAction("DeleteSuccess");
+            return RedirectToAction("PersonalChoose");
         }
 
         [HttpPost]
@@ -151,8 +183,14 @@ namespace Spaghetti.Controllers
                 var learner = await _context.Learners.FindAsync(learnerId.Value);
                 if (learner != null)
                 {
+                    var page = await _context.SignupPages.FirstOrDefaultAsync(p => p.Email == learner.Email);
                     _context.Learners.Remove(learner);
                     await _context.SaveChangesAsync();
+                    if (page != null)
+                    {
+                        _context.SignupPages.Remove(page);
+                        await _context.SaveChangesAsync();
+                    }
                     _logger.LogInformation("Learner with ID {LearnerID} deleted.", learnerId.Value);
                     HttpContext.Session.SetString("Message", "Account deleted.");
                 }
@@ -168,7 +206,7 @@ namespace Spaghetti.Controllers
                 HttpContext.Session.SetString("Message", "LearnerID not found.");
             }
 
-            return RedirectToAction("PersonalChoose");
+            return RedirectToAction("index","Home");
         }
         
         [HttpPost]
@@ -248,26 +286,6 @@ namespace Spaghetti.Controllers
                 RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier
             };
             return View(errorViewModel);
-        }
-
-        public IActionResult CreateSuccess()
-        {
-            return View();
-        }
-
-        public IActionResult DeleteSuccess()
-        {
-            return View();
-        }
-
-        public IActionResult GoSuccess()
-        {
-            return View();
-        }
-        public IActionResult GoUpdate()
-        {
-            return View();
-
         }
         
         public async Task<IActionResult> CheckUpcomingGoals()

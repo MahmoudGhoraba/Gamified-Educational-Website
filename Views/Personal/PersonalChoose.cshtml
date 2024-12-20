@@ -26,6 +26,26 @@
     </div>
 }
 
+<form asp-controller="Personal" asp-action="UpdateLearner" method="post">
+    <div class="form-group">
+        <label for="firstName">firstName:</label>
+        <input type="text" class="form-control" id="firstName" name="firstName" />
+    </div>
+    <div class="form-group">
+        <label for="LastName">LastName:</label>
+        <input type="text" class="form-control" id="LastName" name="LastName" />
+    </div>
+    <div class="form-group">
+        <label for="country">country:</label>
+        <input type="text" class="form-control" id="country" name="country" />
+    </div>
+    <div class="form-group">
+        <label for="cultural_background">cultural_background:</label>
+        <input type="text" class="form-control" id="cultural_background" name="cultural_background" />
+    </div>
+    <button type="submit" class="btn btn-primary">Update</button>
+</form>
+
 <form asp-controller="Personal" asp-action="Create" method="post">
     <div class="form-group">
         <label for="id">Profile ID:</label>
@@ -70,15 +90,13 @@
     <button type="submit" class="btn btn-info">Profile</button>
 </form>
 
-<form asp-controller="Personal" asp-action="GoUpdate" method="get">
-    <button type="submit" class="btn btn-success">go update</button>
-</form>
 <form asp-controller="Discussion" asp-action="AddPost" method="get">
     <button type="submit" class="btn btn-warning">Add Post</button>
 </form>
-<form asp-controller="Discussion" asp-action="AddPost" method="get">
-    <button type="submit" class="btn btn-warning">Add Post</button>
-</form>
+
+<a asp-controller="LearnersPaths" asp-action="AllPaths" class="btn btn-primary">Learner paths</a>
+
+
 <form asp-controller="LakshyLearner" asp-action="LearnerLaksh" method="get">
     <button type="submit" class="btn btn-secondary">Courses</button>
 </form>

@@ -43,7 +43,7 @@ namespace Spaghetti.Controllers
                 var learnerId = HttpContext.Session.GetInt32("LearnerID");
 
                 // Call the stored procedure to add the post
-                var r  =await _context.Database.ExecuteSqlRawAsync($"EXEC Post @LearnerID = {learnerId} , @DiscussionID = {discussionId} , @Post = {postContent}");
+                var r  =await _context.Database.ExecuteSqlRawAsync($"EXEC Post @LearnerID = {learnerId} , @DiscussionID = {discussionId} , @Post = '{postContent}'");
 
                 if (r > 0)
                 {

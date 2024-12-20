@@ -24,7 +24,7 @@ public class IPathController : Controller
     public IActionResult CreatePath()
     {
         // Return the view for creating a path
-        return View("PathCreation");
+        return View();
     }
 
     [HttpPost]
@@ -42,18 +42,18 @@ public class IPathController : Controller
             // Call the NewPathAsync method
             await _context.Database.ExecuteSqlRawAsync($"EXEC NewPath @LearnerID = {learnerID} , @ProfileID = {profileID} , @completion_status = {completionStatus} , @custom_content = {customContent} , @adaptiverules = {adaptiveRules}");
 
-            TempData["Message"] = "Path created successfully.";
-            TempData["MessageType"] = "success";
+            ViewBag.Message = "Path created successfully.";
+            ViewBag.type = "success";
         }
         catch (Exception ex)
         {
             // Log the error
             _logger.LogError(ex, "An error occurred while creating the path.");
-            TempData["Message"] = "An error occurred while creating the path.";
-            TempData["MessageType"] = "error";
+            ViewBag.Message = "An error occurred while creating the path.";
+            ViewBag.type = "error";
         }
 
-        return RedirectToAction("CreatePath");
+        return View();
     }
     public IActionResult Error()
     {

@@ -83,6 +83,13 @@ namespace Spaghetti.Controllers
                 {
                     HttpContext.Session.SetInt32("InstructorID", instructor.InstructorId);
                 }
+            }else if (user.Role == "A")
+            {
+                var admin = await _context.Admins.FirstOrDefaultAsync(i => i.Email == email);
+                if (admin != null)
+                {
+                    HttpContext.Session.SetInt32("AdminID", admin.AdminId);
+                }
             }
 
             // Redirect based on role

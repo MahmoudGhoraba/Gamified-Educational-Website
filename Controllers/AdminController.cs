@@ -20,6 +20,15 @@ namespace Spaghetti.Controllers
 
         public IActionResult Page()
         {
+            var AdminID = HttpContext.Session.GetInt32("AdminID");
+            if (AdminID.HasValue)
+            {
+                ViewBag.AdminID = AdminID.Value;
+            }
+            else
+            {
+                return View("Error");
+            }
             return View();
         }
 
@@ -153,9 +162,16 @@ namespace Spaghetti.Controllers
                 return Json(new { success = false, message = "Instructor ID does not exist." });
             }
 
+            var page = await _context.SignupPages.FirstOrDefaultAsync(i => i.Email == existingInstructor.Email);
             // Delete the entry from the Instructors table
             _context.Instructors.Remove(existingInstructor);
             await _context.SaveChangesAsync();
+            
+            if (page != null)
+            {
+                _context.SignupPages.Remove(page);
+                await _context.SaveChangesAsync();
+            }
 
             return Json(new { success = true, message = "Instructor account deleted successfully." });
         }
@@ -177,9 +193,16 @@ namespace Spaghetti.Controllers
                 return Json(new { success = false, message = "Learner ID does not exist." });
             }
 
+            var page = await _context.SignupPages.FirstOrDefaultAsync(i => i.Email == existingLearner.Email);
             // Delete the entry from the Learners table
             _context.Learners.Remove(existingLearner);
             await _context.SaveChangesAsync();
+            
+            if (page != null)
+            {
+                _context.SignupPages.Remove(page);
+                await _context.SaveChangesAsync();
+            }
 
             return Json(new { success = true, message = "Learner account deleted successfully." });
         }
@@ -207,10 +230,9 @@ namespace Spaghetti.Controllers
         {
             return View();
         }
-        
+        [HttpPost]
         public IActionResult RedirectToAdminCreateFourm()
         {
-            _logger.LogError("dsfhdsjsbjdf.");
             return RedirectToAction("CreateForum", "AdminPost");
         }
 

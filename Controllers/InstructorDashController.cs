@@ -59,7 +59,7 @@ namespace Spaghetti.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> UpdateInstructor(string name, string latest_qualifications, string expertise_area)
+        public async Task<IActionResult> UpdateInstructor(string? name, string? latest_qualifications, string? expertise_area)
         {
             var instructorId = HttpContext.Session.GetInt32("InstructorID");
             if (instructorId == null)
@@ -73,10 +73,12 @@ namespace Spaghetti.Controllers
                 ViewBag.ErrorMessage = "Instructor not found.";
                 return View("IDash");
             }
-
-            instructor.Name = name;
-            instructor.LatestQualification = latest_qualifications;
-            instructor.ExpertiseArea = expertise_area;
+            if(name != null)
+                instructor.Name = name;
+            if(latest_qualifications != null)
+                instructor.LatestQualification = latest_qualifications;
+            if(expertise_area != null)
+                instructor.ExpertiseArea = expertise_area;
 
             _context.Instructors.Update(instructor);
             await _context.SaveChangesAsync();

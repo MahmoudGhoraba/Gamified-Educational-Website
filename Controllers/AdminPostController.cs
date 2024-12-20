@@ -21,9 +21,10 @@ namespace Spaghetti.Controllers
 
         public IActionResult CreateForum()
         {
-            return View("CreateForum");
+            return View();
         }
-
+        
+        [HttpPost]
         public async Task<IActionResult> CreateForum(int ModuleID, int CourseID, string title, string description)
         {
             var instructorId = HttpContext.Session.GetInt32("AdminID");
@@ -50,7 +51,7 @@ namespace Spaghetti.Controllers
                 TempData["MessageType"] = "error";
             }
 
-            return RedirectToAction("Page","Admin");
+            return View();
         }
     }
 }

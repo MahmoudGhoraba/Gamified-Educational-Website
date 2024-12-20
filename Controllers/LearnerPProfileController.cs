@@ -42,12 +42,20 @@ namespace Spaghetti.Controllers
                     Deadline = deadline,
                     Description = description
                 };
-
+                
                 _context.LearningGoals.Add(learningGoal);
                 await _context.SaveChangesAsync();
+                
+                var result =await _context.Database.ExecuteSqlRawAsync("EXEC AddGoal @LearnerID = {0}, @GoalID = {1}", learnerId, goalId);
 
-                HttpContext.Session.SetString("Message", "Goal added successfully.");
-                HttpContext.Session.SetString("MessageType", "success");
+                if(result >0){
+                    HttpContext.Session.SetString("Message", "Goal added successfully.");
+                    HttpContext.Session.SetString("MessageType", "success");
+                }
+                else{
+                    HttpContext.Session.SetString("Message", "An error occurred while connecting the goal to learner.");
+                    HttpContext.Session.SetString("MessageType", "error");
+                }
             }
             catch (Exception ex)
             {

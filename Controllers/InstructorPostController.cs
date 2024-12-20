@@ -39,7 +39,7 @@ namespace Spaghetti.Controllers
             try
             {
                 // Call the stored procedure to add the post
-                await _context.Database.ExecuteSqlRawAsync($"EXEC Post2 @InstructorID = {instructorId} , @DiscussionID = {discussionID} , @Post = {postContent}");
+                await _context.Database.ExecuteSqlRawAsync($"EXEC Post2 @InstructorID = {instructorId} , @DiscussionID = {discussionID} , @Post = '{postContent}'");
                 
                 TempData["Message"] = "Post added successfully.";
                 TempData["MessageType"] = "success";

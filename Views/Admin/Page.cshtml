@@ -1,7 +1,14 @@
 ﻿@{
     ViewData["Title"] = "Delete Profile";
-}
+    var a = ViewBag.AdminID as int?;
 
+}
+<h1>Admin Page</h1>
+
+@if (a.HasValue)
+{
+    <p><strong>Admin ID:</strong> @a</p>
+}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -77,7 +84,7 @@
     <button type="submit" class="btn btn-info">Profile</button>
 </form>
 
-<form asp-controller="Admin" asp-action="RedirectToAdminCreateFourm" method="get">
+<form asp-controller="Admin" asp-action="RedirectToAdminCreateFourm" method="post">
     <button type="submit" class="btn btn-warning">Create Fourm</button>
 </form>
 
