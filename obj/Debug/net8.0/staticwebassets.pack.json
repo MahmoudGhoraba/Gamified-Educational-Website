@@ -5,6 +5,14 @@
       "PackagePath": "staticwebassets/Spaghetti.bundle.scp.css"
     },
     {
+      "Id": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/css/login.css",
+      "PackagePath": "staticwebassets/css/login.css"
+    },
+    {
+      "Id": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/css/signup.css",
+      "PackagePath": "staticwebassets/css/signup.css"
+    },
+    {
       "Id": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/css/site.css",
       "PackagePath": "staticwebassets/css/site.css"
     },
@@ -243,6 +251,18 @@
     {
       "Id": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/lib/jquery/dist/jquery.min.map",
       "PackagePath": "staticwebassets/lib/jquery/dist/jquery.min.map"
+    },
+    {
+      "Id": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/resources/SLE_LOGO.png",
+      "PackagePath": "staticwebassets/resources/SLE_LOGO.png"
+    },
+    {
+      "Id": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/resources/facebookLogo.png",
+      "PackagePath": "staticwebassets/resources/facebookLogo.png"
+    },
+    {
+      "Id": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/resources/googleLogo.png",
+      "PackagePath": "staticwebassets/resources/googleLogo.png"
     },
     {
       "Id": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/uploads/094de3c7-b767-4973-ad5e-552b68d62c23_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",

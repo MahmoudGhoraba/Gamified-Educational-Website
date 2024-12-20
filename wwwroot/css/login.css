@@ -1,0 +1,386 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    overflow: hidden; 
+}
+
+.login {
+    width: 100%;
+    height: 100%; 
+    position: relative; 
+    background: #F0F2F5
+}
+
+.rightPanel {
+    width: 619px; 
+    height: 900px; 
+    left: 821px; 
+    top: 0px; 
+    position: absolute; 
+    background: black
+}
+
+.Picture {
+    width: 619px; 
+    height: 900px; 
+    left: 821px; 
+    top: 0px; 
+    position: absolute
+}
+
+.LoginDetails {
+    width: 400px; 
+    height: 557px; 
+    left: 198px; 
+    top: 176px; 
+    position: absolute
+}
+
+.OrContinueWith {
+    left: 146px; 
+    top: 198px; 
+    position: absolute; 
+    color: black; 
+    font-size: 13px; 
+    font-family: Poppins; 
+    font-weight: 400; 
+    line-height: 14.50px; 
+    word-wrap: break-word
+}
+
+.leftLine {
+    width: 130px; 
+    height: 0px; 
+    left: 5px; 
+    top: 205.50px; 
+    position: absolute; 
+    border: 1px #DBDBDB solid
+}
+
+.rightLine {
+    width: 130px; 
+    height: 0px; 
+    left: 270px; 
+    top: 205.50px; 
+    position: absolute; 
+    border: 1px #DBDBDB solid
+}
+
+.googleGroup {
+    width: 126px; 
+    height: 44px; 
+    left: 67px; 
+    top: 117px; 
+    position: absolute
+}
+
+.rGoogle {
+    width: 126px; 
+    height: 43px; 
+    left: 0px; 
+    top: 1px; 
+    position: absolute; 
+    background: white; 
+    border-radius: 5px; 
+    border: 1px #DEDEDE solid
+}
+
+.Google {
+    left: 56px; 
+    top: 0px; 
+    position: absolute; 
+    color: black; 
+    font-size: 12px; 
+    font-family: Poppins; 
+    font-weight: 500; 
+    line-height: 44px; 
+    word-wrap: break-word
+}
+
+.googleLogo {
+    width: 22px; 
+    height: 22px; 
+    left: 26px; 
+    top: 11px; 
+    position: absolute
+}
+
+.googleLogo img {
+    width: 100%; 
+    height: 100%; 
+    object-fit: contain;
+}
+
+.FacebookGroup {
+    width: 126px; 
+    height: 44px; 
+    left: 207px; 
+    top: 118px; 
+    position: absolute
+}
+
+.rFacebook {
+    width: 126px; 
+    height: 43px; 
+    left: 0px; 
+    top: 0px; 
+    position: absolute; 
+    background: white; 
+    border-radius: 5px; 
+    border: 1px #DEDEDE solid
+}
+
+.Facebook {
+    width: 126px; 
+    height: 44px; 
+    left: 0px; 
+    top: 0px; 
+    position: absolute; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
+
+.FacebookLogo {
+    width: 22px; 
+    height: 22px; 
+    position: relative; 
+    margin-right: 8px;
+}
+
+.FacebookLogo img {
+    width: 100%; 
+    height: 100%; 
+    object-fit: contain;
+}
+
+.FacebookText {
+    color: black; 
+    font-size: 12px; 
+    font-family: Poppins; 
+    font-weight: 500; 
+    line-height: 44px;
+}
+
+.RecoverPassword {
+    left: 273px; 
+    top: 449px; 
+    position: absolute; 
+    color: #D93F21; 
+    font-size: 14px; 
+    font-family: Poppins; 
+    font-weight: 300; 
+    line-height: 14.50px; 
+    word-wrap: break-word
+}
+
+.EmailSection {
+    width: 400px; 
+    height: 70px; 
+    left: 0px; 
+    top: 248px; 
+    position: absolute
+}
+
+.rEmail {
+    width: 400px; 
+    height: 70px; 
+    left: 0px; 
+    top: 0px; 
+    position: absolute; 
+    background: white; 
+    border-radius: 10px; 
+    border: 1px #D9D9D9 solid
+}
+
+.rEmail::placeholder {
+    text-align: center; 
+    line-height: 50px; 
+    font-size: 10px; 
+    color: #888; 
+}
+
+.Email {
+    left: 24px; 
+    top: 27px; 
+    position: absolute; 
+    color: #5A5A5A; 
+    font-size: 14px; 
+    font-family: Poppins; 
+    font-weight: 400; 
+    line-height: 14.50px; 
+    word-wrap: break-word
+}
+
+.PasswordSection {
+    width: 400px; 
+    height: 70px; 
+    left: 0px; 
+    top: 356px; 
+    position: absolute
+}
+
+.rPassword {
+    width: 400px; 
+    height: 70px; 
+    left: 0px; 
+    top: 0px; 
+    position: absolute; 
+    background: white; 
+    border-radius: 10px; 
+    border: 1px #D9D9D9 solid
+}
+
+.rPassword::placeholder {
+    text-align: center; 
+    line-height: 50px; 
+    font-size: 10px; 
+    color: #888; 
+}
+
+.Password {
+    left: 24px; 
+    top: 27px; 
+    position: absolute; 
+    color: #5A5A5A; 
+    font-size: 14px; 
+    font-family: Poppins; 
+    font-weight: 400; 
+    line-height: 14.50px; 
+    word-wrap: break-word
+}
+
+.Button {
+    width: 400px; 
+    height: 55px; 
+    left: 0px; 
+    top: 502px; 
+    position: absolute;
+    background: #3a3e3b;
+    border-radius: 10px; 
+    border: 1px solid #DEDEDE; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    cursor: pointer; 
+    transition: all 0.3s ease; 
+}
+
+.Button:hover {
+    background: #a5ada7; 
+}
+
+.Button:active {
+    background: #189A3A;
+}
+
+.Button span.LogIn {
+    color: white; 
+    font-size: 16px; 
+    font-family: 'Poppins', sans-serif; 
+    font-weight: 500; 
+    text-align: center; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+    line-height: 1.2;
+}
+
+.LoginIntoYourAccount {
+    left: 94px; 
+    top: 50px; 
+    position: absolute; 
+    color: black; 
+    font-size: 18px; 
+    font-family: Poppins; 
+    font-weight: 400; 
+    line-height: 29.16px; 
+    word-wrap: break-word
+}
+
+.WelcomeBack {
+    left: 63px; 
+    top: 0px;
+    position: absolute; 
+    color: black; 
+    font-size: 36px; 
+    font-family: Poppins; 
+    font-weight: 600; 
+    line-height: 44px; 
+    word-wrap: break-word
+}
+
+.DontHaveAnAccount {
+    width: 178px; 
+    height: 17px; 
+    left: 538px; 
+    top: 53px; 
+    position: absolute; 
+    color: black; 
+    font-size: 14px; 
+    font-family: Poppins; 
+    font-weight: 300; 
+    line-height: 14.50px; 
+    word-wrap: break-word
+}
+
+.SignUp {
+    width: 58px; 
+    height: 17px; 
+    left: 709px; 
+    top: 53px; 
+    position: absolute; 
+    color: #20DC49; 
+    line-height: 14.50px; 
+    word-wrap: break-word
+}
+
+.SignUp a {
+    color: #3a3e3b; 
+    font-size: 14px; 
+    font-family: 'Poppins', sans-serif; 
+    font-weight: 500; 
+    text-decoration: none; 
+    transition: color 0.3s ease; 
+}
+
+.SignUp a:hover {
+    color: #a5ada7; 
+}
+
+.SignUp a:active {
+    color: #189A3A; 
+}
+
+.trademark {
+    left: 58px;
+    top: 40px; 
+    position: absolute
+}
+.LogoHere {
+    left: 40.76px; 
+    top: 0px; 
+    position: absolute; 
+    color: black; 
+    font-size: 16.93px; 
+    font-family: Inter; 
+    font-weight: 500; 
+    line-height: 41.12px; 
+    word-wrap: break-word
+}
+
+.logoImage {
+    position: relative; 
+    width: 29.49px; 
+    height: 29.49px;
+}
+
+.logoImage img {
+    width: 100%; 
+    height: 100%; 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    opacity: 0.40;
+}

@@ -388,28 +388,29 @@ namespace Spaghetti.Controllers
                 ViewBag.ErrorMessage = "Please select an emotional state.";
                 return View("SelectActivityForShare");
             }
-
+            _logger.LogInformation("SubmitEmotionalFeedback method called with parameters: ActivityID={ActivityID}, LearnerID={LearnerID}, Timestamp={Timestamp}, EmotionalState={EmotionalState}", activityId, learnerId, DateTime.Now, emotionalState);
             try
             {
                 // Call the stored procedure
-                await _context.Database.ExecuteSqlRawAsync(
-                    "EXEC ActivityEmotionalFeedback @ActivityID = {0}, @LearnerID = {1}, @Timestamp = {2}, @EmotionalState = {3}",
-                    activityId, 
-                    learnerId.Value, 
-                    DateTime.Now, 
-                    emotionalState
-                );
+                int r = await _context.Database.ExecuteSqlRawAsync(
+                    "EXEC ActivityEmotionalFeedback @ActivityID = {0}, @LearnerID = {1}, @Timestamp = {2}, @EmotionalState = {3}", activityId, learnerId.Value, DateTime.Now, emotionalState);
+                if (r > 0)
+                {
+                    ViewBag.Success = "Emotional feedback submitted successfully!";
+                }
+                else
+                {
+                    ViewBag.ErrorMessage = "This is not an Activity You are in!";
 
-                TempData["SuccessMessage"] = "Emotional feedback submitted successfully!";
+                }
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "An error occurred while submitting feedback.");
                 ViewBag.ErrorMessage = "An error occurred while submitting your feedback. Please try again.";
-                return View("PersonalChoose","Personal");
             }
 
-            return RedirectToAction("PersonalChoose", "Personal");
+            return View();
         }
         public async Task<IActionResult> LeaderboardFilter()
         {
