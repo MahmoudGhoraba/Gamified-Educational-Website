@@ -232,7 +232,21 @@ namespace Spaghetti.Controllers
                 return View();
             }
         }
-        
+
+        public async Task<IActionResult> Progress()
+        {
+            var learnerId = HttpContext.Session.GetInt32("LearnerID");
+            if (learnerId == null)
+            {
+                return View("Error");
+            }
+            var quests = await _context.QuestsPro.FromSqlRaw("EXEC QuestProgress @LearnerID = {0}", learnerId).ToListAsync();
+            var badges = await _context.BadgesPro.FromSqlRaw("EXEC BadgeProgress @LearnerID = {0}", learnerId).ToListAsync();
+            ViewBag.list = quests;
+            ViewBag.badges = badges;
+            return View();
+        }
+
         [HttpGet]
         public async Task<IActionResult> AssessmentAnalysis()
         {

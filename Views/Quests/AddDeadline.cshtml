@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Add Deadline";
+    var questId = ViewBag.QuestID;
+}
+
+<h1>Add Deadline</h1>
+<form asp-action="AddDeadline" method="post">
+    <input type="hidden" name="questId" value="@questId" />
+    <div class="form-group">
+        <label for="deadline">Select Deadline</label>
+        <input type="datetime-local" class="form-control" id="deadline" name="deadline" required>
+        <small class="form-text text-muted">Please select a date and time for the deadline.</small>
+    </div>
+    <input type="submit" value="Add Deadline" class="btn btn-primary" /> |
+    <a asp-action="AllQuests2" class="btn btn-secondary">Back to List</a>
+</form>

@@ -2,7 +2,7 @@
 @{
     ViewData["Title"] = "Available Quests";
     var learnerId = ViewBag.LearnerID;
-    var joinedQuests = ViewBag.JoinedQuests as List<Spaghetti.Models.Quest> ?? new List<Spaghetti.Models.Quest>();
+    var joinedQuests = ViewBag.JoinedQuests as List<dynamic> ?? new List<dynamic>();
 }
 
 <h2>Available Quests</h2>
@@ -20,34 +20,35 @@
 <h3>Quests You Can Join</h3>
 <table class="table">
     <thead>
-        <tr>
-            <th>Title</th>
-            <th>Description</th>
-            <th>Action</th>
-            <th>Details</th>
-        </tr>
+    <tr>
+        <th>QuestID</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Action</th>
+        <th>Details</th>
+    </tr>
     </thead>
     <tbody>
         @foreach (var quest in Model)
         {
             <tr>
+                <td>@quest.QuestId</td>
                 <td>@quest.Title</td>
                 <td>@quest.Description</td>
                 <td>
                     @if (joinedQuests.Any(jq => jq.QuestId == quest.QuestId))
                     {
                         <!-- If already joined, disable the button -->
-                        <button class="btn btn-secondary" disabled>Joined</button>
+                        <button class="btn btn-primary" disabled>Joined</button>
                     }
                     else
                     {
                         <!-- Display the "Join" button for available quests -->
                         <form asp-action="JoinQuest" method="post">
-                            <input type="hidden" name="learnerId" value="@learnerId" />
-                            <input type="hidden" name="questId" value="@quest.QuestId" />
+                            <input type="hidden" name="questId" value="@quest.QuestId"/>
                             <button type="submit" class="btn btn-primary">Join</button>
                         </form>
-                        <a asp-action="Details" asp-controller="Quests" asp-route-id="@quest.QuestId" asp-route-learnerId="@learnerId" class="btn btn-primary">
+                        <a asp-action="Details" asp-controller="Quests" asp-route-id="@quest.QuestId" class="btn btn-primary">
                             Details
                         </a>
 
@@ -62,24 +63,26 @@
 <h3>Quests You've Joined</h3>
 <table class="table">
     <thead>
-        <tr>
-            <th>Title</th>
-            <th>Description</th>
-            <th>Action</th>
-            <th>Completion Status</th> <!-- Added column for completion status -->
-        </tr>
+    <tr>
+        <th>QuestID</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Action</th>
+        <th>Completion Status</th> <!-- Added column for completion status -->
+    </tr>
     </thead>
     <tbody>
         @foreach (var quest in ViewBag.JoinedQuests)
         {
             <tr>
+                <td>@quest.QuestId</td>
                 <td>@quest.Title</td>
                 <td>@quest.Description</td>
                 <td>
-                    <a asp-action="Participants" asp-route-questId="@quest.QuestID" asp-route-learnerId="@learnerId" class="btn btn-info">
+                    <a asp-action="Participants" asp-route-questId="@quest.QuestId" class="btn btn-info">
                         View Participants
                     </a>
-                    <a asp-action="Details" asp-controller="Quests" asp-route-id="@quest.QuestID" asp-route-learnerId="@learnerId" class="btn btn-primary">
+                    <a asp-action="Details" asp-controller="Quests" asp-route-id="@quest.QuestId" class="btn btn-primary">
                         Details
                     </a>
                 </td>
@@ -94,7 +97,8 @@
                     }
                     else
                     {
-                        <span class="badge bg-secondary">In Progress</span> <!-- Default value if no status is available -->
+                        <span class="badge bg-secondary">In Progress</span>
+                        <!-- Default value if no status is available -->
                     }
                 </td>
             </tr>

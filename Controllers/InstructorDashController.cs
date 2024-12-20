@@ -229,29 +229,6 @@ namespace Spaghetti.Controllers
             return View(results);  // Pass the results to your view
             
         }
-
-        [HttpPost]
-        public IActionResult AddDeadline(int questId, DateTime deadline)
-        {
-            // Find the Collaborative entity associated with the questId
-            var collaborative = _context.Collaboratives
-                .FirstOrDefault(c => c.QuestId == questId);
-
-            if (collaborative == null)
-            {
-                return NotFound();
-            }
-
-            // Update the Deadline
-            collaborative.Deadline = deadline;
-
-            // Save changes to the database
-            _context.Update(collaborative);
-            _context.SaveChanges();
-
-            // Redirect to the AllQuests view (or wherever you want after updating)
-            return RedirectToAction("AllQuests2", "Quests");
-        }
   
     
 

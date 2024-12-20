@@ -19,10 +19,13 @@ namespace Spaghetti.Controllers
     public class QuestsController : Controller
     {
         private readonly HelpmeContext _context;
+        private readonly ILogger<QuestsController> _logger;
 
-        public QuestsController(HelpmeContext context)
+
+        public QuestsController(HelpmeContext context, ILogger<QuestsController> logger)
         {
             _context = context;
+            _logger = logger;
         }
 
         // GET: Quests
@@ -54,8 +57,9 @@ namespace Spaghetti.Controllers
 
         // GET: Quests/Details/5
         [HttpGet("Quests/DetailsF/{id?}")]
-        public async Task<IActionResult> Details(int? id, int learnerID)
+        public async Task<IActionResult> Details(int? id)
         {
+            var learnerID = HttpContext.Session.GetInt32("LearnerID");
             if (id == null)
             {
                 return NotFound();
@@ -67,7 +71,7 @@ namespace Spaghetti.Controllers
             {
                 return NotFound();
             }
-
+            
             ViewBag.LearnerID = learnerID;
             return View(quest);
         }
@@ -301,38 +305,21 @@ namespace Spaghetti.Controllers
         }
         // Action to Join a Quest
       [HttpPost]
-public async Task<IActionResult> JoinQuest(int learnerId, int questId)
+public async Task<IActionResult> JoinQuest(int questId)
 {
     try
     {
-        // Validate that the quest exists
-        var quest = await _context.Quests.FirstOrDefaultAsync(q => q.QuestId == questId);
-        if (quest == null)
-        {
-            TempData["Error"] = "The selected quest does not exist.";
-            return RedirectToAction("AvailableQuests", new { learnerId });
-        }
-
-        // Check if the learner is already part of the quest
-        var existingCollaboration = await _context.LearnersCollaborations
-            .FirstOrDefaultAsync(lc => lc.LearnerId == learnerId && lc.QuestId == questId);
-
-        if (existingCollaboration == null)
-        {
-            var collaboration = new LearnersCollaboration
-            {
-                LearnerId = learnerId,
-                QuestId = questId
-            };
-
-            _context.LearnersCollaborations.Add(collaboration);
-            await _context.SaveChangesAsync();
-
+        // Get the learner's ID from the session
+        var learnerId = HttpContext.Session.GetInt32("LearnerID");
+        
+        int result =await  _context.Database.ExecuteSqlRawAsync("Exec JoinQuest @LearnerID = {0}, @QuestID = {1}",learnerId,questId);
+        
+        if(result>0){
             TempData["Message"] = "You successfully joined the quest!";
         }
         else
         {
-            TempData["Message"] = "You are already part of this quest.";
+            TempData["Message"] = "Quest Full.";
         }
     }
     catch (Exception ex)
@@ -342,22 +329,57 @@ public async Task<IActionResult> JoinQuest(int learnerId, int questId)
         TempData["Error"] = $"An error occurred: {ex.InnerException?.Message ?? ex.Message}";
     }
 
-    return RedirectToAction("AvailableQuests", new { learnerId });
+    return RedirectToAction("AvailableQuests");
 }
 
-        public async Task<IActionResult> AvailableQuests(int learnerId)
+public IActionResult AddDeadline(int questId)
+{
+    _logger.LogInformation(questId.ToString());
+    ViewBag.QuestID = questId;
+    return View();
+}
+
+[HttpPost]
+public async Task<IActionResult> AddDeadline(int questId, DateTime deadline)
+{
+    _logger.LogInformation(questId.ToString());
+    _logger.LogInformation(deadline.ToString());
+    // Find the Collaborative entity associated with the questId
+    int collaborative = await _context.Database.ExecuteSqlRawAsync("Exec DeadlineUpdate @QuestID = {0}, @Deadline = {1}",questId,deadline);
+    if(collaborative>0){
+        TempData["Message"] = "Deadline added successfully!";
+        return RedirectToAction("allquests2");
+    }
+    else
+    {
+        TempData["Error"] = "An error occurred while adding the deadline.";
+        return View();
+    }
+
+    return RedirectToAction("AllQuests2");
+}
+
+        public async Task<IActionResult> AvailableQuests()
         {
             try
             {
+                
+                // Get the learner's ID from the session
+                var learnerId = HttpContext.Session.GetInt32("LearnerID");
+                if (learnerId == null)
+                {
+                    TempData["Error"] = "Learner ID is not available.";
+                    return RedirectToAction("Profile","Personal");
+                }
                 // Fetch IDs and completion status of quests the learner has already joined
                 var joinedQuests = await _context.LearnersCollaborations
                     .Where(lc => lc.LearnerId == learnerId)
                     .Join(_context.Quests, lc => lc.QuestId, q => q.QuestId, (lc, q) => new
                     {
+                        q.QuestId,
                         q.Title,
                         q.Description,
-                        lc.CompletionStatus,
-                        q.QuestId
+                        lc.CompletionStatus
                     })
                     .ToListAsync();
 
@@ -406,10 +428,11 @@ public async Task<IActionResult> JoinQuest(int learnerId, int questId)
             }
         }
 
-     public async Task<IActionResult> Participants(int questId, int learnerId)
+     public async Task<IActionResult> Participants(int questId)
 {
     try
     {
+        var learnerId = HttpContext.Session.GetInt32("LearnerID");
         // Fetch participants for the specified quest
         var participants = await _context.LearnersCollaborations
             .Where(lc => lc.QuestId == questId)
