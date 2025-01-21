@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "CW4Ng7QeXD5jA0OvAUPZMi7rAKPipsH25powBR3764U=",
+  "Hash": "M+e8bgTUo41EYt+m085JyUPIf+OyDJgfFSxx8dmJPvg=",
   "Source": "Spaghetti",
   "BasePath": "_content/Spaghetti",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "Spaghetti/wwwroot",
       "Source": "Spaghetti",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/obj/Debug/net8.0/scopedcss/bundle/Spaghetti.styles.css",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/obj/Debug/net8.0/scopedcss/bundle/Spaghetti.styles.css",
       "SourceId": "Spaghetti",
       "SourceType": "Computed",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/obj/Debug/net8.0/scopedcss/bundle/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/obj/Debug/net8.0/scopedcss/bundle/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "Spaghetti.styles.css",
       "AssetKind": "All",
@@ -33,13 +33,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/obj/Debug/net8.0/scopedcss/bundle/Spaghetti.styles.css"
+      "OriginalItemSpec": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/obj/Debug/net8.0/scopedcss/bundle/Spaghetti.styles.css"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/obj/Debug/net8.0/scopedcss/projectbundle/Spaghetti.bundle.scp.css",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/obj/Debug/net8.0/scopedcss/projectbundle/Spaghetti.bundle.scp.css",
       "SourceId": "Spaghetti",
       "SourceType": "Computed",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/obj/Debug/net8.0/scopedcss/projectbundle/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/obj/Debug/net8.0/scopedcss/projectbundle/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "Spaghetti.bundle.scp.css",
       "AssetKind": "All",
@@ -52,13 +52,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/obj/Debug/net8.0/scopedcss/projectbundle/Spaghetti.bundle.scp.css"
+      "OriginalItemSpec": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/obj/Debug/net8.0/scopedcss/projectbundle/Spaghetti.bundle.scp.css"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/css/login.css",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/css/login.css",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "css/login.css",
       "AssetKind": "All",
@@ -74,10 +74,10 @@
       "OriginalItemSpec": "wwwroot/css/login.css"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/css/signup.css",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/css/signup.css",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "css/signup.css",
       "AssetKind": "All",
@@ -93,10 +93,10 @@
       "OriginalItemSpec": "wwwroot/css/signup.css"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/css/site.css",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/css/site.css",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -112,10 +112,10 @@
       "OriginalItemSpec": "wwwroot/css/site.css"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/favicon.ico",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/favicon.ico",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -131,10 +131,10 @@
       "OriginalItemSpec": "wwwroot/favicon.ico"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/js/site.js",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/js/site.js",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "js/site.js",
       "AssetKind": "All",
@@ -150,10 +150,10 @@
       "OriginalItemSpec": "wwwroot/js/site.js"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css",
       "AssetKind": "All",
@@ -169,10 +169,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css.map",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css.map",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css.map",
       "AssetKind": "All",
@@ -188,10 +188,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css.map"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css",
       "AssetKind": "All",
@@ -207,10 +207,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
       "AssetKind": "All",
@@ -226,10 +226,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css.map"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
       "AssetKind": "All",
@@ -245,10 +245,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
       "AssetKind": "All",
@@ -264,10 +264,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
       "AssetKind": "All",
@@ -283,10 +283,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
       "AssetKind": "All",
@@ -302,10 +302,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css",
       "AssetKind": "All",
@@ -321,10 +321,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css.map",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css.map",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css.map",
       "AssetKind": "All",
@@ -340,10 +340,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css.map"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css",
       "AssetKind": "All",
@@ -359,10 +359,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
       "AssetKind": "All",
@@ -378,10 +378,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css.map"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
       "AssetKind": "All",
@@ -397,10 +397,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
       "AssetKind": "All",
@@ -416,10 +416,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
       "AssetKind": "All",
@@ -435,10 +435,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
       "AssetKind": "All",
@@ -454,10 +454,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css",
       "AssetKind": "All",
@@ -473,10 +473,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css.map",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css.map",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css.map",
       "AssetKind": "All",
@@ -492,10 +492,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css.map"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css",
       "AssetKind": "All",
@@ -511,10 +511,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
       "AssetKind": "All",
@@ -530,10 +530,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css.map"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
       "AssetKind": "All",
@@ -549,10 +549,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
       "AssetKind": "All",
@@ -568,10 +568,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
       "AssetKind": "All",
@@ -587,10 +587,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
       "AssetKind": "All",
@@ -606,10 +606,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/css/bootstrap.css",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/css/bootstrap.css",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css",
       "AssetKind": "All",
@@ -625,10 +625,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap.css"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/css/bootstrap.css.map",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/css/bootstrap.css.map",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css.map",
       "AssetKind": "All",
@@ -644,10 +644,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap.css.map"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css",
       "AssetKind": "All",
@@ -663,10 +663,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap.min.css"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css.map",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css.map",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -682,10 +682,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap.min.css.map"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css",
       "AssetKind": "All",
@@ -701,10 +701,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css.map",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css.map",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css.map",
       "AssetKind": "All",
@@ -720,10 +720,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css.map"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css",
       "AssetKind": "All",
@@ -739,10 +739,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
       "AssetKind": "All",
@@ -758,10 +758,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css.map"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js",
       "AssetKind": "All",
@@ -777,10 +777,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js.map",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js.map",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js.map",
       "AssetKind": "All",
@@ -796,10 +796,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js.map"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js",
       "AssetKind": "All",
@@ -815,10 +815,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
       "AssetKind": "All",
@@ -834,10 +834,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js",
       "AssetKind": "All",
@@ -853,10 +853,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js.map",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js.map",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js.map",
       "AssetKind": "All",
@@ -872,10 +872,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js.map"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js",
       "AssetKind": "All",
@@ -891,10 +891,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
       "AssetKind": "All",
@@ -910,10 +910,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js.map"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/js/bootstrap.js",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/js/bootstrap.js",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js",
       "AssetKind": "All",
@@ -929,10 +929,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/js/bootstrap.js"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/js/bootstrap.js.map",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/js/bootstrap.js.map",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js.map",
       "AssetKind": "All",
@@ -948,10 +948,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/js/bootstrap.js.map"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js",
       "AssetKind": "All",
@@ -967,10 +967,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/js/bootstrap.min.js"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js.map",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js.map",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js.map",
       "AssetKind": "All",
@@ -986,10 +986,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/dist/js/bootstrap.min.js.map"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/LICENSE",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/lib/bootstrap/LICENSE",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "lib/bootstrap/LICENSE",
       "AssetKind": "All",
@@ -1005,10 +1005,10 @@
       "OriginalItemSpec": "wwwroot/lib/bootstrap/LICENSE"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
       "AssetKind": "All",
@@ -1024,10 +1024,10 @@
       "OriginalItemSpec": "wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
       "AssetKind": "All",
@@ -1043,10 +1043,10 @@
       "OriginalItemSpec": "wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/lib/jquery-validation-unobtrusive/LICENSE.txt",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/lib/jquery-validation-unobtrusive/LICENSE.txt",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "lib/jquery-validation-unobtrusive/LICENSE.txt",
       "AssetKind": "All",
@@ -1062,10 +1062,10 @@
       "OriginalItemSpec": "wwwroot/lib/jquery-validation-unobtrusive/LICENSE.txt"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/lib/jquery-validation/dist/additional-methods.js",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/lib/jquery-validation/dist/additional-methods.js",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.js",
       "AssetKind": "All",
@@ -1081,10 +1081,10 @@
       "OriginalItemSpec": "wwwroot/lib/jquery-validation/dist/additional-methods.js"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/lib/jquery-validation/dist/additional-methods.min.js",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/lib/jquery-validation/dist/additional-methods.min.js",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.min.js",
       "AssetKind": "All",
@@ -1100,10 +1100,10 @@
       "OriginalItemSpec": "wwwroot/lib/jquery-validation/dist/additional-methods.min.js"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/lib/jquery-validation/dist/jquery.validate.js",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/lib/jquery-validation/dist/jquery.validate.js",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.js",
       "AssetKind": "All",
@@ -1119,10 +1119,10 @@
       "OriginalItemSpec": "wwwroot/lib/jquery-validation/dist/jquery.validate.js"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/lib/jquery-validation/dist/jquery.validate.min.js",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/lib/jquery-validation/dist/jquery.validate.min.js",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.min.js",
       "AssetKind": "All",
@@ -1138,10 +1138,10 @@
       "OriginalItemSpec": "wwwroot/lib/jquery-validation/dist/jquery.validate.min.js"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/lib/jquery-validation/LICENSE.md",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/lib/jquery-validation/LICENSE.md",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "lib/jquery-validation/LICENSE.md",
       "AssetKind": "All",
@@ -1157,10 +1157,10 @@
       "OriginalItemSpec": "wwwroot/lib/jquery-validation/LICENSE.md"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/lib/jquery/dist/jquery.js",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/lib/jquery/dist/jquery.js",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "lib/jquery/dist/jquery.js",
       "AssetKind": "All",
@@ -1176,10 +1176,10 @@
       "OriginalItemSpec": "wwwroot/lib/jquery/dist/jquery.js"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/lib/jquery/dist/jquery.min.js",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/lib/jquery/dist/jquery.min.js",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "lib/jquery/dist/jquery.min.js",
       "AssetKind": "All",
@@ -1195,10 +1195,10 @@
       "OriginalItemSpec": "wwwroot/lib/jquery/dist/jquery.min.js"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/lib/jquery/dist/jquery.min.map",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/lib/jquery/dist/jquery.min.map",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "lib/jquery/dist/jquery.min.map",
       "AssetKind": "All",
@@ -1214,10 +1214,10 @@
       "OriginalItemSpec": "wwwroot/lib/jquery/dist/jquery.min.map"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/lib/jquery/LICENSE.txt",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/lib/jquery/LICENSE.txt",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "lib/jquery/LICENSE.txt",
       "AssetKind": "All",
@@ -1233,10 +1233,10 @@
       "OriginalItemSpec": "wwwroot/lib/jquery/LICENSE.txt"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/resources/facebookLogo.png",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/resources/facebookLogo.png",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "resources/facebookLogo.png",
       "AssetKind": "All",
@@ -1252,10 +1252,10 @@
       "OriginalItemSpec": "wwwroot/resources/facebookLogo.png"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/resources/googleLogo.png",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/resources/googleLogo.png",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "resources/googleLogo.png",
       "AssetKind": "All",
@@ -1271,10 +1271,48 @@
       "OriginalItemSpec": "wwwroot/resources/googleLogo.png"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/resources/SLE_LOGO.png",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/resources/login.jpg",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
+      "BasePath": "_content/Spaghetti",
+      "RelativePath": "resources/login.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/resources/login.jpg"
+    },
+    {
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/resources/signup.jpg",
+      "SourceId": "Spaghetti",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
+      "BasePath": "_content/Spaghetti",
+      "RelativePath": "resources/signup.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/resources/signup.jpg"
+    },
+    {
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/resources/SLE_LOGO.png",
+      "SourceId": "Spaghetti",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "resources/SLE_LOGO.png",
       "AssetKind": "All",
@@ -1290,10 +1328,10 @@
       "OriginalItemSpec": "wwwroot/resources/SLE_LOGO.png"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/uploads/094de3c7-b767-4973-ad5e-552b68d62c23_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/uploads/094de3c7-b767-4973-ad5e-552b68d62c23_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "uploads/094de3c7-b767-4973-ad5e-552b68d62c23_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
       "AssetKind": "All",
@@ -1309,10 +1347,10 @@
       "OriginalItemSpec": "wwwroot/uploads/094de3c7-b767-4973-ad5e-552b68d62c23_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/uploads/0b98ee6f-1fd0-47d6-815b-1748b89b946a_Best-Documentation-for-Education-Institute-eLearning-LMS-Class-in-2020.png",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/uploads/0b98ee6f-1fd0-47d6-815b-1748b89b946a_Best-Documentation-for-Education-Institute-eLearning-LMS-Class-in-2020.png",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "uploads/0b98ee6f-1fd0-47d6-815b-1748b89b946a_Best-Documentation-for-Education-Institute-eLearning-LMS-Class-in-2020.png",
       "AssetKind": "All",
@@ -1328,10 +1366,10 @@
       "OriginalItemSpec": "wwwroot/uploads/0b98ee6f-1fd0-47d6-815b-1748b89b946a_Best-Documentation-for-Education-Institute-eLearning-LMS-Class-in-2020.png"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/uploads/0c72ef7c-c1a1-44da-8394-bc8a8c3579f3_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/uploads/0c72ef7c-c1a1-44da-8394-bc8a8c3579f3_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "uploads/0c72ef7c-c1a1-44da-8394-bc8a8c3579f3_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
       "AssetKind": "All",
@@ -1347,10 +1385,10 @@
       "OriginalItemSpec": "wwwroot/uploads/0c72ef7c-c1a1-44da-8394-bc8a8c3579f3_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/uploads/17c46fff-b2bb-44b5-a9fb-82eaf6485dcc_default.jpg",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/uploads/17c46fff-b2bb-44b5-a9fb-82eaf6485dcc_default.jpg",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "uploads/17c46fff-b2bb-44b5-a9fb-82eaf6485dcc_default.jpg",
       "AssetKind": "All",
@@ -1366,10 +1404,10 @@
       "OriginalItemSpec": "wwwroot/uploads/17c46fff-b2bb-44b5-a9fb-82eaf6485dcc_default.jpg"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/uploads/1aae307e-a9a8-4505-8956-0d5974c58493_1675842278201.jpeg",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/uploads/1aae307e-a9a8-4505-8956-0d5974c58493_1675842278201.jpeg",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "uploads/1aae307e-a9a8-4505-8956-0d5974c58493_1675842278201.jpeg",
       "AssetKind": "All",
@@ -1385,10 +1423,10 @@
       "OriginalItemSpec": "wwwroot/uploads/1aae307e-a9a8-4505-8956-0d5974c58493_1675842278201.jpeg"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/uploads/20e211ea-05f0-4d6b-9dcf-5c97102d8d82_1520128073704.jpeg",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/uploads/20e211ea-05f0-4d6b-9dcf-5c97102d8d82_1520128073704.jpeg",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "uploads/20e211ea-05f0-4d6b-9dcf-5c97102d8d82_1520128073704.jpeg",
       "AssetKind": "All",
@@ -1404,10 +1442,10 @@
       "OriginalItemSpec": "wwwroot/uploads/20e211ea-05f0-4d6b-9dcf-5c97102d8d82_1520128073704.jpeg"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/uploads/2bca84eb-37a2-4fb4-abfb-7f96e3ff0cea_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/uploads/2bca84eb-37a2-4fb4-abfb-7f96e3ff0cea_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "uploads/2bca84eb-37a2-4fb4-abfb-7f96e3ff0cea_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
       "AssetKind": "All",
@@ -1423,10 +1461,10 @@
       "OriginalItemSpec": "wwwroot/uploads/2bca84eb-37a2-4fb4-abfb-7f96e3ff0cea_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/uploads/2d567023-1b9c-410f-be22-4fa8a565a9ca_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/uploads/2d567023-1b9c-410f-be22-4fa8a565a9ca_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "uploads/2d567023-1b9c-410f-be22-4fa8a565a9ca_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
       "AssetKind": "All",
@@ -1442,10 +1480,10 @@
       "OriginalItemSpec": "wwwroot/uploads/2d567023-1b9c-410f-be22-4fa8a565a9ca_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/uploads/2d687e37-fa83-491d-892f-ac8af7fe4c47_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/uploads/2d687e37-fa83-491d-892f-ac8af7fe4c47_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "uploads/2d687e37-fa83-491d-892f-ac8af7fe4c47_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
       "AssetKind": "All",
@@ -1461,10 +1499,10 @@
       "OriginalItemSpec": "wwwroot/uploads/2d687e37-fa83-491d-892f-ac8af7fe4c47_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/uploads/3d4a8848-e852-4de8-8ae5-88ea738aec41_default.jpg",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/uploads/3d4a8848-e852-4de8-8ae5-88ea738aec41_default.jpg",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "uploads/3d4a8848-e852-4de8-8ae5-88ea738aec41_default.jpg",
       "AssetKind": "All",
@@ -1480,10 +1518,29 @@
       "OriginalItemSpec": "wwwroot/uploads/3d4a8848-e852-4de8-8ae5-88ea738aec41_default.jpg"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/uploads/43098618-5da7-44ca-9f4e-12542bb89d87_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/uploads/3df8c8a8-67a7-49a5-9f7a-302fa78b0427_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
+      "BasePath": "_content/Spaghetti",
+      "RelativePath": "uploads/3df8c8a8-67a7-49a5-9f7a-302fa78b0427_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/uploads/3df8c8a8-67a7-49a5-9f7a-302fa78b0427_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg"
+    },
+    {
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/uploads/43098618-5da7-44ca-9f4e-12542bb89d87_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
+      "SourceId": "Spaghetti",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "uploads/43098618-5da7-44ca-9f4e-12542bb89d87_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
       "AssetKind": "All",
@@ -1499,10 +1556,10 @@
       "OriginalItemSpec": "wwwroot/uploads/43098618-5da7-44ca-9f4e-12542bb89d87_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/uploads/4353c729-5347-4cd4-8e32-1cd47c24b106_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/uploads/4353c729-5347-4cd4-8e32-1cd47c24b106_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "uploads/4353c729-5347-4cd4-8e32-1cd47c24b106_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
       "AssetKind": "All",
@@ -1518,10 +1575,10 @@
       "OriginalItemSpec": "wwwroot/uploads/4353c729-5347-4cd4-8e32-1cd47c24b106_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/uploads/46c774fc-fc90-4e41-9361-187e756a75ec_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/uploads/46c774fc-fc90-4e41-9361-187e756a75ec_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "uploads/46c774fc-fc90-4e41-9361-187e756a75ec_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
       "AssetKind": "All",
@@ -1537,10 +1594,10 @@
       "OriginalItemSpec": "wwwroot/uploads/46c774fc-fc90-4e41-9361-187e756a75ec_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/uploads/4b975bf5-5019-4c94-a763-036c09b44428_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/uploads/4b975bf5-5019-4c94-a763-036c09b44428_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "uploads/4b975bf5-5019-4c94-a763-036c09b44428_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
       "AssetKind": "All",
@@ -1556,10 +1613,10 @@
       "OriginalItemSpec": "wwwroot/uploads/4b975bf5-5019-4c94-a763-036c09b44428_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/uploads/4ccec579-7a4a-49b7-9196-8f8dbda78afe_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/uploads/4ccec579-7a4a-49b7-9196-8f8dbda78afe_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "uploads/4ccec579-7a4a-49b7-9196-8f8dbda78afe_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
       "AssetKind": "All",
@@ -1575,10 +1632,29 @@
       "OriginalItemSpec": "wwwroot/uploads/4ccec579-7a4a-49b7-9196-8f8dbda78afe_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/uploads/55722f1d-1289-40e9-8ac9-76b8295cd263_migration-MutualRespectIMGT.jpg",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/uploads/4fe2145e-4b4c-49af-84f9-876802de161b_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
+      "BasePath": "_content/Spaghetti",
+      "RelativePath": "uploads/4fe2145e-4b4c-49af-84f9-876802de161b_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/uploads/4fe2145e-4b4c-49af-84f9-876802de161b_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg"
+    },
+    {
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/uploads/55722f1d-1289-40e9-8ac9-76b8295cd263_migration-MutualRespectIMGT.jpg",
+      "SourceId": "Spaghetti",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "uploads/55722f1d-1289-40e9-8ac9-76b8295cd263_migration-MutualRespectIMGT.jpg",
       "AssetKind": "All",
@@ -1594,10 +1670,10 @@
       "OriginalItemSpec": "wwwroot/uploads/55722f1d-1289-40e9-8ac9-76b8295cd263_migration-MutualRespectIMGT.jpg"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/uploads/57417c5f-c73f-459f-b546-785674dfc190_default.jpg",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/uploads/57417c5f-c73f-459f-b546-785674dfc190_default.jpg",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "uploads/57417c5f-c73f-459f-b546-785674dfc190_default.jpg",
       "AssetKind": "All",
@@ -1613,10 +1689,10 @@
       "OriginalItemSpec": "wwwroot/uploads/57417c5f-c73f-459f-b546-785674dfc190_default.jpg"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/uploads/5771093f-c214-47ce-a612-11f45123c3a0_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/uploads/5771093f-c214-47ce-a612-11f45123c3a0_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "uploads/5771093f-c214-47ce-a612-11f45123c3a0_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
       "AssetKind": "All",
@@ -1632,10 +1708,10 @@
       "OriginalItemSpec": "wwwroot/uploads/5771093f-c214-47ce-a612-11f45123c3a0_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/uploads/5afe0ea2-3e26-435c-ac15-e5ff4c7b2b4e_Best-Documentation-for-Education-Institute-eLearning-LMS-Class-in-2020.png",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/uploads/5afe0ea2-3e26-435c-ac15-e5ff4c7b2b4e_Best-Documentation-for-Education-Institute-eLearning-LMS-Class-in-2020.png",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "uploads/5afe0ea2-3e26-435c-ac15-e5ff4c7b2b4e_Best-Documentation-for-Education-Institute-eLearning-LMS-Class-in-2020.png",
       "AssetKind": "All",
@@ -1651,10 +1727,10 @@
       "OriginalItemSpec": "wwwroot/uploads/5afe0ea2-3e26-435c-ac15-e5ff4c7b2b4e_Best-Documentation-for-Education-Institute-eLearning-LMS-Class-in-2020.png"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/uploads/5b555916-d7ed-4cff-827a-3ea694ce7f1d_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/uploads/5b555916-d7ed-4cff-827a-3ea694ce7f1d_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "uploads/5b555916-d7ed-4cff-827a-3ea694ce7f1d_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
       "AssetKind": "All",
@@ -1670,10 +1746,10 @@
       "OriginalItemSpec": "wwwroot/uploads/5b555916-d7ed-4cff-827a-3ea694ce7f1d_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/uploads/6195446d-29d2-4c35-bf9e-76deab5b6f8a_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/uploads/6195446d-29d2-4c35-bf9e-76deab5b6f8a_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "uploads/6195446d-29d2-4c35-bf9e-76deab5b6f8a_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
       "AssetKind": "All",
@@ -1689,10 +1765,10 @@
       "OriginalItemSpec": "wwwroot/uploads/6195446d-29d2-4c35-bf9e-76deab5b6f8a_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/uploads/66c8fe6e-02c6-4830-80b7-8db5016eae34_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/uploads/66c8fe6e-02c6-4830-80b7-8db5016eae34_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "uploads/66c8fe6e-02c6-4830-80b7-8db5016eae34_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
       "AssetKind": "All",
@@ -1708,10 +1784,10 @@
       "OriginalItemSpec": "wwwroot/uploads/66c8fe6e-02c6-4830-80b7-8db5016eae34_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/uploads/6a1037b3-f52b-4f35-9d33-72d3f89e7127_Best-Documentation-for-Education-Institute-eLearning-LMS-Class-in-2020.png",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/uploads/6a1037b3-f52b-4f35-9d33-72d3f89e7127_Best-Documentation-for-Education-Institute-eLearning-LMS-Class-in-2020.png",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "uploads/6a1037b3-f52b-4f35-9d33-72d3f89e7127_Best-Documentation-for-Education-Institute-eLearning-LMS-Class-in-2020.png",
       "AssetKind": "All",
@@ -1727,10 +1803,10 @@
       "OriginalItemSpec": "wwwroot/uploads/6a1037b3-f52b-4f35-9d33-72d3f89e7127_Best-Documentation-for-Education-Institute-eLearning-LMS-Class-in-2020.png"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/uploads/7595c5c5-5c23-460c-a73a-aaf2e675b89f_642ff781-5cdc-40f9-befc-2276d909e660.png",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/uploads/7595c5c5-5c23-460c-a73a-aaf2e675b89f_642ff781-5cdc-40f9-befc-2276d909e660.png",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "uploads/7595c5c5-5c23-460c-a73a-aaf2e675b89f_642ff781-5cdc-40f9-befc-2276d909e660.png",
       "AssetKind": "All",
@@ -1746,10 +1822,10 @@
       "OriginalItemSpec": "wwwroot/uploads/7595c5c5-5c23-460c-a73a-aaf2e675b89f_642ff781-5cdc-40f9-befc-2276d909e660.png"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/uploads/79a19f57-dcf7-41a3-b4d0-a3e8d9217b52_default.jpg",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/uploads/79a19f57-dcf7-41a3-b4d0-a3e8d9217b52_default.jpg",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "uploads/79a19f57-dcf7-41a3-b4d0-a3e8d9217b52_default.jpg",
       "AssetKind": "All",
@@ -1765,10 +1841,10 @@
       "OriginalItemSpec": "wwwroot/uploads/79a19f57-dcf7-41a3-b4d0-a3e8d9217b52_default.jpg"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/uploads/8370f58c-e4c8-4b7e-8e12-cb4bd29b8f6b_default.jpg",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/uploads/8370f58c-e4c8-4b7e-8e12-cb4bd29b8f6b_default.jpg",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "uploads/8370f58c-e4c8-4b7e-8e12-cb4bd29b8f6b_default.jpg",
       "AssetKind": "All",
@@ -1784,10 +1860,10 @@
       "OriginalItemSpec": "wwwroot/uploads/8370f58c-e4c8-4b7e-8e12-cb4bd29b8f6b_default.jpg"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/uploads/895f401c-eaed-460b-8a3b-fb32d0c5b832_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/uploads/895f401c-eaed-460b-8a3b-fb32d0c5b832_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "uploads/895f401c-eaed-460b-8a3b-fb32d0c5b832_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
       "AssetKind": "All",
@@ -1803,10 +1879,10 @@
       "OriginalItemSpec": "wwwroot/uploads/895f401c-eaed-460b-8a3b-fb32d0c5b832_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/uploads/90167f41-7bc4-48c4-a06a-306dc7c08218_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/uploads/90167f41-7bc4-48c4-a06a-306dc7c08218_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "uploads/90167f41-7bc4-48c4-a06a-306dc7c08218_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
       "AssetKind": "All",
@@ -1822,10 +1898,10 @@
       "OriginalItemSpec": "wwwroot/uploads/90167f41-7bc4-48c4-a06a-306dc7c08218_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/uploads/95a97994-36e4-40df-bc5c-dd973279d34f_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/uploads/95a97994-36e4-40df-bc5c-dd973279d34f_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "uploads/95a97994-36e4-40df-bc5c-dd973279d34f_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
       "AssetKind": "All",
@@ -1841,10 +1917,10 @@
       "OriginalItemSpec": "wwwroot/uploads/95a97994-36e4-40df-bc5c-dd973279d34f_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/uploads/9a967126-0f5c-4cda-8a63-03d19f824773_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/uploads/9a967126-0f5c-4cda-8a63-03d19f824773_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "uploads/9a967126-0f5c-4cda-8a63-03d19f824773_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
       "AssetKind": "All",
@@ -1860,10 +1936,10 @@
       "OriginalItemSpec": "wwwroot/uploads/9a967126-0f5c-4cda-8a63-03d19f824773_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/uploads/9eb71d6a-e5dc-4872-b369-b59effb32113_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/uploads/9eb71d6a-e5dc-4872-b369-b59effb32113_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "uploads/9eb71d6a-e5dc-4872-b369-b59effb32113_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
       "AssetKind": "All",
@@ -1879,10 +1955,48 @@
       "OriginalItemSpec": "wwwroot/uploads/9eb71d6a-e5dc-4872-b369-b59effb32113_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/uploads/aab070ae-02e5-44a2-bd2e-fb3eeae99891_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/uploads/a13f2256-a02c-4aef-871e-6f929db92327_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
+      "BasePath": "_content/Spaghetti",
+      "RelativePath": "uploads/a13f2256-a02c-4aef-871e-6f929db92327_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/uploads/a13f2256-a02c-4aef-871e-6f929db92327_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg"
+    },
+    {
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/uploads/a91f1b62-356d-47ec-99b9-18d7f6fb2625_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
+      "SourceId": "Spaghetti",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
+      "BasePath": "_content/Spaghetti",
+      "RelativePath": "uploads/a91f1b62-356d-47ec-99b9-18d7f6fb2625_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/uploads/a91f1b62-356d-47ec-99b9-18d7f6fb2625_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg"
+    },
+    {
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/uploads/aab070ae-02e5-44a2-bd2e-fb3eeae99891_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
+      "SourceId": "Spaghetti",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "uploads/aab070ae-02e5-44a2-bd2e-fb3eeae99891_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
       "AssetKind": "All",
@@ -1898,10 +2012,48 @@
       "OriginalItemSpec": "wwwroot/uploads/aab070ae-02e5-44a2-bd2e-fb3eeae99891_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/uploads/b860db2d-f0d4-45db-990b-0a300a14e48d_default.jpg",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/uploads/abdf3bdf-104a-49b4-be8d-9f69254dd6f8_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
+      "BasePath": "_content/Spaghetti",
+      "RelativePath": "uploads/abdf3bdf-104a-49b4-be8d-9f69254dd6f8_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/uploads/abdf3bdf-104a-49b4-be8d-9f69254dd6f8_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg"
+    },
+    {
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/uploads/adbd0ba6-7202-43c2-af1f-d53022a6cb8d_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
+      "SourceId": "Spaghetti",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
+      "BasePath": "_content/Spaghetti",
+      "RelativePath": "uploads/adbd0ba6-7202-43c2-af1f-d53022a6cb8d_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/uploads/adbd0ba6-7202-43c2-af1f-d53022a6cb8d_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg"
+    },
+    {
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/uploads/b860db2d-f0d4-45db-990b-0a300a14e48d_default.jpg",
+      "SourceId": "Spaghetti",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "uploads/b860db2d-f0d4-45db-990b-0a300a14e48d_default.jpg",
       "AssetKind": "All",
@@ -1917,10 +2069,10 @@
       "OriginalItemSpec": "wwwroot/uploads/b860db2d-f0d4-45db-990b-0a300a14e48d_default.jpg"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/uploads/bbcc6728-7267-4d79-b7f8-046c2c14ab86_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/uploads/bbcc6728-7267-4d79-b7f8-046c2c14ab86_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "uploads/bbcc6728-7267-4d79-b7f8-046c2c14ab86_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
       "AssetKind": "All",
@@ -1936,10 +2088,10 @@
       "OriginalItemSpec": "wwwroot/uploads/bbcc6728-7267-4d79-b7f8-046c2c14ab86_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/uploads/bde5fe71-a571-4c86-9beb-e6a97ca3263e_default.jpg",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/uploads/bde5fe71-a571-4c86-9beb-e6a97ca3263e_default.jpg",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "uploads/bde5fe71-a571-4c86-9beb-e6a97ca3263e_default.jpg",
       "AssetKind": "All",
@@ -1955,10 +2107,29 @@
       "OriginalItemSpec": "wwwroot/uploads/bde5fe71-a571-4c86-9beb-e6a97ca3263e_default.jpg"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/uploads/d39d348a-3da0-4111-9f42-85ab55dfc340_1675842278201.jpeg",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/uploads/c0ba7fc3-2b89-4526-b9fe-562b65ee7451_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
+      "BasePath": "_content/Spaghetti",
+      "RelativePath": "uploads/c0ba7fc3-2b89-4526-b9fe-562b65ee7451_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/uploads/c0ba7fc3-2b89-4526-b9fe-562b65ee7451_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg"
+    },
+    {
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/uploads/d39d348a-3da0-4111-9f42-85ab55dfc340_1675842278201.jpeg",
+      "SourceId": "Spaghetti",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "uploads/d39d348a-3da0-4111-9f42-85ab55dfc340_1675842278201.jpeg",
       "AssetKind": "All",
@@ -1974,10 +2145,10 @@
       "OriginalItemSpec": "wwwroot/uploads/d39d348a-3da0-4111-9f42-85ab55dfc340_1675842278201.jpeg"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/uploads/d78604e0-671a-4985-ab6f-451f3c7274f5_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/uploads/d78604e0-671a-4985-ab6f-451f3c7274f5_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "uploads/d78604e0-671a-4985-ab6f-451f3c7274f5_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
       "AssetKind": "All",
@@ -1993,10 +2164,10 @@
       "OriginalItemSpec": "wwwroot/uploads/d78604e0-671a-4985-ab6f-451f3c7274f5_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/uploads/dee15de7-5907-4a33-9fa3-cec7fd253e80_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/uploads/dee15de7-5907-4a33-9fa3-cec7fd253e80_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "uploads/dee15de7-5907-4a33-9fa3-cec7fd253e80_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
       "AssetKind": "All",
@@ -2012,10 +2183,48 @@
       "OriginalItemSpec": "wwwroot/uploads/dee15de7-5907-4a33-9fa3-cec7fd253e80_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg"
     },
     {
-      "Identity": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/uploads/ea352703-600b-4a2a-89f6-2ce8f499e3bd_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/uploads/e3fcef38-f837-4cbd-a13f-471336719bad_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
       "SourceId": "Spaghetti",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/wwwroot/",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
+      "BasePath": "_content/Spaghetti",
+      "RelativePath": "uploads/e3fcef38-f837-4cbd-a13f-471336719bad_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/uploads/e3fcef38-f837-4cbd-a13f-471336719bad_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg"
+    },
+    {
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/uploads/e71c957d-abfb-4604-b552-9dea7e9e7041_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
+      "SourceId": "Spaghetti",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
+      "BasePath": "_content/Spaghetti",
+      "RelativePath": "uploads/e71c957d-abfb-4604-b552-9dea7e9e7041_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/uploads/e71c957d-abfb-4604-b552-9dea7e9e7041_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg"
+    },
+    {
+      "Identity": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/uploads/ea352703-600b-4a2a-89f6-2ce8f499e3bd_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
+      "SourceId": "Spaghetti",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/wwwroot/",
       "BasePath": "_content/Spaghetti",
       "RelativePath": "uploads/ea352703-600b-4a2a-89f6-2ce8f499e3bd_artworks-kARAqHVkti63JPsp-QJzgtA-t500x500.jpg",
       "AssetKind": "All",

@@ -2,21 +2,125 @@
     ViewData["Title"] = "Select Learner for Notifications";
 }
 
-<h1>Select Learner for Notifications</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+        }
 
-<p>Please enter the Learner ID to view their notifications.</p>
+        .container {
+            width: 100%;
+            max-width: 700px;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
 
-<form asp-controller="Admin" asp-action="ViewNotifications" method="post">
-    <div class="form-group">
-        <label for="learnerId">Learner ID</label>
-        <input type="number" name="learnerId" id="learnerId" class="form-control" placeholder="Enter Learner ID" required>
-    </div>
-    <button type="submit" class="btn btn-primary mt-2">View Notifications</button>
-</form>
+        h1 {
+            font-size: 28px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
 
-@if (ViewData["ErrorMessage"] != null)
-{
-    <div class="alert alert-danger mt-3">
-        @ViewData["ErrorMessage"]
-    </div>
-}
+        p {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        label {
+            font-size: 14px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+            color: #333;
+            margin-top: 5px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #3a3e3b;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #a5ada7;
+        }
+
+        button:active {
+            background-color: #189a3a;
+        }
+
+        .alert {
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .alert-danger {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        
+        button {
+            font-size: 14px;
+        }
+        
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Select Learner for Notifications</h1>
+    <p>Please enter the Learner ID to view their notifications.</p>
+
+    <form asp-controller="Admin" asp-action="ViewNotifications" method="post">
+        <div class="form-group">
+            <label for="learnerId">Learner ID</label>
+            <input type="number" name="learnerId" id="learnerId" class="form-control" placeholder="Enter Learner ID" required>
+        </div>
+        <button type="submit">View Notifications</button>
+    </form>
+
+    @if (ViewData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger">
+            @ViewData["ErrorMessage"]
+        </div>
+    }
+</div>
+</body>
+</html>

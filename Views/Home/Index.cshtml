@@ -7,107 +7,461 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>Simple Learning</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            background-color: #f3f4f6;
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
             font-family: 'Arial', sans-serif;
+            overflow: hidden;
         }
-        .login-container {
+
+        .login {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            background: #F0F2F5
+        }
+
+        .rightPanel {
+            width: 619px;
+            height: 900px;
+            left: 821px;
+            top: 0px;
+            position: absolute;
+            background: black
+        }
+
+        .Picture {
+            width: 619px;
+            height: 900px;
+            left: 821px;
+            top: 0px;
+            position: absolute
+        }
+
+        .LoginDetails {
+            width: 400px;
+            height: 557px;
+            left: 198px;
+            top: 176px;
+            position: absolute
+        }
+
+        .OrContinueWith {
+            left: 146px;
+            top: 198px;
+            position: absolute;
+            color: black;
+            font-size: 13px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
+            line-height: 14.50px;
+            word-wrap: break-word
+        }
+
+        .leftLine {
+            width: 130px;
+            height: 0px;
+            left: 5px;
+            top: 205.50px;
+            position: absolute;
+            border: 1px #DBDBDB solid
+        }
+
+        .rightLine {
+            width: 130px;
+            height: 0px;
+            left: 270px;
+            top: 205.50px;
+            position: absolute;
+            border: 1px #DBDBDB solid
+        }
+
+        .googleGroup {
+            width: 126px;
+            height: 44px;
+            left: 67px;
+            top: 117px;
+            position: absolute
+        }
+
+        .rGoogle {
+            width: 126px;
+            height: 43px;
+            left: 0px;
+            top: 1px;
+            position: absolute;
+            background: white;
+            border-radius: 5px;
+            border: 1px #DEDEDE solid
+        }
+
+        .Google {
+            left: 56px;
+            top: 0px;
+            position: absolute;
+            color: black;
+            font-size: 12px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            line-height: 44px;
+            word-wrap: break-word
+        }
+
+        .googleLogo {
+            width: 22px;
+            height: 22px;
+            left: 26px;
+            top: 11px;
+            position: absolute
+        }
+
+        .googleLogo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .FacebookGroup {
+            width: 126px;
+            height: 44px;
+            left: 207px;
+            top: 118px;
+            position: absolute
+        }
+
+        .rFacebook {
+            width: 126px;
+            height: 43px;
+            left: 0px;
+            top: 0px;
+            position: absolute;
+            background: white;
+            border-radius: 5px;
+            border: 1px #DEDEDE solid
+        }
+
+        .Facebook {
+            width: 126px;
+            height: 44px;
+            left: 0px;
+            top: 0px;
+            position: absolute;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
         }
-        .login-card {
-            background-color: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-            padding: 40px 30px;
+
+        .FacebookLogo {
+            width: 22px;
+            height: 22px;
+            position: relative;
+            margin-right: 8px;
+        }
+
+        .FacebookLogo img {
             width: 100%;
-            max-width: 400px;
+            height: 100%;
+            object-fit: contain;
         }
-        .login-card h1 {
-            text-align: center;
-            margin-bottom: 20px;
-            font-weight: bold;
+
+        .FacebookText {
+            color: black;
+            font-size: 12px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            line-height: 44px;
         }
-        .form-control {
-            border-radius: 8px;
-            padding: 10px;
-        }
-        .btn-primary {
-            width: 100%;
-            border-radius: 8px;
-            padding: 10px;
-            font-size: 16px;
-            background-color: #007bff;
-            border: none;
-        }
-        .btn-primary:hover {
-            background-color: #0056b3;
-        }
-        .form-group label {
-            font-weight: bold;
-        }
-        .alternative-text {
-            text-align: center;
-            margin-top: 20px;
-        }
-        .alternative-text a {
-            color: #007bff;
-            text-decoration: none;
-        }
-        .alternative-text a:hover {
-            text-decoration: underline;
-        }
-        .social-buttons {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
-        }
-        .social-buttons a {
-            width: 48%;
-            text-align: center;
-            padding: 10px;
-            border-radius: 8px;
+
+        .RecoverPassword {
+            left: 273px;
+            top: 449px;
+            position: absolute;
+            color: #D93F21;
             font-size: 14px;
-            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 300;
+            line-height: 14.50px;
+            word-wrap: break-word
+        }
+
+        .EmailSection {
+            width: 400px;
+            height: 70px;
+            left: 0px;
+            top: 248px;
+            position: absolute
+        }
+
+        .rEmail {
+            width: 400px;
+            height: 70px;
+            left: 0px;
+            top: 0px;
+            position: absolute;
+            background: white;
+            border-radius: 10px;
+            border: 1px #D9D9D9 solid
+        }
+
+        .rEmail::placeholder {
+            text-align: center;
+            line-height: 70px;
+            font-size: 15px;
+            color: #888;
+        }
+
+        .Email {
+            left: 24px;
+            top: 27px;
+            position: absolute;
+            color: #5A5A5A;
+            font-size: 14px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
+            line-height: 14.50px;
+            word-wrap: break-word
+        }
+
+        .PasswordSection {
+            width: 400px;
+            height: 70px;
+            left: 0px;
+            top: 356px;
+            position: absolute
+        }
+
+        .rPassword {
+            width: 400px;
+            height: 70px;
+            left: 0px;
+            top: 0px;
+            position: absolute;
+            background: white;
+            border-radius: 10px;
+            border: 1px #D9D9D9 solid
+        }
+
+        .rPassword::placeholder {
+            text-align: center;
+            line-height: 50px;
+            font-size: 15px;
+            color: #888;
+        }
+
+        .Password {
+            left: 24px;
+            top: 27px;
+            position: absolute;
+            color: #5A5A5A;
+            font-size: 14px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
+            line-height: 14.50px;
+            word-wrap: break-word
+        }
+
+        .Button {
+            width: 400px;
+            height: 55px;
+            left: 0px;
+            top: 502px;
+            position: absolute;
+            background: #3a3e3b;
+            border-radius: 10px;
+            border: 1px solid #DEDEDE;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .Button:hover {
+            background: #a5ada7;
+        }
+
+        .Button:active {
+            background: #189A3A;
+        }
+
+        .Button span.LogIn {
             color: white;
+            font-size: 16px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            line-height: 1.2;
         }
-        .btn-google {
-            background-color: #db4437;
+
+        .LoginIntoYourAccount {
+            left: 94px;
+            top: 50px;
+            position: absolute;
+            color: black;
+            font-size: 18px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
+            line-height: 29.16px;
+            word-wrap: break-word
         }
-        .btn-facebook {
-            background-color: #4267B2;
+
+        .WelcomeBack {
+            left: 63px;
+            top: 0px;
+            position: absolute;
+            color: black;
+            font-size: 36px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            line-height: 44px;
+            word-wrap: break-word
+        }
+
+        .DontHaveAnAccount {
+            width: 178px;
+            height: 17px;
+            left: 538px;
+            top: 53px;
+            position: absolute;
+            color: black;
+            font-size: 14px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 300;
+            line-height: 14.50px;
+            word-wrap: break-word
+        }
+
+        .SignUp {
+            width: 58px;
+            height: 17px;
+            left: 709px;
+            top: 53px;
+            position: absolute;
+            color: #20DC49;
+            line-height: 14.50px;
+            word-wrap: break-word
+        }
+
+        .SignUp a {
+            color: #3a3e3b;
+            font-size: 14px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .SignUp a:hover {
+            color: #a5ada7;
+        }
+
+        .SignUp a:active {
+            color: #189A3A;
+        }
+
+        .trademark {
+            left: 58px;
+            top: 40px;
+            position: absolute
+        }
+        .LogoHere {
+            left: 40.76px;
+            top: 0px;
+            position: absolute;
+            color: black;
+            font-size: 13px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            line-height: 41.12px;
+            word-wrap: break-word
+        }
+
+        .logoImage {
+            position: relative;
+            width: 29.49px;
+            height: 29.49px;
+        }
+
+        .logoImage img {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0.40;
         }
     </style>
 </head>
 <body>
-<div class="login-container">
-    <div class="login-card">
-        <h1>Welcome Back</h1>
-        <form method="post" action="@Url.Action("Index", "Home")">
-            <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+<div class="Login">
+    <div class="rightPanel"></div>
+    <img class="Picture" src="/resources/login.jpg" alt="Mahmoud Ghoraba"/>
+    <div class="LoginDetails">
+
+        <div class="OrContinueWith">Or continue with</div>
+
+        <div class="leftLine"></div>
+
+        <div class="rightLine"></div>
+
+        <div class="googleGroup">
+            <div class="rGoogle"></div>
+            <div class="Google">Google</div>
+            <div class="googleLogo">
+                <img src="/resources/googleLogo.png" alt="Google Logo">
             </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required>
-            </div>
-            <button type="submit" class="btn btn-primary">Login</button>
-        </form>
-        <div class="alternative-text">
-            <p>Don't have an account? <a href="@Url.Action("Index2", "Signup")">Sign up here</a></p>
         </div>
-        <div class="social-buttons">
-            <a href="#" class="btn-google"><i class="fab fa-google"></i> Sign in with Google</a>
-            <a href="#" class="btn-facebook"><i class="fab fa-facebook-f"></i> Sign in with Facebook</a>
+
+        <div class="FacebookGroup">
+            <div class="rFacebook"></div>
+            <div class="Facebook">
+
+                <div class="FacebookLogo">
+                    <img src="/resources/facebookLogo.png" alt="Facebook Logo">
+                </div>
+
+                <div class="FacebookText">Facebook</div>
+            </div>
+        </div>
+
+        <div class="RecoverPassword">
+            <a href="#">Recover Password</a>
+        </div>
+
+        <form asp-action="Index" asp-controller="Home" method="post" >
+            <div class="EmailSection">
+                <label for="email" class="Email">Email</label>
+                <input type="email" id="email" class="rEmail" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="PasswordSection">
+                <label for="password" class="Password">Password</label>
+                <input type="password" id="password" class="rPassword" name="password" placeholder="Enter your password" required>
+            </div>
+            <button class="Button" type="submit">
+                <span class="LogIn">Login</span>
+            </button>
+        </form>
+
+        <div class="LoginIntoYourAccount">Login into your account</div>
+        <div class="WelcomeBack">Welcome Back</div>
+    </div>
+
+    <div class="DontHaveAnAccount">Don’t have an account?</div>
+    <div class="SignUp">
+        <a href="@Url.Action("Index2", "Signup")">Sign up!</a>
+    </div>
+
+    <div class="trademark">
+        <div class="LogoHere">Spaghetti's</div>
+        <div class="logoImage">
+            <img src="/resources/SLE_LOGO.png"  alt="Spaghetti's Logo">
         </div>
     </div>
 </div>

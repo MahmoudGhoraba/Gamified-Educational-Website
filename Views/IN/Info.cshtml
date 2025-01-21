@@ -10,103 +10,152 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Instructor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <style>
-        body {
-            background-color: #f8f9fa;
-            font-family: 'Fjalla One', sans-serif;
-        }
-
-        .create-instructor-container {
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Poppins, sans-serif;
+            background-color: #F0F2F5;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
         }
 
-        .card {
-            width: 100%;
-            max-width: 500px;
+        .container {
+            max-width: 600px;
+            background-color: white;
             padding: 30px;
-            border-radius: 15px;
+            border-radius: 10px;
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-            background-color: #fff;
+            width: 100%;
         }
 
-        .card h1 {
+        h1, h4 {
+            color: black;
             text-align: center;
-            font-weight: bold;
+            font-weight: 600;
+        }
+
+        .form-group {
+            width: 100%;
             margin-bottom: 20px;
         }
 
         .form-control {
-            border-radius: 50px;
-        }
-
-        .btn-primary {
-            border-radius: 50px;
-            font-weight: bold;
-        }
-
-        .form-group label {
-            font-weight: bold;
-        }
-
-        .btn-submit {
             width: 100%;
-            border-radius: 50px;
-            font-weight: bold;
+            height: 55px;
+            background: white;
+            border-radius: 10px;
+            border: 1px #D9D9D9 solid;
+            padding: 0 15px;
         }
 
-        .modal-content {
-            border-radius: 10px;
+        .form-control::placeholder {
+            color: #888;
+            font-size: 15px;
+            text-align: center;
         }
+
+        .form-control-file {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .Button {
+            width: 100%;
+            height: 55px;
+            background: #3a3e3b;
+            border-radius: 10px;
+            border: 1px solid #DEDEDE;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .Button:hover {
+            background: #a5ada7;
+        }
+
+        .Button:active {
+            background: #189A3A;
+        }
+
+        .Button span.LogIn {
+            color: white;
+            font-size: 16px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            line-height: 1.2;
+        }
+        
     </style>
 </head>
 <body>
-<div class="create-instructor-container">
-    <div class="card">
-        <h1>Create Instructor</h1>
-        <p class="text-center">Fill in the details below to create an instructor profile</p>
-        <form asp-action="Values" method="post" enctype="multipart/form-data">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<section class="container">
+    <h1>Create Instructor</h1>
+    <h4>Enter Instructor Information</h4>
 
-            <!-- Name Field -->
-            <div class="form-group">
-                <label asp-for="Name" class="control-label">Name</label>
-                <input asp-for="Name" class="form-control" placeholder="Enter instructor's name" />
-                <span asp-validation-for="Name" class="text-danger"></span>
-            </div>
+    <form asp-action="Values" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
+        <!-- Name Field -->
+        <div class="form-group">
+            <input asp-for="Name" class="form-control" placeholder="Enter instructor's name" required />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
 
-            <!-- Latest Qualification Field -->
-            <div class="form-group">
-                <label asp-for="LatestQualification" class="control-label">Latest Qualification</label>
-                <input asp-for="LatestQualification" class="form-control" placeholder="Enter latest qualification" />
-                <span asp-validation-for="LatestQualification" class="text-danger"></span>
-            </div>
+        <div class="form-group">
+            <label asp-for="ExpertiseArea" class="control-label">Expertise Area</label>
+            <select asp-for="ExpertiseArea" class="form-control" required>
+                <option value="" disabled selected>Select Expertise Area</option>
+                <option value="Software Development">Software Development</option>
+                <option value="Data Science">Data Science</option>
+                <option value="Web Development">Web Development</option>
+                <option value="Cybersecurity">Cybersecurity</option>
+                <option value="Artificial Intelligence">Artificial Intelligence</option>
+                <option value="Machine Learning">Machine Learning</option>
+                <option value="Cloud Computing">Cloud Computing</option>
+                <option value="Mobile App Development">Mobile App Development</option>
+                <option value="UI/UX Design">UI/UX Design</option>
+                <option value="Other">Other</option>
+            </select>
+            <span asp-validation-for="ExpertiseArea" class="text-danger"></span>
+        </div>
 
-            <!-- Expertise Area Field -->
-            <div class="form-group">
-                <label asp-for="ExpertiseArea" class="control-label">Expertise Area</label>
-                <input asp-for="ExpertiseArea" class="form-control" placeholder="Enter area of expertise" />
-                <span asp-validation-for="ExpertiseArea" class="text-danger"></span>
-            </div>
+        <div class="form-group">
+            <label asp-for="LatestQualification" class="control-label">Latest Qualification</label>
+            <select asp-for="LatestQualification" class="form-control" required>
+                <option value="" disabled selected>Select Latest Qualification</option>
+                <option value="High School Diploma">High School Diploma</option>
+                <option value="Associate Degree">Associate Degree</option>
+                <option value="Bachelor's Degree">Bachelor's Degree</option>
+                <option value="Master's Degree">Master's Degree</option>
+                <option value="Doctorate (PhD)">Doctorate (PhD)</option>
+                <option value="Professional Certification">Professional Certification</option>
+                <option value="Other">Other</option>
+            </select>
+            <span asp-validation-for="LatestQualification" class="text-danger"></span>
+        </div>
 
-            <!-- Profile Picture Upload -->
-            <div class="form-group">
-                <label for="ProfilePictureFile">Profile Picture</label>
-                <input type="file" class="form-control" id="ProfilePictureFile" name="ProfilePictureFile" />
-            </div>
 
-            <!-- Submit Button -->
-            <div class="d-flex justify-content-center">
-                <button type="submit" class="btn btn-primary btn-lg">Create</button>
-            </div>
-        </form>
-    </div>
-</div>
+        <!-- Profile Picture Upload -->
+        <div class="form-group">
+            <label for="ProfilePictureFile" class="control-label">Profile Picture</label>
+            <input type="file" class="form-control-file" id="ProfilePictureFile" name="ProfilePictureFile" />
+        </div>
+
+        <!-- Submit Button -->
+        <button class="Button" type="submit">
+            <span class="LogIn">Create</span>
+        </button>
+    </form>
+</section>
 </body>
 </html>

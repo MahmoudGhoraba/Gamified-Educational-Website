@@ -44,7 +44,7 @@ namespace Spaghetti.Controllers
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> Create(string firstName, string lastName, string gender,IFormFile? profilePictureFile)
+        public async Task<IActionResult> Create(string firstName, string lastName, string gender,IFormFile? ProfilePicture)
         {
             var email = TempData["Email"] as string; // Retrieve TempData
 
@@ -66,11 +66,11 @@ namespace Spaghetti.Controllers
 
                 string profilePicture = null;
 
-                if (profilePictureFile != null && profilePictureFile.Length > 0)
+                if (ProfilePicture != null && ProfilePicture.Length > 0)
                 {
                     var allowedExtensions = new[] { ".jpg", ".jpeg", ".png", ".gif" };
 
-                    var fileExtension = Path.GetExtension(profilePictureFile.FileName).ToLower();
+                    var fileExtension = Path.GetExtension(ProfilePicture.FileName).ToLower();
                     if (!allowedExtensions.Contains(fileExtension))
                     {
                         ModelState.AddModelError("ProfilePicture",
@@ -81,12 +81,12 @@ namespace Spaghetti.Controllers
                     var uploadsFolder = Path.Combine("wwwroot", "uploads");
                     if (!Directory.Exists(uploadsFolder)) Directory.CreateDirectory(uploadsFolder);
 
-                    var uniqueFileName = Guid.NewGuid().ToString() + "_" + profilePictureFile.FileName;
+                    var uniqueFileName = Guid.NewGuid().ToString() + "_" + ProfilePicture.FileName;
                     var filePath = Path.Combine(uploadsFolder, uniqueFileName);
 
                     using (var fileStream = new FileStream(filePath, FileMode.Create))
                     {
-                        await profilePictureFile.CopyToAsync(fileStream);
+                        await ProfilePicture.CopyToAsync(fileStream);
                     }
 
                     profilePicture = "/uploads/" + uniqueFileName;

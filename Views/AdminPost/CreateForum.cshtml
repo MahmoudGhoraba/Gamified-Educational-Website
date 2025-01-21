@@ -10,40 +10,147 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewData["Title"]</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-</head>
-<body>
-    <div class="container mt-5">
-        <h2>Create Forum</h2>
-
-        @if (!string.IsNullOrEmpty(message))
-        {
-            <div class="alert @(messageType == "success" ? "alert-success" : "alert-danger")">
-                @message
-            </div>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
         }
 
-        <form method="post" asp-controller="AdminPost" asp-action="CreateForum">
-            <div class="form-row">
-                <div class="form-group col-md-4">
-                    <label for="ModuleID">Module ID</label>
-                    <input type="number" class="form-control" id="ModuleID" name="ModuleID" required />
-                </div>
-                <div class="form-group col-md-4">
-                    <label for="CourseID">Course ID</label>
-                    <input type="number" class="form-control" id="CourseID" name="CourseID" required />
-                </div>
-                <div class="form-group col-md-4">
-                    <label for="title">Title</label>
-                    <input type="text" class="form-control" id="title" name="title" required />
-                </div>
+        .container {
+            width: 100%;
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 28px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        label {
+            font-size: 14px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+            color: #333;
+            margin-top: 5px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #3a3e3b;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #a5ada7;
+        }
+
+        button:active {
+            background-color: #189a3a;
+        }
+
+        .alert {
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .alert-success {
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        .alert-danger {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+
+        .form-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+        }
+
+        .form-group {
+            flex: 1;
+            min-width: 250px;
+        }
+
+
+        button {
+            font-size: 14px;
+        }
+        
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Create Forum</h2>
+
+    @if (!string.IsNullOrEmpty(message))
+    {
+        <div class="alert @(messageType == "success" ? "alert-success" : "alert-danger")">
+            @message
+        </div>
+    }
+
+    <form method="post" asp-controller="AdminPost" asp-action="CreateForum">
+        <div class="form-row">
+            <div class="form-group">
+                <label for="ModuleID">Module ID</label>
+                <input type="number" class="form-control" id="ModuleID" name="ModuleID" required />
             </div>
             <div class="form-group">
-                <label for="description">Description</label>
-                <textarea class="form-control" id="description" name="description" rows="5" required></textarea>
+                <label for="CourseID">Course ID</label>
+                <input type="number" class="form-control" id="CourseID" name="CourseID" required />
             </div>
-            <button type="submit" class="btn btn-primary">Create Forum</button>
-        </form>
-    </div>
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" class="form-control" id="title" name="title" required />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea class="form-control" id="description" name="description" rows="5" required></textarea>
+        </div>
+        <button type="submit">Create Forum</button>
+    </form>
+</div>
 </body>
 </html>

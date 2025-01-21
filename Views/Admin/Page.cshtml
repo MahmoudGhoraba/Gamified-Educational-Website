@@ -1,20 +1,329 @@
 ﻿@{
     ViewData["Title"] = "Delete Profile";
     var a = ViewBag.AdminID as int?;
-
-}
-<h1>Admin Page</h1>
-
-@if (a.HasValue)
-{
-    <p><strong>Admin ID:</strong> @a</p>
 }
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Delete Profile</title>
+    <title>Admin Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+        }
+        .navigation {
+            position: fixed;
+            bottom: 50%;
+            left: 20px;
+            transform: translateY(50%);
+            width: 70px;
+            height: 430px;
+            background-color: #1e272e;
+            border-radius: 10px;
+            z-index: 1000;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .navigation ul {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .navigation ul li {
+            position: relative;
+            list-style: none;
+            width: 70px;
+            height: 70px;
+            z-index: 1;
+        }
+
+        .navigation ul li form {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .navigation ul li form .icon {
+            position: absolute;
+            display: block;
+            bottom: 25.72px;
+            right: 25.72px;
+            font-size: 1.25em;
+            text-align: center;
+            transition: .5s;
+            color: #fff;
+        }
+
+        .navigation ul li.active form .icon {
+            transform: translateX(28px);
+        }
+        
+        .navigation ul li form .text {
+            position: absolute;
+            top: 45.72px;
+            left:17.72px;
+            color: #fff;
+            font-weight: 300;
+            font-size: 0.65rem;
+            letter-spacing: 0.05rem;
+            transition: 0.5s;
+            opacity: 0;
+            transform: translateX(-30px);
+            text-transform: capitalize;
+        }
+
+        .navigation ul li form button {
+            display: none;
+        }
+
+        .navigation ul li.active form .text {
+            opacity: 1;
+            transform: translateX(29px);
+        }
+
+        .indicator {
+            position: absolute;
+            left: 30%;
+            top: 7px;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 70px;
+            background-color: #3a3e3b;
+            border-radius: 50%;
+            border: 4px solid #f0f2f5;
+            transition: 0.5s;
+        }
+
+        .navigation ul li:nth-child(1).active ~ .indicator {
+            transform: translateY(calc(60px * 0));
+        }
+
+        .navigation ul li:nth-child(2).active ~ .indicator {
+            transform: translateY(calc(84px * 1));
+        }
+
+        .navigation ul li:nth-child(3).active ~ .indicator {
+            transform: translateY(calc(84px * 2));
+        }
+
+        .navigation ul li:nth-child(4).active ~ .indicator {
+            transform: translateY(calc(85px * 3));
+        }
+
+        .navigation ul li:nth-child(5).active ~ .indicator {
+            transform: translateY(calc(85px * 4));
+        }
+
+
+        /* Admin Page Container */
+        .admin-page-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Form Section Styles */
+        .form-container {
+            display: flex;
+            flex-wrap: nowrap;  /* Ensures forms stay on one row */
+            gap: 20px;  /* Space between the forms */
+            justify-content: space-between;  /* Space the forms out evenly */
+            align-items: stretch;  /* Align forms to stretch the same height */
+            margin-bottom: 20px; /* Space below the entire form container */
+        }
+
+        .form-section {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            flex: 1;  /* Each form will take up 30% of the container's width */
+            min-width: 300px;  /* Ensure forms do not become too narrow */
+            margin-top: 20px; /* Add space above each form */
+            margin-bottom: 20px; /* Add space below each form */
+        }
+        
+        .form-delete {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            flex: 1 1 30%;  /* Each form will take up 30% of the container's width */
+            min-width: 280px;  /* Ensure forms do not become too narrow */
+            margin-top: 20px; /* Add space above each form */
+            margin-bottom: 20px; /* Add space below each form */
+        }
+
+
+        .block-for-Delete {
+            background: white;
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            flex: 1 1 50%;  /* Each form will take up 30% of the container's width */
+            min-width: 100px;  /* Ensure forms do not become too narrow */
+            margin-top: 90px; /* Add space above each form */
+            margin-bottom: 90px; /* Add space below each form */
+            transition: background-color 1s ease , margin-top 1s ease , margin-bottom 1s ease;
+        }
+
+        .block-for-Delete:hover {   
+            background-color: #a5ada7;
+            margin-top: 60px; /* Add space above each form */
+            margin-bottom: 60px; /* Add space below each form */
+        }
+
+        .middle:hover {
+            top: 40%;
+        }
+        .form-inline {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .middle {
+            position: relative;
+            top: 10%;
+            word-break: break-word;
+            text-align: center;
+            transition: top 1s ease;
+        }
+        
+        h2 {
+            font-size: 24px;
+            font-weight: 500;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        label {
+            font-size: 14px;
+            font-weight: 400;
+            color: #555;
+        }
+
+        input[type="text"], input[type="number"], input[type="datetime-local"] {
+            width: 94%;
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+            color: #333;
+            margin-top: 7px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #3a3e3b;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #a5ada7;
+        }
+
+        button:active {
+            background-color: #189a3a;
+        }
+
+        /* Error Message Styles */
+        .error-message {
+            color: red;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+
+        /* Additional Margin for Buttons */
+        .form-section button {
+            margin-top: 10px;
+        }
+        
+        /* Additional Margin for Buttons */
+        .form-delete button {
+            margin-top: 10px;
+        }
+        /* Container for circular buttons */
+        .circular-buttons-container {
+            display: flex;
+            justify-content: center; /* Centers buttons horizontally */
+            align-items: center; /* Centers buttons vertically */
+            gap: 20px; /* Space between buttons */
+            margin-top: 50px; /* Space above the buttons */
+            margin-bottom: 50px; /* Space below the buttons */
+        }
+
+        /* Each individual button section */
+        .circular-button-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Circular button styles */
+        .circular-btn {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;  /* Makes the button circular */
+            background-color: #3a3e3b;
+            color: white;
+            font-size: 16px;
+            border: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease, width 0.3s ease, height 0.3s ease;
+            margin-right: 10px;  /* Space between buttons */
+        }
+
+        .circular-btn:hover {
+            background-color: #a5ada7;
+            width: 150px;
+            height: 150px;
+        }
+
+        .circular-btn:active {
+            background-color: #3a3e3b;
+        }
+        
+        .circular-btn i {
+            font-size: 3em; /* Makes the icon bigger */
+        }
+        
+        .form-l {
+            margin-top: 30px;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+        
+
+    </style>
+
     <script>
         async function deleteProfile(event) {
             event.preventDefault();
@@ -54,79 +363,209 @@
     </script>
 </head>
 <body>
-<h1>Delete Profile</h1>
 
-<form asp-controller="Admin" asp-action="Delete" method="post" onsubmit="deleteProfile(event)">
-    <label for="learnerId">Learner ID:</label>
-    <input type="text" id="learnerId" name="learnerId" required />
-    <label for="deleteId">Profile ID to Delete:</label>
-    <input type="text" id="deleteId" name="id" required />
-    <button type="submit">Delete Profile</button>
-</form>
+<div class="admin-page-container">
+    <header>
+        <h1>Admin Page</h1>
+        @if (a.HasValue)
+        {
+            <p><strong>Admin ID:</strong> @a</p>
+        }
+    </header>
 
-<h1>Delete Instructor Account</h1>
 
-<form asp-controller="Admin" asp-action="DeleteInstructorAccount" method="post" onsubmit="deleteInstructorAccount(event)">
-    <label for="instructorId">Instructor ID:</label>
-    <input type="text" id="instructorId" name="instructorId" required />
-    <button type="submit">Delete Instructor Account</button>
-</form>
+    
+    <div class="form-container">
+        <section class="block-for-Delete">
+            <h1 class="middle">Delete Actions</h1>
+        </section>
 
-<h1>Delete Learner Account</h1>
+        <!-- Delete Profile Form -->
+        <section class="form-delete form-inline">
+            <h2>Delete Profile</h2>
+            <form asp-controller="Admin" asp-action="Delete" method="post" onsubmit="deleteProfile(event)">
+                <div class="form-group">
+                    <label for="learnerId">Learner ID:</label>
+                    <input type="text" id="learnerId" name="learnerId" required/>
+                </div>
+                <div class="form-group">
+                    <label for="deleteId">Profile ID to Delete:</label>
+                    <input type="text" id="deleteId" name="id" required/>
+                </div>
+                <button type="submit" class="btn btn-danger">Delete Profile</button>
+            </form>
+        </section>
 
-<form asp-controller="Admin" asp-action="DeleteLearnerAccount" method="post" onsubmit="deleteLearnerAccount(event)">
-    <label for="learnerAccountId">Learner ID:</label>
-    <input type="text" id="learnerAccountId" name="learnerAccountId" required />
-    <button type="submit">Delete Learner Account</button>
-</form>
+        <!-- Delete Instructor Account Form -->
+        <section class="form-delete form-inline">
+            <h2>Delete Instructor Account</h2>
+            <form asp-controller="Admin" asp-action="DeleteInstructorAccount" method="post" onsubmit="deleteInstructorAccount(event)">
+                <div class="form-group">
+                    <label for="instructorId">Instructor ID:</label>
+                    <input type="text" id="instructorId" name="instructorId" required/>
+                </div>
+                <button type="submit" class="btn btn-danger">Delete Instructor Account</button>
+            </form>
+        </section>
 
-<form asp-controller="Admin" asp-action="ProfileDetails" method="post">
-    <button type="submit" class="btn btn-info">Profile</button>
-</form>
-
-<form asp-controller="Admin" asp-action="RedirectToAdminCreateFourm" method="post">
-    <button type="submit" class="btn btn-warning">Create Fourm</button>
-</form>
-
-<a asp-controller="Admin" asp-action="SelectLearnerForNotifications" class="btn btn-primary">View Notifications</a>
-
-<form asp-controller="Admin" asp-action="EmotionalTrendAnalysis" method="post">
-    <div class="form-group">
-        <label for="courseID">Course ID</label>
-        <input type="number" class="form-control" id="courseID" name="courseID" required />
+        <!-- Delete Learner Account Form -->
+        <section class="form-delete form-inline">
+            <h2>Delete Learner Account</h2>
+            <form asp-controller="Admin" asp-action="DeleteLearnerAccount" method="post" onsubmit="deleteLearnerAccount(event)">
+                <div class="form-group">
+                    <label for="learnerAccountId">Learner ID:</label>
+                    <input type="text" id="learnerAccountId" name="learnerAccountId" required/>
+                </div>
+                <button type="submit" class="btn btn-danger">Delete Learner Account</button>
+            </form>
+        </section>
     </div>
-    <div class="form-group">
-        <label for="moduleID">Module ID</label>
-        <input type="number" class="form-control" id="moduleID" name="moduleID" required />
-    </div>
-    <div class="form-group">
-        <label for="timePeriod">Time Period</label>
-        <input type="datetime-local" class="form-control" id="timePeriod" name="timePeriod" required="" />
-    </div>
-    <button type="submit" class="btn btn-primary">Get Emotional Trend Analysis</button>
-</form>
 
-<!-- All Quests Button -->
-<a asp-controller="Quests" asp-action="AllQuests" method="get" class="d-inline-block mb-2">
-    <button type="button" class="btn btn-primary mx-2">
-        <i class="bi bi-list"></i> Delete by Criteria
-    </button>
-</a>
+    <!-- Emotional Trend Analysis and Leaderboard Rank Forms -->
+    <div class="form-container">
+        <!-- Emotional Trend Analysis Form -->
+        <section class="form-section">
+            <h2>Emotional Trend Analysis</h2>
+            <form asp-controller="Admin" asp-action="EmotionalTrendAnalysis" method="post">
+                <div class="form-group">
+                    <label for="courseID">Course ID</label>
+                    <input type="number" class="form-control" id="courseID" name="courseID" required />
+                </div>
+                <div class="form-group">
+                    <label for="moduleID">Module ID</label>
+                    <input type="number" class="form-control" id="moduleID" name="moduleID" required />
+                </div>
+                <div class="form-group">
+                    <label for="timePeriod">Time Period</label>
+                    <input type="datetime-local" class="form-control" id="timePeriod" name="timePeriod" required />
+                </div>
+                <button type="submit" class="btn btn-primary">Get Emotional Trend Analysis</button>
+            </form>
+        </section>
 
-<form asp-controller="Leaderboards" asp-action="LeaderboardRank" method="post">
-    <div class="form-group">
-        <label for="LeaderboardID">LeaderBoard ID</label>
-        <input type="number" class="form-control" id="LeaderboardID" name="leaderboardID" required />
+        <!-- Leaderboard Rank Form -->
+        <section class="form-section">
+            <h2>Leaderboard</h2>
+            <form asp-controller="Leaderboards" asp-action="LeaderboardRank" method="post">
+                <div class="form-group">
+                    <label for="LeaderboardID">LeaderBoard ID</label>
+                    <input type="number" class="form-control form-l" id="LeaderboardID" name="leaderboardID" required/>
+                </div>
+                <button type="submit" class="btn btn-primary form-x">Get Rank</button>
+            </form>
+        </section>
     </div>
-    <button type="submit" class="btn btn-primary">get Rank</button>
-</form>
-@if (ViewBag.ErrorMessage != null)
-{
-    <div class="error-message">
-        <p>@ViewBag.ErrorMessage</p>
+
+
+    <!-- Additional Action Buttons (Circular) -->
+    <div class="circular-buttons-container">
+        <!-- Circular Button 1 -->
+        <section class="circular-button-section">
+            <form asp-controller="Admin" asp-action="RedirectToAdminCreateFourm" method="post">
+                <button type="submit" class="circular-btn">
+                    <i class="bi bi-info"></i> <!-- Optional icon for Forum -->
+                </button>
+            </form>
+        </section>
+
+        <!-- Circular Button 2 -->
+        <section class="circular-button-section">
+            <form asp-controller="Admin" asp-action="SelectLearnerForNotifications" method="post">
+                <button type="submit" class="circular-btn">
+                    <i class="bi bi-bell"></i> <!-- Optional icon for Notifications -->
+                </button>
+            </form>
+        </section>
+
+        <!-- Circular Button 3 -->
+        <section class="circular-button-section">
+            <form asp-controller="Quests" asp-action="AllQuests" method="get">
+                <button type="submit" class="circular-btn">
+                    <i class="bi bi-bookmark-check"></i> <!-- Optional icon for Criteria -->
+                </button>
+            </form>
+        </section>
     </div>
-}
+
+
+    <div class="navigation">
+        <ul>
+            <li class="list active">
+                <form asp-action="Page" >
+                <span class="icon">
+                    <ion-icon name="home-outline"></ion-icon>
+                </span>
+                    <span class="text">Home</span>
+                    <button type="submit" ></button>
+                </form>
+            </li>
+
+            <li class="list">
+                <form>
+                <span class="icon">
+                    <ion-icon name="book-outline"></ion-icon>
+                </span>
+                    <span class="text">About</span>
+                    <button type="submit"></button>
+                </form>
+            </li>
+
+            <li class="list">
+                <form>
+                <span class="icon">
+                    <ion-icon name="chatbox-ellipses-outline"></ion-icon>
+                </span>
+                    <span class="text">Chat</span>
+                    <button type="submit"></button>
+                </form>
+            </li>
+            <li class="list">
+                <form>
+                <span class="icon">
+                    <ion-icon name="settings-outline"></ion-icon>
+                </span>
+                    <span class="text">Option</span>
+                    <button type="submit"></button>
+                </form>
+            </li>
+            <li class="list">
+                <form asp-controller="Admin" asp-action="ProfileDetails" method="post">
+                <span class="icon">
+                    <ion-icon name="person-outline"></ion-icon>
+                </span>
+                <span class="text">profile</span>
+                <button type="submit"></button>
+                </form>
+            </li>
+            <div class="indicator"></div>
+        </ul>
+    </div>
+
+
+    @if (ViewBag.ErrorMessage != null)
+    {
+        <div class="error-message">
+            <p>@ViewBag.ErrorMessage</p>
+        </div>
+    }
+</div>
+
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script>
+    const list = document.querySelectorAll('.list')
+    function active(){
+        list.forEach((item)=> item.classList.remove('active'));
+        this.classList.add('active');
+        const form = this.querySelector('form');
+        if (form) {
+            setTimeout(() => {
+                form.submit();
+            }, 1000);
+        }
+    }
+    list.forEach((item)=> item.addEventListener('click',active));
+</script>
+
 </body>
-
-
 </html>

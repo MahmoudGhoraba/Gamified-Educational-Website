@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/Spaghetti.csproj": {}
+    "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/Spaghetti.csproj": {}
   },
   "projects": {
-    "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/Spaghetti.csproj": {
+    "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/Spaghetti.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/Spaghetti.csproj",
+        "projectUniqueName": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/Spaghetti.csproj",
         "projectName": "Spaghetti",
-        "projectPath": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/Spaghetti.csproj",
+        "projectPath": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/Spaghetti.csproj",
         "packagesPath": "/Users/ghorabas/.nuget/packages/",
-        "outputPath": "/Users/ghorabas/Desktop/isa howa/Spaghetti/Spaghetti/obj/",
+        "outputPath": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/obj/",
         "projectStyle": "PackageReference",
         "UsingMicrosoftNETSdk": false,
         "configFilePaths": [

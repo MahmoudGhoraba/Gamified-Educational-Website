@@ -4,31 +4,91 @@
     ViewData["Title"] = "Details";
 }
 
-<div>
-    <h4>Instructor Profile</h4>
-    <hr />
-    <div class="text-center mb-3">
-        <img src="@(@Model.ProfilePicture ?? "/uploads/default.jpg")" alt="Profile Picture"
-             style="width: 150px; height: 150px; border-radius: 50%; border: 1px solid #ddd;" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instructor Profile</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css" />
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Poppins, sans-serif;
+            background-color: #F0F2F5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .profile-container {
+            max-width: 700px;
+            width: 100%;
+            background-color: white;
+            padding: 30px;
+            border-radius: 40px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .profile-header h4 {
+            color: #333;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .profile-header img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 2px solid #ddd;
+            margin-bottom: 10px;
+        }
+
+        .profile-details dt {
+            font-weight: 600;
+            color: #555;
+            margin-bottom: 5px;
+        }
+
+        .profile-details dd {
+            margin-bottom: 15px;
+            color: #777;
+        }
+
+        .profile-details dl {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .profile-details dt,
+        .profile-details dd {
+            width: 90%;
+            word-wrap: break-word;
+        }
+        
+    </style>
+</head>
+<body>
+<div class="profile-container">
+    <div class="profile-header">
+        <img src="@(@Model.ProfilePicture ?? "/uploads/default.jpg")" alt="Profile Picture" />
+        <h4>@Model.Name</h4>
     </div>
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.LatestQualification)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.LatestQualification)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ExpertiseArea)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ExpertiseArea)
-        </dd>
+    <dl class="profile-details">
+        <dt>Latest Qualification:</dt>
+        <dd>@Model.LatestQualification</dd>
+        <dt>Expertise Area:</dt>
+        <dd>@Model.ExpertiseArea</dd>
     </dl>
 </div>
+</body>
+</html>

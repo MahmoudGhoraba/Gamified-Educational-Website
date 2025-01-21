@@ -89,6 +89,12 @@ namespace Spaghetti.Controllers
 
         public IActionResult IDash()
         {
+            var iID = HttpContext.Session.GetInt32("InstructorID");
+            if (iID.HasValue)
+            {
+                ViewBag.ID = iID.Value;
+            }
+            
             return View();
         }
 
