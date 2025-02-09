@@ -1,26 +1,148 @@
 ﻿@{
-    ViewData["Title"] = "Select Activity for share";
+    ViewData["Title"] = "Select Activity for Share";
 }
 
-<h1>Select Activity for Share</h1>
+<div class="container">
+    <h1>Select an Activity to Share</h1>
+    <p>Please enter the activity ID and describe your emotional response.</p>
 
-<p>Please enter the activity ID .</p>
+    <div class="form-container">
+        <form asp-controller="Personal" asp-action="SubmitEmotionalFeedback" method="post">
+            <div class="form-group">
+                <label for="activityId">Activity ID:</label>
+                <input type="number" name="activityId" id="activityId" class="form-control" placeholder="e.g., 101" required>
+            </div>
 
-<form asp-controller="Personal" asp-action="SubmitEmotionalFeedback" method="post">
-    <div class="form-group">
-        <label for="activityId">Activity ID</label>
-        <input type="number" name="activityId" id="activityId" class="form-control" placeholder="Enter activity ID" required>
-    </div>
-    <div class="form-group">
-        <label for="emotionalState">How do you feel about this activity?</label>
-        <input type ="text" name="emotionalState" id="emotionalState" class="form-control" placeholder="Enter state" required/>
-    </div>
-    <button type="submit" class="btn btn-primary mt-2">share</button>
-</form>
+            <div class="form-group">
+                <label for="emotionalState">How do you feel about this activity?</label>
+                <input type="text" name="emotionalState" id="emotionalState" class="form-control" placeholder="e.g., Excited, Motivated, Happy" required>
+            </div>
 
-@if (ViewData["ErrorMessage"] != null)
-{
-    <div class="alert alert-danger mt-3">
-        @ViewData["ErrorMessage"]
+            <div class="btn-container">
+                <button type="submit" class="btn btn-primary">Share</button>
+            </div>
+        </form>
     </div>
-}
+
+    @if (ViewData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger mt-3">
+            @ViewData["ErrorMessage"]
+        </div>
+    }
+</div>
+
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        font-family: 'Poppins', sans-serif;
+        background: #f4f8f5;
+    }
+
+    .container {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 20px;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 2rem;
+        color: #3a3e3b;
+        margin-bottom: 20px;
+    }
+
+    .alert {
+        padding: 15px;
+        border-radius: 5px;
+        margin-top: 20px;
+        font-weight: 500;
+    }
+
+    .alert-danger {
+        background: #f8d7da;
+        color: #721c24;
+        border: 1px solid #f5c6cb;
+    }
+
+    .form-container {
+        padding: 20px;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+        text-align: left;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+        color: #3a3e3b;
+        font-weight: 500;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 1rem;
+        transition: border 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+    .form-control:focus {
+        border-color: #189A3A;
+        box-shadow: 0 0 8px rgba(24, 154, 58, 0.3);
+        outline: none;
+    }
+
+    .btn-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 15px;
+    }
+
+    .btn {
+        padding: 12px 25px;
+        border-radius: 5px;
+        font-weight: 700;
+        font-family: 'Poppins', sans-serif;
+        cursor: pointer;
+        border: none;
+        transition: background 0.3s ease-in-out;
+    }
+
+    .btn-primary {
+        background: #189A3A;
+        color: white;
+    }
+
+    .btn-primary:hover {
+        background: #117a2d;
+    }
+
+    /* Responsive Design */
+    @@media (max-width: 600px) {
+    .container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .form-control {
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 12px;
+    }
+    }
+</style>

@@ -215,58 +215,58 @@
 
 
 <div class="admin-page-container">
-<div class="navigation">
-    <ul>
-        <li class="list">
-            <form asp-action="Page" >
+    <div class="navigation">
+        <ul>
+            <li class="list">
+                <form asp-action="Page" >
                 <span class="icon">
                     <ion-icon name="home-outline"></ion-icon>
                 </span>
-                <span class="text">Home</span>
-                <button type="submit" ></button>
-            </form>
-        </li>
+                    <span class="text">Home</span>
+                    <button type="submit" ></button>
+                </form>
+            </li>
 
-        <li class="list">
-            <form>
+            <li class="list">
+                <form asp-controller="Admin" asp-action="RedirectToAdminCreateFourm" method="post">
                 <span class="icon">
-                    <ion-icon name="book-outline"></ion-icon>
-                </span>
-                <span class="text">About</span>
-                <button type="submit"></button>
-            </form>
-        </li>
+                    <ion-icon name="information-outline"></ion-icon>
+                    </span>
+                    <span class="text">Forum</span>
+                    <button type="submit"></button>
+                </form>
+            </li>
 
-        <li class="list">
-            <form>
+            <li class="list">
+                <form asp-controller="Admin" asp-action="SelectLearnerForNotifications" method="post">
                 <span class="icon">
                     <ion-icon name="chatbox-ellipses-outline"></ion-icon>
                 </span>
-                <span class="text">Chat</span>
-                <button type="submit"></button>
-            </form>
-        </li>
-        <li class="list">
-            <form>
+                    <span class="text">Chat</span>
+                    <button type="submit"></button>
+                </form>
+            </li>
+            <li class="list">
+                <form asp-controller="Quests" asp-action="AllQuests" method="get">
                 <span class="icon">
-                    <ion-icon name="settings-outline"></ion-icon>
-                </span>
-                <span class="text">Option</span>
-                <button type="submit"></button>
-            </form>
-        </li>
-        <li class="list active">
-            <form asp-controller="Admin" asp-action="ProfileDetails" method="post">
+                    <ion-icon name="bookmarks-outline"></ion-icon>                
+                    </span>
+                    <span class="text">Quests</span>
+                    <button type="submit"></button>
+                </form>
+            </li>
+            <li class="list active">
+                <form asp-controller="Admin" asp-action="ProfileDetails" method="post">
                 <span class="icon">
                     <ion-icon name="person-outline"></ion-icon>
                 </span>
-                <span class="text">profile</span>
-                <button type="submit"></button>
-            </form>
-        </li>
-        <div class="indicator"></div>
-    </ul>
-</div>
+                    <span class="text">profile</span>
+                    <button type="submit"></button>
+                </form>
+            </li>
+            <div class="indicator"></div>
+        </ul>
+    </div>
 </div>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

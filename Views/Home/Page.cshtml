@@ -1,0 +1,586 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spaghetti Learning - Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            background: #f4f8f5;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: white;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: #3a3e3b;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #189A3A;
+        }
+
+        .home {
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .animated-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #f4f8f5;
+            background-size: 400% 400%;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .HomeDetails {
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .WelcomeMessage {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #3a3e3b;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            position: relative;
+            display: inline-block;
+        }
+
+        .Description {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 30px;
+            max-width: 800px;
+            line-height: 1.6;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease forwards 0.5s;
+        }
+
+        .GetStartedButton {
+            display: inline-flex;
+            align-items: center;
+            padding: 15px 40px;
+            background: #189A3A;
+            border-radius: 30px;
+            color: white;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards 1s;
+            box-shadow: 0 4px 15px rgba(32,220,73,0.3);
+        }
+
+        .GetStartedButton:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(32,220,73,0.4);
+        }
+
+        .GetStartedButton:active {
+            transform: translateY(0);
+        }
+
+        .CoursesSection, .InstructorsSection {
+            width: 90%;
+            max-width: 1200px;
+            margin: 80px 0;
+            padding: 40px;
+            background: rgba(255,255,255,0.9);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        .CoursesSection h2, .InstructorsSection h2 {
+            font-size: 2.5rem;
+            color: #3a3e3b;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .CoursesSection h2::after, .InstructorsSection h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: #189A3A;
+        }
+
+        .CoursesList, .InstructorsList {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .Course, .Instructor {
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .Course:hover, .Instructor:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .Course::before, .Instructor::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: #189A3A;
+        }
+
+        .Course h3, .Instructor h3 {
+            font-size: 1.5rem;
+            color: #3a3e3b;
+            margin-bottom: 15px;
+        }
+
+        .Course p, .Instructor p {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .icon {
+            font-size: 2.5rem;
+            color: #189A3A;
+            margin-bottom: 20px;
+        }
+
+        .chatbot-container {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+        }
+
+        .chatbot-button {
+            width: 60px;
+            height: 60px;
+            background: #189A3A;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(24, 154, 58, 0.3);
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .chatbot-button i {
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .chatbot-interface {
+            width: 350px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: absolute;
+            bottom: 80px;
+            right: 0;
+            transform: scale(0);
+            transform-origin: bottom right;
+            transition: all 0.3s ease;
+            opacity: 0;
+        }
+
+        .chatbot-interface.active {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        .chat-header {
+            background: #189A3A;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 15px 15px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chat-header h3 {
+            margin: 0;
+            font-weight: 500;
+        }
+
+        .close-chat {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0 5px;
+        }
+
+        .chat-messages {
+            height: 300px;
+            padding: 20px;
+            overflow-y: auto;
+            background: #f8f9fa;
+        }
+
+        .bot-message, .user-message {
+            margin: 10px 0;
+            padding: 10px 15px;
+            border-radius: 15px;
+            max-width: 80%;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .bot-message {
+            background: white;
+            color: #3a3e3b;
+            border: 1px solid #e9ecef;
+            margin-right: auto;
+        }
+
+        .user-message {
+            background: #189A3A;
+            color: white;
+            margin-left: auto;
+        }
+
+        .chat-input {
+            display: flex;
+            padding: 15px;
+            background: white;
+            border-top: 1px solid #e9ecef;
+        }
+
+        .chat-input input {
+            flex: 1;
+            padding: 10px 15px;
+            border: 1px solid #e9ecef;
+            border-radius: 25px;
+            margin-right: 10px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .chat-input button {
+            width: 40px;
+            height: 40px;
+            border: none;
+            background: #189A3A;
+            color: white;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .chat-input button:hover {
+            background: #117a2d;
+        }
+
+        @@keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        @@keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @@media (max-width: 480px) {
+        .chatbot-container {
+            bottom: 15px;
+            right: 15px;
+        }
+
+        .chatbot-interface {
+            width: 90vw;
+            right: -10px;
+        }
+        }
+
+        @@keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @@keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @@keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @@media (max-width: 768px) {
+        .WelcomeMessage {
+            font-size: 2.5rem;
+        }
+
+        .CoursesSection, .InstructorsSection {
+            padding: 20px;
+        }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-links">
+        <a href="#courses" class="nav-link">Courses</a>
+        <a href="#instructors" class="nav-link">Instructors</a>
+        <a href="#contact" class="nav-link">Contact Us</a>
+    </div>
+</nav>
+
+<div class="home">
+    <div class="animated-bg"></div>
+
+    <div class="HomeDetails">
+        <div class="WelcomeMessage" id="welcomeMessage"></div>
+        <div class="Description">
+            Start your journey with us and explore the world of knowledge. We offer cutting-edge courses in web development to help you succeed in the digital age.
+        </div>
+        <div class="GetStartedButton" onclick="location.href='@Url.Action("Info", "Home")'">
+            Get Started <i class="fas fa-arrow-right" style="margin-left: 10px;"></i>
+        </div>
+
+    </div>
+
+    <div class="CoursesSection" id="courses">
+        <h2>Our Courses</h2>
+        <div class="CoursesList">
+            <div class="Course">
+                <i class="fas fa-code icon"></i>
+                <h3>HTML & CSS</h3>
+                <p>Master the building blocks of modern web design with our comprehensive HTML & CSS curriculum.</p>
+            </div>
+            <div class="Course">
+                <i class="fab fa-js icon"></i>
+                <h3>JavaScript</h3>
+                <p>Create dynamic, interactive web experiences with our complete JavaScript development program.</p>
+            </div>
+            <div class="Course">
+                <i class="fas fa-rocket icon"></i>
+                <h3>Advanced Web Dev</h3>
+                <p>Take your skills to the next level with modern frameworks, performance optimization, and best practices.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="chatbot-container">
+        <div class="chatbot-button" onclick="toggleChat()">
+            <i class="fas fa-comments"></i>
+        </div>
+        <div class="chatbot-interface">
+            <div class="chat-header">
+                <h3>Learning Assistant</h3>
+                <button class="close-chat" onclick="toggleChat()">&times;</button>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <div class="bot-message">
+                    <p>Hello! I'm your Spaghetti Learning assistant. How can I help you today?</p>
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" placeholder="Type your message..." id="userInput">
+                <button onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="InstructorsSection" id="instructors">
+        <h2>Meet Our Experts</h2>
+        <div class="InstructorsList">
+            <div class="Instructor">
+                <i class="fas fa-user-tie icon"></i>
+                <h3>Rahma Amin</h3>
+                <p>Full-stack developer with 10+ years experience in JavaScript ecosystems and cloud architectures.</p>
+            </div>
+            <div class="Instructor">
+                <i class="fas fa-palette icon"></i>
+                <h3>Thomas Safwat</h3>
+                <p>Front-end specialist focusing on responsive design, UX principles, and modern CSS techniques.</p>
+            </div>
+            <div class="Instructor">
+                <i class="fas fa-database icon"></i>
+                <h3>David Said</h3>
+                <p>Back-end expert with deep knowledge in system architecture, databases, and API development.</p>
+            </div>
+        </div>
+    </div>
+    <div class="CoursesSection" id="contact">
+        <h2>Contact Us</h2>
+        <div class="CoursesList">
+            <div class="Course">
+                <i class="fa-brands fa-twitter icon"></i>
+                <h3>SpaghettiMafia's</h3>
+            </div>
+            <div class="Course">
+                <i class="fa-brands fa-instagram icon"></i>
+                <h3>SpaghettiMafia</h3>
+            </div>
+            <div class="Course">
+                <i class="fa-brands fa-youtube icon"></i>
+                <h3>7ooka</h3>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+<script>
+    // Intersection Observer for scroll animations
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = 1;
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    });
+
+    document.querySelectorAll('.CoursesSection, .InstructorsSection').forEach((section) => {
+        observer.observe(section);
+    });
+
+    // Enhanced typing effect
+    const messages = [
+        "Welcome to Spaghetti Learning",
+        "Transform Your Career",
+        "Learn. Build. Succeed."
+    ];
+
+    let index = 0;
+    const welcomeElement = document.getElementById("welcomeMessage");
+
+    function typeMessage() {
+        let message = messages[index];
+        let currentLength = 0;
+        welcomeElement.innerHTML = "";
+        const typingInterval = setInterval(() => {
+            if (currentLength < message.length) {
+                welcomeElement.innerHTML += message.charAt(currentLength);
+                currentLength++;
+            } else {
+                clearInterval(typingInterval);
+                setTimeout(eraseMessage, 2000);
+            }
+        }, 100);
+    }
+
+    function eraseMessage() {
+        let currentLength = welcomeElement.textContent.length;
+        const erasingInterval = setInterval(() => {
+            if (currentLength > 0) {
+                welcomeElement.textContent = welcomeElement.textContent.slice(0, currentLength - 1);
+                currentLength--;
+            } else {
+                clearInterval(erasingInterval);
+                index = (index + 1) % messages.length;
+                setTimeout(typeMessage, 500);
+            }
+        }, 50);
+    }
+
+    function toggleChat() {
+        const interface = document.querySelector('.chatbot-interface');
+        interface.classList.toggle('active');
+    }
+
+    function sendMessage() {
+        const userInput = document.getElementById('userInput');
+        const chatMessages = document.getElementById('chatMessages');
+
+        if (userInput.value.trim() === '') return;
+
+        // User message
+        const userDiv = document.createElement('div');
+        userDiv.className = 'user-message';
+        userDiv.innerHTML = `<p>${userInput.value}</p>`;
+        chatMessages.appendChild(userDiv);
+
+        // Bot response
+        setTimeout(() => {
+            const botDiv = document.createElement('div');
+            botDiv.className = 'bot-message';
+            botDiv.innerHTML = `<p>Thank you for your message! Our team will get back to you soon. In the meantime, feel free to explore our courses!</p>`;
+            chatMessages.appendChild(botDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }, 1000);
+
+        userInput.value = '';
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    // Handle Enter key
+    document.getElementById('userInput').addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            sendMessage();
+        }
+    });
+
+    typeMessage();
+</script>
+</body>
+</html>

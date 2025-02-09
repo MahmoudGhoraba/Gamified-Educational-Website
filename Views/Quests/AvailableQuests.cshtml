@@ -5,103 +5,409 @@
     var joinedQuests = ViewBag.JoinedQuests as List<dynamic> ?? new List<dynamic>();
 }
 
-<h2>Available Quests</h2>
+<div class="quests-container">
+    <!-- Header Section -->
+    <div class="header-section">
+        <h1 class="main-title">
+            <span class="icon">📜</span>
+            Quest Board
+        </h1>
+        <div class="stats-container">
+            <div class="stat-card available">
+                <span class="stat-number">@Model.Count()</span>
+                <span class="stat-label">Available Quests</span>
+            </div>
+            <div class="stat-card joined">
+                <span class="stat-number">@ViewBag.JoinedQuests.Count</span>
+                <span class="stat-label">Joined Quests</span>
+            </div>
+        </div>
+    </div>
 
-@if (TempData["Message"] != null)
-{
-    <div class="alert alert-success">@TempData["Message"]</div>
-}
-@if (TempData["Error"] != null)
-{
-    <div class="alert alert-danger">@TempData["Error"]</div>
-}
+    <!-- Messages -->
+    @if (TempData["Message"] != null)
+    {
+        <div class="custom-alert success">
+            <span class="alert-icon">✅</span>
+            @TempData["Message"]
+        </div>
+    }
+    @if (TempData["Error"] != null)
+    {
+        <div class="custom-alert error">
+            <span class="alert-icon">⚠️</span>
+            @TempData["Error"]
+        </div>
+    }
 
-<!-- Display quests that can be joined -->
-<h3>Quests You Can Join</h3>
-<table class="table">
-    <thead>
-    <tr>
-        <th>QuestID</th>
-        <th>Title</th>
-        <th>Description</th>
-        <th>Action</th>
-        <th>Details</th>
-    </tr>
-    </thead>
-    <tbody>
-        @foreach (var quest in Model)
+    <!-- Available Quests Card -->
+    <div class="quests-card">
+        <div class="card-header">
+            <h2>
+                <span class="icon">🆕</span>
+                New Adventures Await
+                <span class="sub-header">Choose your next challenge</span>
+            </h2>
+        </div>
+        <div class="card-body">
+            <div class="quests-grid">
+                @foreach (var quest in Model)
+                {
+                    <div class="quest-item">
+                        <div class="quest-content">
+                            <div class="quest-meta">
+                                <span class="quest-id">#@quest.QuestId</span>
+                                <span class="quest-status available">Available</span>
+                            </div>
+                            <h3 class="quest-title">@quest.Title</h3>
+                            <p class="quest-description">@quest.Description</p>
+                        </div>
+                        <div class="quest-actions">
+                            @if (joinedQuests.Any(jq => jq.QuestId == quest.QuestId))
+                            {
+                                <button class="btn joined" disabled>
+                                    <span class="btn-icon">✓</span>
+                                    Joined
+                                </button>
+                            }
+                            else
+                            {
+                                <form asp-action="JoinQuest" method="post" class="inline-form">
+                                    <input type="hidden" name="questId" value="@quest.QuestId"/>
+                                    <button type="submit" class="btn join">
+                                        <span class="btn-icon">⚔️</span>
+                                        Join Quest
+                                    </button>
+                                </form>
+                            }
+                            <a asp-action="Details" asp-controller="Quests"
+                               asp-route-id="@quest.QuestId" class="btn details">
+                                <span class="btn-icon">🔍</span>
+                                Details
+                            </a>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- Joined Quests Card -->
+    <div class="quests-card">
+        <div class="card-header">
+            <h2>
+                <span class="icon">📌</span>
+                Active Quests
+                <span class="sub-header">Your current challenges</span>
+            </h2>
+        </div>
+        <div class="card-body">
+            <div class="quests-grid">
+                @foreach (var quest in ViewBag.JoinedQuests)
+                {
+                    <div class="quest-item joined">
+                        <div class="quest-content">
+                            <div class="quest-meta">
+                                <span class="quest-id">#@quest.QuestId</span>
+                                <div class="status-pill @GetStatusClass(quest.CompletionStatus)">
+                                    @GetStatusText(quest.CompletionStatus)
+                                </div>
+                            </div>
+                            <h3 class="quest-title">@quest.Title</h3>
+                            <p class="quest-description">@quest.Description</p>
+                        </div>
+                        <div class="quest-actions">
+                            <a asp-action="Participants" asp-route-questId="@quest.QuestId"
+                               class="btn participants">
+                                <span class="btn-icon">👥</span>
+                                Participants
+                            </a>
+                            <a asp-action="Details" asp-controller="Quests"
+                               asp-route-id="@quest.QuestId" class="btn details">
+                                <span class="btn-icon">🔍</span>
+                                Details
+                            </a>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+@functions {
+    string GetStatusClass(bool? status)
+    {
+        return status switch
         {
-            <tr>
-                <td>@quest.QuestId</td>
-                <td>@quest.Title</td>
-                <td>@quest.Description</td>
-                <td>
-                    @if (joinedQuests.Any(jq => jq.QuestId == quest.QuestId))
-                    {
-                        <!-- If already joined, disable the button -->
-                        <button class="btn btn-primary" disabled>Joined</button>
-                    }
-                    else
-                    {
-                        <!-- Display the "Join" button for available quests -->
-                        <form asp-action="JoinQuest" method="post">
-                            <input type="hidden" name="questId" value="@quest.QuestId"/>
-                            <button type="submit" class="btn btn-primary">Join</button>
-                        </form>
-                        <a asp-action="Details" asp-controller="Quests" asp-route-id="@quest.QuestId" class="btn btn-primary">
-                            Details
-                        </a>
+            true => "completed",
+            false => "not-completed",
+            _ => "in-progress"
+        };
+    }
 
-
-                    }
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
-
-<h3>Quests You've Joined</h3>
-<table class="table">
-    <thead>
-    <tr>
-        <th>QuestID</th>
-        <th>Title</th>
-        <th>Description</th>
-        <th>Action</th>
-        <th>Completion Status</th> <!-- Added column for completion status -->
-    </tr>
-    </thead>
-    <tbody>
-        @foreach (var quest in ViewBag.JoinedQuests)
+    string GetStatusText(bool? status)
+    {
+        return status switch
         {
-            <tr>
-                <td>@quest.QuestId</td>
-                <td>@quest.Title</td>
-                <td>@quest.Description</td>
-                <td>
-                    <a asp-action="Participants" asp-route-questId="@quest.QuestId" class="btn btn-info">
-                        View Participants
-                    </a>
-                    <a asp-action="Details" asp-controller="Quests" asp-route-id="@quest.QuestId" class="btn btn-primary">
-                        Details
-                    </a>
-                </td>
-                <td>
-                    @if (quest.CompletionStatus == true)
-                    {
-                        <span class="badge bg-success">Completed</span>
-                    }
-                    else if (quest.CompletionStatus == false)
-                    {
-                        <span class="badge bg-warning">Not Completed</span>
-                    }
-                    else
-                    {
-                        <span class="badge bg-secondary">In Progress</span>
-                        <!-- Default value if no status is available -->
-                    }
-                </td>
-            </tr>
+            true => "Completed",
+            false => "Not Completed",
+            _ => "In Progress"
+        };
+    }
+}
+
+<style>
+    /* Base Styles */
+    :root {
+        --primary-color: #189A3A;
+        --success-color: #2ecc71;
+        --warning-color: #f1c40f;
+        --error-color: #e74c3c;
+        --text-color: #2d3436;
+        --bg-color: #f8f9fa;
+    }
+
+    body {
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        background: var(--bg-color);
+        color: var(--text-color);
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Main Container */
+    .quests-container {
+        max-width: 1400px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+    }
+
+    /* Header Section */
+    .header-section {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    .main-title {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .stats-container {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    .stat-card {
+        padding: 1.5rem 3rem;
+        border-radius: 12px;
+        background: white;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .stat-card.available { border: 2px solid var(--primary-color); }
+    .stat-card.joined { border: 2px solid var(--success-color); }
+
+    .stat-number {
+        display: block;
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+    .stat-label {
+        font-size: 0.9rem;
+        color: #7f8c8d;
+    }
+
+    /* Quest Cards */
+    .quests-card {
+        background: white;
+        border-radius: 16px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        margin-bottom: 2rem;
+        overflow: hidden;
+    }
+
+    .card-header {
+        background: #189A3A;
+        padding: 2rem;
+        color: white;
+    }
+
+    .card-header h2 {
+        margin: 0;
+        font-size: 1.8rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .sub-header {
+        font-size: 1rem;
+        opacity: 0.9;
+        margin-left: auto;
+    }
+
+    /* Quest Items */
+    .quests-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 1.5rem;
+        padding: 2rem;
+    }
+
+    .quest-item {
+        border: 2px solid #eee;
+        border-radius: 12px;
+        padding: 1.5rem;
+        transition: all 0.3s ease;
+    }
+
+    .quest-item:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .quest-item.joined {
+        border-color: var(--success-color);
+        background: #f8fff9;
+    }
+
+    .quest-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+
+    .quest-id {
+        color: #7f8c8d;
+        font-size: 0.9rem;
+    }
+
+    .quest-title {
+        margin: 0 0 1rem 0;
+        color: var(--text-color);
+    }
+
+    .quest-description {
+        color: #7f8c8d;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Status Elements */
+    .status-pill {
+        padding: 0.4rem 1rem;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+
+    .status-pill.completed {
+        background: var(--success-color);
+        color: white;
+    }
+
+    .status-pill.not-completed {
+        background: var(--error-color);
+        color: white;
+    }
+
+    .status-pill.in-progress {
+        background: var(--warning-color);
+        color: var(--text-color);
+    }
+
+    /* Buttons */
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.8rem 1.5rem;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+    }
+
+    .btn.join {
+        background: var(--primary-color);
+        color: white;
+    }
+
+    .btn.joined {
+        background: #7f8c8d;
+        color: white;
+        cursor: not-allowed;
+    }
+
+    .btn.details {
+        background: #e0e0e0;
+        color: var(--text-color);
+    }
+
+    .btn.participants {
+        background: #4a90e2;
+        color: white;
+    }
+
+    .btn:hover:not(:disabled) {
+        filter: brightness(1.1);
+        transform: translateY(-2px);
+    }
+
+    /* Alerts */
+    .custom-alert {
+        padding: 1rem 2rem;
+        border-radius: 8px;
+        margin: 1rem 0;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        animation: slideIn 0.3s ease-out;
+    }
+
+    .custom-alert.success {
+        background: #e8f5e9;
+        color: #2e7d32;
+    }
+
+    .custom-alert.error {
+        background: #ffebee;
+        color: #c62828;
+    }
+
+    .alert-icon {
+        font-size: 1.5rem;
+    }
+
+    @@keyframes slideIn {
+        from { transform: translateY(-20px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+    }
+
+    @@media (max-width: 768px) {
+        .quests-grid {
+            grid-template-columns: 1fr;
         }
-    </tbody>
-</table>
+
+        .stats-container {
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .main-title {
+            font-size: 2rem;
+        }
+    }
+</style>

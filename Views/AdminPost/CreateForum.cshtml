@@ -116,6 +116,178 @@
         button {
             font-size: 14px;
         }
+
+        .admin-page-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .navigation {
+            position: fixed;
+            bottom: 50%;
+            left: 20px;
+            transform: translateY(50%);
+            width: 70px;
+            height: 430px;
+            background-color: #1e272e;
+            border-radius: 10px;
+            z-index: 1000;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .navigation ul {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .navigation ul li {
+            position: relative;
+            list-style: none;
+            width: 70px;
+            height: 70px;
+            z-index: 1;
+        }
+
+        .navigation ul li form {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .navigation ul li form .icon {
+            position: absolute;
+            display: block;
+            bottom: 25.72px;
+            right: 25.72px;
+            font-size: 1.25em;
+            text-align: center;
+            transition: .5s;
+            color: #fff;
+        }
+
+        .navigation ul li.active form .icon {
+            transform: translateX(28px);
+        }
+
+        .navigation ul li form .text {
+            position: absolute;
+            top: 45.72px;
+            left:17.72px;
+            color: #fff;
+            font-weight: 300;
+            font-size: 0.65rem;
+            letter-spacing: 0.05rem;
+            transition: 0.5s;
+            opacity: 0;
+            transform: translateX(-30px);
+            text-transform: capitalize;
+        }
+
+        .navigation ul li form button {
+            display: none;
+        }
+
+        .navigation ul li.active form .text {
+            opacity: 1;
+            transform: translateX(29px);
+        }
+
+        .indicator {
+            position: absolute;
+            left: 30%;
+            top: 7px;
+            transform: translateX(-50%);
+            width: 78px;
+            height: 78px;
+            background-color: #3a3e3b;
+            border-radius: 50%;
+            border: 4px solid #f0f2f5;
+            transition: 0.5s;
+        }
+
+        .navigation ul li:nth-child(1).active ~ .indicator {
+            transform: translateY(calc(60px * 0));
+        }
+
+        .navigation ul li:nth-child(2).active ~ .indicator {
+            transform: translateY(calc(84px * 1));
+        }
+
+        .navigation ul li:nth-child(3).active ~ .indicator {
+            transform: translateY(calc(84px * 2));
+        }
+
+        .navigation ul li:nth-child(4).active ~ .indicator {
+            transform: translateY(calc(85px * 3));
+        }
+
+        .navigation ul li:nth-child(5).active ~ .indicator {
+            transform: translateY(calc(85px * 4));
+        }
+
+        .profile-container {
+            max-width: 700px;
+            width: 100%;
+            background-color: white;
+            padding: 30px;
+            border-radius: 40px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .profile-header h4 {
+            color: #333;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .profile-header img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 2px solid #ddd;
+            margin-bottom: 10px;
+        }
+
+        .profile-details dt {
+            font-weight: 600;
+            color: #555;
+            margin-bottom: 5px;
+        }
+
+        .profile-details dd {
+            margin-bottom: 15px;
+            color: #777;
+        }
+
+        .profile-details dl {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .profile-details dt,
+        .profile-details dd {
+            width: 90%;
+            word-wrap: break-word;
+        }
         
     </style>
 </head>
@@ -129,6 +301,62 @@
             @message
         </div>
     }
+
+
+    <div class="admin-page-container">
+        <div class="navigation">
+            <ul>
+                <li class="list">
+                    <form asp-controller="Admin" asp-action="Page" >
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="text">Home</span>
+                        <button type="submit" ></button>
+                    </form>
+                </li>
+
+                <li class="list active">
+                    <form asp-controller="Admin" asp-action="RedirectToAdminCreateFourm" method="post">
+                        <span class="icon">
+                            <ion-icon name="information-outline"></ion-icon>
+                        </span>
+                        <span class="text">Forum</span>
+                        <button type="submit"></button>
+                    </form>
+                </li>
+
+                <li class="list">
+                    <form asp-controller="Admin" asp-action="SelectLearnerForNotifications" method="post">
+                        <span class="icon">
+                            <ion-icon name="chatbox-ellipses-outline"></ion-icon>
+                        </span>
+                        <span class="text">Chat</span>
+                        <button type="submit"></button>
+                    </form>
+                </li>
+                <li class="list">
+                    <form asp-controller="Quests" asp-action="AllQuests" method="get">
+                        <span class="icon">
+                            <ion-icon name="bookmarks-outline"></ion-icon>                
+                        </span>
+                        <span class="text">Quests</span>
+                        <button type="submit"></button>
+                    </form>
+                </li>
+                <li class="list">
+                    <form asp-controller="Admin" asp-action="ProfileDetails" method="post">
+                        <span class="icon">
+                            <ion-icon name="person-outline"></ion-icon>
+                        </span>
+                        <span class="text">profile</span>
+                        <button type="submit"></button>
+                    </form>
+                </li>
+                <div class="indicator"></div>
+            </ul>
+        </div>
+    </div>
 
     <form method="post" asp-controller="AdminPost" asp-action="CreateForum">
         <div class="form-row">
@@ -152,5 +380,22 @@
         <button type="submit">Create Forum</button>
     </form>
 </div>
+
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script>
+    const list = document.querySelectorAll('.list')
+    function active(){
+        list.forEach((item)=> item.classList.remove('active'));
+        this.classList.add('active');
+        const form = this.querySelector('form');
+        if (form) {
+            setTimeout(() => {
+                form.submit();
+            }, 1000);
+        }
+    }
+    list.forEach((item)=> item.addEventListener('click',active));
+</script>
 </body>
 </html>

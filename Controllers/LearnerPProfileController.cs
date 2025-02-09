@@ -70,7 +70,7 @@ namespace Spaghetti.Controllers
             return RedirectToAction("Personalized_Profile");
         }
 
-        public IActionResult Personalized_Profile()
+        public async Task<IActionResult> Personalized_Profile()
         {
             ViewBag.Message = HttpContext.Session.GetString("Message");
             ViewBag.MessageType = HttpContext.Session.GetString("MessageType");
@@ -78,8 +78,10 @@ namespace Spaghetti.Controllers
             // Clear the message after displaying it
             HttpContext.Session.Remove("Message");
             HttpContext.Session.Remove("MessageType");
-
-            return View();
+            int learnerId = HttpContext.Session.GetInt32("LearnerID") ?? 0;
+            int profileId = TempData["profileId"] as int? ?? 0;
+            var learner = await _context.PersonalizationProfiles.FindAsync(learnerId,profileId);
+            return View(learner);
         }
 
         [HttpPost]
@@ -88,6 +90,7 @@ namespace Spaghetti.Controllers
             // Redirect to another controller's action
             return RedirectToAction("ProfileDetails", "LearnerProfile");
         }
+        
 
         public IActionResult Error()
         {

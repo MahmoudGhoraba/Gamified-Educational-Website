@@ -15,8 +15,9 @@ builder.Services.AddLogging();
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>
     {
-        options.LoginPath = "/Home/Index";
+        options.LoginPath = "/Home/Index"; // Change this to OurPage
     });
+
 
 // Add session services
 builder.Services.AddSession(options =>
@@ -56,6 +57,7 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Home}/{action=Page}/{id?}");
+
 
 app.Run();

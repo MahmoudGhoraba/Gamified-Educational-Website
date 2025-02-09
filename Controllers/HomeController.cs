@@ -27,6 +27,16 @@ namespace Spaghetti.Controllers
         {
             return View();
         }
+        
+        public IActionResult Page()
+        {
+            return View();
+        }
+        
+        public IActionResult Info()
+        {
+            return View();
+        }
 
         [HttpPost]
         public async Task<IActionResult> Index(string email, string password)

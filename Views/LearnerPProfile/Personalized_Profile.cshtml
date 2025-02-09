@@ -1,42 +1,180 @@
-﻿@{
+﻿@model Spaghetti.Models.PersonalizationProfile
+@{
     ViewData["Title"] = "Personalized Profile";
     var message = ViewBag.Message as string;
     var messageType = ViewBag.MessageType as string;
 }
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        font-family: 'Poppins', sans-serif;
+        background: #f4f8f5;
+    }
 
-<h1>Personalized Profile</h1>
+    .container {
+        max-width: 900px;
+        margin: 50px auto;
+        padding: 20px;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        text-align: center;
+    }
 
-@if (!string.IsNullOrEmpty(message))
-{
-    <div class="alert @(messageType == "success" ? "alert-success" : "alert-danger")">
-        @message
-    </div>
-}
+    h1 {
+        font-size: 2rem;
+        color: #3a3e3b;
+        margin-bottom: 30px;
+    }
 
-<form asp-controller="LearnerPProfile" asp-action="AddGoal" method="post">
-    <div class="form-group">
-        <label for="goalId">Goal ID:</label>
-        <input type="number" class="form-control" id="goalId" name="goalId" required />
-    </div>
-    <div class="form-group">
-        <label for="goalValue">Goal Value:</label>
-        <input type="text" class="form-control" id="goalValue" name="goalValue" required />
-    </div>
-    <div class="form-group">
-        <label for="status">Status:</label>
-        <input type="text" class="form-control" id="status" name="status" required />
-    </div>
-    <div class="form-group">
-        <label for="deadline">Deadline:</label>
-        <input type="date" class="form-control" id="deadline" name="deadline" required />
-    </div>
-    <div class="form-group">
-        <label for="description">Description:</label>
-        <textarea class="form-control" id="description" name="description" rows="3" required></textarea>
-    </div>
-    <button type="submit" class="btn btn-primary">Add Goal</button>
-</form>
+    .alert {
+        padding: 15px;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        font-weight: 500;
+    }
 
-<form asp-controller="LearnerPProfile" asp-action="ProfileDetails" method="post">
-    <button type="submit" class="btn btn-info">Profile Details</button>
-</form>
+    .alert-success {
+        background: #d4edda;
+        color: #155724;
+        border: 1px solid #c3e6cb;
+    }
+
+    .alert-danger {
+        background: #f8d7da;
+        color: #721c24;
+        border: 1px solid #f5c6cb;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+        text-align: left;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+        color: #3a3e3b;
+        font-weight: 500;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 1rem;
+    }
+
+    .form-control:focus {
+        border-color: #189A3A;
+        box-shadow: 0 0 5px rgba(24, 154, 58, 0.2);
+        outline: none;
+    }
+
+    .btn-container {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .btn {
+        padding: 15px 30px;
+        border-radius: 5px;
+        font-weight: 800;
+        font-family: 'Poppins', sans-serif;
+        text-decoration: none;
+        cursor: pointer;
+        border: none;
+        transition: all 0.3s ease;
+    }
+
+    .btn-primary {
+        background: #189A3A;
+        color: white;
+    }
+
+    .btn-primary:hover {
+        background: #117a2d;
+    }
+
+    .btn-info {
+        background: #189A3A;
+        color: white;
+    }
+
+    .btn-info:hover {
+        background: #117a2d;
+    }
+
+    .form-container {
+        padding: 20px;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+
+    .profile-container {
+        margin-top: 30px;
+        padding: 20px;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        text-align: left;
+    }
+</style>
+
+<div class="container">
+    <h1>Personalized Profile</h1>
+
+    @if (!string.IsNullOrEmpty(message))
+    {
+        <div class="alert @(messageType == "success" ? "alert-success" : "alert-danger")">
+            @message
+        </div>
+    }
+
+    <div class="profile-container">
+        <h2>Profile Details</h2>
+        <p><strong>Profile ID:</strong>@Html.DisplayFor(model => model.ProfileId)</p>
+        <p><strong>Emotional State:</strong>@Html.DisplayFor(model => model.EmotionalState)</p>
+        <p><strong>Personality Type:</strong>@Html.DisplayFor(model => model.PersonalityType)</p>
+    </div>
+    
+    <div class="form-container">
+        <form asp-controller="LearnerPProfile" asp-action="AddGoal" method="post">
+            <div class="form-group">
+                <label for="goalId">Goal ID:</label>
+                <input type="number" class="form-control" id="goalId" name="goalId" required />
+            </div>
+            <div class="form-group">
+                <label for="goalValue">Goal Value:</label>
+                <input type="text" class="form-control" id="goalValue" name="goalValue" required />
+            </div>
+            <div class="form-group">
+                <label for="status">Status:</label>
+                <input type="text" class="form-control" id="status" name="status" required />
+            </div>
+            <div class="form-group">
+                <label for="deadline">Deadline:</label>
+                <input type="date" class="form-control" id="deadline" name="deadline" required />
+            </div>
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea class="form-control" id="description" name="description" rows="3" required></textarea>
+            </div>
+            <div class="btn-container">
+                <button type="submit" class="btn btn-primary">Add Goal</button>
+            </div>
+        </form>
+    </div>
+
+    <form asp-controller="LearnerPProfile" asp-action="ProfileDetails" method="post">
+        <div class="btn-container">
+            <button type="submit" class="btn btn-info">Learner Profile</button>
+        </div>
+    </form>
+</div>

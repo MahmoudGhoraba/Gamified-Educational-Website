@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/Spaghetti.csproj": {}
+    "/Users/ghorabas/Desktop/bonus/Spaghetti/Spaghetti.csproj": {}
   },
   "projects": {
-    "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/Spaghetti.csproj": {
+    "/Users/ghorabas/Desktop/bonus/Spaghetti/Spaghetti.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/Spaghetti.csproj",
+        "projectUniqueName": "/Users/ghorabas/Desktop/bonus/Spaghetti/Spaghetti.csproj",
         "projectName": "Spaghetti",
-        "projectPath": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/Spaghetti.csproj",
+        "projectPath": "/Users/ghorabas/Desktop/bonus/Spaghetti/Spaghetti.csproj",
         "packagesPath": "/Users/ghorabas/.nuget/packages/",
-        "outputPath": "/Users/ghorabas/Desktop/fun gdn/Spaghetti/Spaghetti/obj/",
+        "outputPath": "/Users/ghorabas/Desktop/bonus/Spaghetti/obj/",
         "projectStyle": "PackageReference",
         "UsingMicrosoftNETSdk": false,
         "configFilePaths": [
@@ -37,7 +37,7 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "direct"
+          "auditMode": "all"
         }
       },
       "frameworks": {
@@ -74,6 +74,20 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.11, 8.0.11]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.osx-arm64",
+              "version": "[8.0.11, 8.0.11]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.11, 8.0.11]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -82,7 +96,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

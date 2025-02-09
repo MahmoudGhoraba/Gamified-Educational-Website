@@ -1,24 +1,199 @@
 ﻿@{
     ViewData["Title"] = "View Score";
 }
+<style>
+    /* Modern Global Styles */
+    body {
+        font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        min-height: 100vh;
+        color: #2d3436;
+    }
 
-<h2>View Score</h2>
+    .container {
+        max-width: 800px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+    }
 
-@if (ViewData["Error"] != null)
-{
-    <div class="alert alert-danger">
-        @ViewData["Error"]
-    </div>
-}
-else if (ViewData["Score"] != null)
-{
-    <div class="alert alert-success">
-        <p>Your score is: @ViewData["Score"]</p>
-    </div>
-}
-else
-{
-    <div class="alert alert-info">
-        <p>No assessment found for the given IDs.</p>
-    </div>
-}
+    h2.title {
+        text-align: center;
+        margin: 2rem 0;
+        font-size: 2.5rem;
+        background: #6c757d;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        position: relative;
+        padding-bottom: 0.5rem;
+    }
+
+    h2.title::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 120px;
+        height: 3px;
+        background: #6c757d;
+    }
+
+    /* Modern Alert Styles */
+    .alert {
+        border-radius: 16px;
+        padding: 2rem;
+        margin: 2rem 0;
+        font-size: 1.1rem;
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        border: none;
+        transition: transform 0.2s ease;
+    }
+
+    .alert:hover {
+        transform: translateY(-3px);
+    }
+
+    .alert-success {
+        background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);
+        color: white;
+    }
+
+    .alert-danger {
+        background: linear-gradient(135deg, #ff7675 0%, #d63031 100%);
+        color: white;
+    }
+
+    .alert-info {
+        background: linear-gradient(135deg, #194318 0%, #0984e3 100%);
+        color: white;
+    }
+
+    .alert-icon {
+        font-size: 2.5rem;
+        min-width: 60px;
+        text-align: center;
+    }
+
+    .alert-content {
+        flex: 1;
+    }
+
+    .alert-content p {
+        margin: 0;
+        font-size: 1.2rem;
+        line-height: 1.6;
+    }
+
+    /* Score Display Styles */
+    .score-display {
+        font-size: 4rem;
+        font-weight: 700;
+        text-align: center;
+        margin: 2rem 0;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    }
+
+    /* Progress Visualization */
+    .progress-container {
+        background: rgba(255,255,255,0.2);
+        border-radius: 12px;
+        height: 12px;
+        margin: 1.5rem 0;
+        overflow: hidden;
+    }
+
+    .progress-bar {
+        height: 100%;
+        background: white;
+        transition: width 0.5s ease;
+    }
+
+    /* Back Button */
+    .back-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.8rem 1.5rem;
+        border-radius: 8px;
+        background: #2d3436;
+        color: white;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        margin-top: 2rem;
+    }
+
+    .back-button:hover {
+        background: #0984e3;
+        transform: translateY(-2px);
+    }
+
+    @@media (max-width: 768px) {
+        h2.title {
+            font-size: 2rem;
+        }
+
+        .alert {
+            flex-direction: column;
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .alert-icon {
+            font-size: 2rem;
+        }
+
+        .score-display {
+            font-size: 3rem;
+        }
+    }
+
+    @@keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .container {
+        animation: fadeIn 0.6s ease;
+    }
+</style>
+
+<div class="container">
+    <h2 class="title">Assessment Results</h2>
+
+    @if (ViewData["Error"] != null)
+    {
+        <div class="alert alert-danger">
+            <div class="alert-icon">⚠️</div>
+            <div class="alert-content">
+                <p>@ViewData["Error"]</p>
+            </div>
+        </div>
+    }
+    else if (ViewData["Score"] != null)
+    {
+        <div class="alert alert-success">
+            <div class="alert-icon">🎯</div>
+            <div class="alert-content">
+                <div class="score-display">@ViewData["Score"]%</div>
+                <div class="progress-container">
+                    <div class="progress-bar" style="width: @ViewData["Score"]%"></div>
+                </div>
+                <p>Great job! You're making excellent progress.</p>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-info">
+            <div class="alert-icon">ℹ️</div>
+            <div class="alert-content">
+                <p>No assessment found for the given criteria.</p>
+                <p>Please check back later or contact your instructor.</p>
+            </div>
+        </div>
+    }
+    
+</div>

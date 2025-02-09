@@ -4,17 +4,95 @@
     ViewData["Title"] = "Review Assessments";
 }
 
-<h1>Review Assessments</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Base styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Poppins', sans-serif;
+            background: #f4f8f5;
+            color: #3a3e3b;
+        }
 
-<table class="table">
-    <thead>
+        .container {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #3a3e3b;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        /* Table styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 40px;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        th {
+            background-color: #189A3A;
+            color: white;
+            font-weight: 500;
+        }
+
+        tr:hover {
+            background-color: #f8fafc;
+        }
+
+        /* Responsive adjustments */
+        @@media (max-width: 768px) {
+            .container {
+                margin: 40px auto;
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            table, th, td {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Review Assessments</h1>
+
+    <table>
+        <thead>
         <tr>
             <th>Assessment ID</th>
             <th>Learner ID</th>
             <th>Scored Points</th>
         </tr>
-    </thead>
-    <tbody>
+        </thead>
+        <tbody>
         @foreach (var assessment in Model)
         {
             <tr>
@@ -23,5 +101,8 @@
                 <td>@assessment.ScoredPoints</td>
             </tr>
         }
-    </tbody>
-</table>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

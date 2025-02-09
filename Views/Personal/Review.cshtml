@@ -4,22 +4,147 @@
     ViewData["Title"] = "Review My Assessments";
 }
 
-<h1>Review My Assessments</h1>
+<div class="container">
+    <h1 class="title">Review My Assessments</h1>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>Assessment ID</th>
-            <th>Scored Points</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var assessment in Model)
-        {
+    @if (!Model.Any())
+    {
+        <div class="alert alert-info">
+            <div class="alert-icon">ℹ️</div>
+            <div class="alert-content">
+                <p>No assessments found.</p>
+                <p>Check back later or contact support.</p>
+            </div>
+        </div>
+    }
+    else
+    {
+        <table class="table">
+            <thead>
             <tr>
-                <td>@assessment.AssessmentId</td>
-                <td>@assessment.ScoredPoints</td>
+                <th>Assessment ID</th>
+                <th>Scored Points</th>
             </tr>
-        }
-    </tbody>
-</table>
+            </thead>
+            <tbody>
+            @foreach (var assessment in Model)
+            {
+                <tr>
+                    <td>@assessment.AssessmentId</td>
+                    <td>@assessment.ScoredPoints</td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    }
+</div>
+
+<style>
+    /* Modern Styles */
+    body {
+        font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        min-height: 100vh;
+        color: #2d3436;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container {
+        max-width: 800px;
+        background: white;
+        padding: 2rem;
+        border-radius: 16px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        animation: fadeIn 0.6s ease;
+    }
+
+    .title {
+        font-size: 2rem;
+        color: #6c757d;
+        margin-bottom: 1.5rem;
+        position: relative;
+    }
+
+    .title::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        height: 3px;
+        background: #6c757d;
+        border-radius: 2px;
+    }
+
+    /* Table Styling */
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+        border-radius: 12px;
+        overflow: hidden;
+    }
+
+    .table th, .table td {
+        padding: 1rem;
+        border-bottom: 1px solid #dee2e6;
+        text-align: center;
+    }
+
+    .table thead {
+        background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
+        color: white;
+    }
+
+    .table tbody tr:hover {
+        background: rgba(0, 0, 0, 0.05);
+        transition: background 0.3s ease;
+    }
+
+    /* Alert Styles */
+    .alert {
+        border-radius: 16px;
+        padding: 1.5rem;
+        margin-top: 1.5rem;
+        font-size: 1.1rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+        border: none;
+        transition: transform 0.2s ease;
+    }
+
+    .alert:hover {
+        transform: translateY(-3px);
+    }
+
+    .alert-info {
+        background: linear-gradient(135deg, #194318 0%, #0984e3 100%);
+        color: white;
+    }
+
+    .alert-icon {
+        font-size: 2rem;
+        min-width: 50px;
+        text-align: center;
+    }
+
+    .alert-content {
+        flex: 1;
+    }
+
+    .alert-content p {
+        margin: 0;
+        font-size: 1.2rem;
+        line-height: 1.5;
+    }
+
+    @@keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+</style>

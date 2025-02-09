@@ -1,0 +1,184 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Simple Learning | Gateway</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .home {
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .half {
+            flex: 1;
+            min-height: 100vh;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .login {
+            background-image: url('https://source.unsplash.com/random/1920x1080/?student,study');
+        }
+
+        .signup {
+            background-image: url('https://source.unsplash.com/random/1920x1080/?education,classroom');
+        }
+
+        .half::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: white;
+            z-index: 1;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .half:hover::before {
+            background: rgba(0,0,0,0.15);
+        }
+
+        .half-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 2rem;
+            max-width: 500px;
+            color: #5a5a5a;
+            transform: scale(0.95);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .half:hover .half-content {
+            transform: scale(1);
+        }
+
+        .auth-link {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: block;
+            z-index: 3;
+        }
+
+        .auth-btn {
+            color: #2d2d2d;
+            text-decoration: none;
+            font-size: 1.5rem;
+            padding: 1rem 2.5rem;
+            border: 2px solid #2d2d2d;
+            border-radius: 50px;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            display: inline-block;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(5px);
+            font-weight: 500;
+            letter-spacing: 1px;
+            margin-top: 1.5rem;
+        }
+
+        .auth-btn:hover {
+            background: rgba(255, 255, 255, 0.812);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .branding {
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            color: #2d2d2d;
+            font-size: 1.8rem;
+            font-weight: 600;
+            z-index: 3;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .branding span {
+            color: #189A3A;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        @@media (max-width: 768px) {
+        .container {
+            flex-direction: column;
+        }
+
+        .half {
+            width: 100%;
+            min-height: 50vh;
+        }
+
+        .section-title {
+            font-size: 2rem;
+        }
+
+        .auth-btn {
+            font-size: 1.2rem;
+            padding: 0.8rem 2rem;
+        }
+
+        .branding {
+            font-size: 1.5rem;
+        }
+        }
+    </style>
+</head>
+<body>
+
+<div class="home">
+    <div class="branding">Simple<span>Learning</span></div>
+
+    <div class="container">
+        <div class="half login">
+            <a href="@Url.Action("Index", "Home")" class="auth-link"></a>
+            <div class="half-content">
+                <h2 class="section-title">Welcome Back</h2>
+                <div class="auth-btn">Access Your Account</div>
+            </div>
+        </div>
+        <div class="half signup">
+            <a href="@Url.Action("Index2", "Signup")" class="auth-link"></a>
+            <div class="half-content">
+                <h2 class="section-title">Join Our Community</h2>
+                <div class="auth-btn">Start Learning Now</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

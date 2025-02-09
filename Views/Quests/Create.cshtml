@@ -1,45 +1,168 @@
 ﻿@model Spaghetti.Models.Quest
 
-<h2>Add a Collaborative Quest</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Collaborative Quest</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Base styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f4f8f5;
+            color: #3a3e3b;
+            padding: 20px;
+        }
 
-<form asp-action="Create" method="post">
-    <div class="form-group">
-        <label asp-for="Title" class="control-label"></label>
-        <input asp-for="Title" class="form-control" />
-        <span asp-validation-for="Title" class="text-danger"></span>
-    </div>
+        h2 {
+            font-size: 2rem;
+            color: #3a3e3b;
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
 
-    <div class="form-group">
-        <label asp-for="Description" class="control-label"></label>
-        <textarea asp-for="Description" class="form-control"></textarea>
-        <span asp-validation-for="Description" class="text-danger"></span>
-    </div>
+        h2:after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: #189A3A;
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
 
-    <div class="form-group">
-        <label asp-for="DifficultyLevel" class="control-label"></label>
-        <select asp-for="DifficultyLevel" class="form-control">
-            <option value="Beginner">Beginner</option>
-            <option value="Intermediate">Intermediate</option>
-            <option value="Expert">Expert</option>
-        </select>
-        <span asp-validation-for="DifficultyLevel" class="text-danger"></span>
-    </div>
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
 
-    <div class="form-group">
-        <label asp-for="Criteria" class="control-label"></label>
-        <textarea asp-for="Criteria" class="form-control"></textarea>
-        <span asp-validation-for="Criteria" class="text-danger"></span>
-    </div>
+        .form-group {
+            margin-bottom: 25px;
+        }
 
-    <div class="form-group">
-        <label for="Deadline">Deadline</label>
-        <input type="datetime-local" name="deadline" class="form-control" required />
-    </div>
+        .control-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #3a3e3b;
+        }
 
-    <div class="form-group">
-        <label for="Max_Num_Participants">Max Participants</label>
-        <input type="number" name="maxParticipants" class="form-control" required />
-    </div>
+        .form-control {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 1rem;
+            background: #f8fafc;
+            transition: all 0.3s ease;
+        }
 
-    <button type="submit" class="btn btn-primary">Add Collaborative Quest</button>
-</form>
+        .form-control:focus {
+            border-color: #189A3A;
+            box-shadow: 0 0 0 3px rgba(24, 154, 58, 0.1);
+            background: white;
+            outline: none;
+        }
+
+        textarea.form-control {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .btn-primary {
+            background: #189A3A;
+            color: white;
+            padding: 14px 28px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 500;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background: #117a2d;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(24, 154, 58, 0.2);
+        }
+
+        .text-danger {
+            color: #dc3545;
+            font-size: 0.875rem;
+            margin-top: 6px;
+            display: block;
+        }
+
+        @@media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 0 15px;
+            }
+
+            h2 {
+                font-size: 1.75rem;
+                margin-bottom: 30px;
+            }
+
+            .form-control {
+                padding: 10px 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Add a Collaborative Quest</h2>
+
+    <form asp-action="Create" method="post">
+        <div class="form-group">
+            <label asp-for="Title" class="control-label"></label>
+            <input asp-for="Title" class="form-control" />
+            <span asp-validation-for="Title" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Description" class="control-label"></label>
+            <textarea asp-for="Description" class="form-control"></textarea>
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="DifficultyLevel" class="control-label"></label>
+            <select asp-for="DifficultyLevel" class="form-control">
+                <option value="Beginner">Beginner</option>
+                <option value="Intermediate">Intermediate</option>
+                <option value="Expert">Expert</option>
+            </select>
+            <span asp-validation-for="DifficultyLevel" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Criteria" class="control-label"></label>
+            <textarea asp-for="Criteria" class="form-control"></textarea>
+            <span asp-validation-for="Criteria" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="Deadline" class="control-label">Deadline</label>
+            <input type="datetime-local" name="deadline" class="form-control" required />
+        </div>
+
+        <div class="form-group">
+            <label for="Max_Num_Participants" class="control-label">Max Participants</label>
+            <input type="number" name="maxParticipants" class="form-control" required />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Add Collaborative Quest</button>
+    </form>
+</div>
+</body>
+</html>

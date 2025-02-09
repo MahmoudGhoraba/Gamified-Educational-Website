@@ -195,7 +195,7 @@
         .middle:hover {
             top: 40%;
         }
-        .form-inline {
+        .form-inline { 
             display: flex;
             flex-direction: column;
         }
@@ -455,38 +455,7 @@
             </form>
         </section>
     </div>
-
-
-    <!-- Additional Action Buttons (Circular) -->
-    <div class="circular-buttons-container">
-        <!-- Circular Button 1 -->
-        <section class="circular-button-section">
-            <form asp-controller="Admin" asp-action="RedirectToAdminCreateFourm" method="post">
-                <button type="submit" class="circular-btn">
-                    <i class="bi bi-info"></i> <!-- Optional icon for Forum -->
-                </button>
-            </form>
-        </section>
-
-        <!-- Circular Button 2 -->
-        <section class="circular-button-section">
-            <form asp-controller="Admin" asp-action="SelectLearnerForNotifications" method="post">
-                <button type="submit" class="circular-btn">
-                    <i class="bi bi-bell"></i> <!-- Optional icon for Notifications -->
-                </button>
-            </form>
-        </section>
-
-        <!-- Circular Button 3 -->
-        <section class="circular-button-section">
-            <form asp-controller="Quests" asp-action="AllQuests" method="get">
-                <button type="submit" class="circular-btn">
-                    <i class="bi bi-bookmark-check"></i> <!-- Optional icon for Criteria -->
-                </button>
-            </form>
-        </section>
-    </div>
-
+    
 
     <div class="navigation">
         <ul>
@@ -501,17 +470,17 @@
             </li>
 
             <li class="list">
-                <form>
+                <form asp-controller="Admin" asp-action="RedirectToAdminCreateFourm" method="post">
                 <span class="icon">
-                    <ion-icon name="book-outline"></ion-icon>
-                </span>
-                    <span class="text">About</span>
+                    <ion-icon name="information-outline"></ion-icon>
+                    </span>
+                    <span class="text">Forum</span>
                     <button type="submit"></button>
                 </form>
             </li>
 
             <li class="list">
-                <form>
+                <form asp-controller="Admin" asp-action="SelectLearnerForNotifications" method="post">
                 <span class="icon">
                     <ion-icon name="chatbox-ellipses-outline"></ion-icon>
                 </span>
@@ -520,11 +489,11 @@
                 </form>
             </li>
             <li class="list">
-                <form>
+                <form asp-controller="Quests" asp-action="AllQuests" method="get">
                 <span class="icon">
-                    <ion-icon name="settings-outline"></ion-icon>
-                </span>
-                    <span class="text">Option</span>
+                    <ion-icon name="bookmarks-outline"></ion-icon>                
+                    </span>
+                    <span class="text">Quests</span>
                     <button type="submit"></button>
                 </form>
             </li>

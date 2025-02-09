@@ -4,42 +4,137 @@
     ViewData["Title"] = "Notifications";
 }
 
-<h1>Notifications</h1>
+<div class="container">
+    <h1>Notifications</h1>
 
-<table class="table">
-    <thead>
-    <tr>
-        <th>NotificationID</th>
-        <th>Message</th>
-        <th>Timestamp</th>
-        <th>ReadStatus</th>
-        <th>UrgencyLevel</th>
-        <th>Action</th>
-    </tr>
-    </thead>
-    <tbody>
-    @foreach (var notification in Model)
-    {
+    <table class="table">
+        <thead>
         <tr>
-            <td>@notification.Id</td>
-            <td>@notification.Message</td>
-            <td>@notification.Timestamp</td>
-            <td>@(notification.ReadStatus == false ? "Unread" : "Read")</td>
-            <td>@notification.UrgencyLevel</td>
-            <td>
-                @if (notification.ReadStatus==true)
-                {
-                    <button class="btn btn-secondary" disabled>Read</button>
-                }
-                else
-                {
-                    <form  asp-controller="Personal" asp-action="MarkasRead" method="post">
-                        <input type="hidden" name="notificationId" value="@notification.Id" />
-                        <button type="submit" class="btn btn-primary">Read</button>
-                    </form>
-                }
-            </td>
+            <th>Notification ID</th>
+            <th>Message</th>
+            <th>Timestamp</th>
+            <th>Read Status</th>
+            <th>Urgency Level</th>
+            <th>Action</th>
         </tr>
+        </thead>
+        <tbody>
+        @foreach (var notification in Model)
+        {
+            <tr>
+                <td>@notification.Id</td>
+                <td>@notification.Message</td>
+                <td>@notification.Timestamp</td>
+                <td>
+                            @(notification.ReadStatus==true ? "Read" : "Unread")
+                        
+                </td>
+                <td> @notification.UrgencyLevel
+                </td>
+                <td>
+                    @if (notification.ReadStatus==true)
+                    {
+                        <button class="btn btn-secondary" disabled>Read</button>
+                    }
+                    else
+                    {
+                        <form asp-controller="Personal" asp-action="MarkAsRead" method="post">
+                            <input type="hidden" name="notificationId" value="@notification.Id" />
+                            <button type="submit" class="btn btn-primary">Mark as Read</button>
+                        </form>
+                    }
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f2f5;
+        color: #333;
+        margin: 0;
+        padding: 0;
     }
-    </tbody>
-</table>
+
+    .container {
+        max-width: 1000px;
+        margin: 50px auto;
+        padding: 20px;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+        font-size: 28px;
+        text-align: center;
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    .table th, .table td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .table th {
+        background-color: #f8f9fa;
+        color: #333;
+        font-weight: bold;
+    }
+
+    .table tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    .table tr:hover {
+        background-color: #ddd;
+    }
+
+    .btn {
+        padding: 6px 12px;
+        font-size: 14px;
+        border-radius: 5px;
+    }
+
+    .gold {
+        color: gold;
+        font-weight: bold;
+        font-size: 1.2em;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    }
+
+    .silver {
+        color: silver;
+        font-weight: bold;
+        font-size: 1.2em;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    }
+
+    .bronze {
+        color: #cd7f32;
+        font-weight: bold;
+        font-size: 1.2em;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    }
+
+    .text-success {
+        color: green;
+        font-weight: bold;
+    }
+
+    .text-danger {
+        color: red;
+        font-weight: bold;
+    }
+</style>

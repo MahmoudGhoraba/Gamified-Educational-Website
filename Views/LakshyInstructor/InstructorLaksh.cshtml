@@ -8,25 +8,93 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewData["Title"]</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        /* Base styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Poppins', sans-serif;
+            background: #f4f8f5;
+            color: #3a3e3b;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #3a3e3b;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        /* Table styling */
         table {
             width: 100%;
             border-collapse: collapse;
-        }
-
-        table, th, td {
-            border: 1px solid black;
+            margin-bottom: 40px;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
 
         th, td {
             padding: 15px;
             text-align: left;
+            border-bottom: 1px solid #e2e8f0;
         }
 
         th {
-            background-color: #f2f2f2;
+            background-color: #189A3A;
+            color: white;
+            font-weight: 500;
         }
 
+        tr:hover {
+            background-color: #f8fafc;
+        }
+
+        /* Form styling */
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #3a3e3b;
+            font-weight: 500;
+        }
+
+        input[type="text"], select {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.2s ease;
+            background: #f8fafc;
+        }
+
+        input[type="text"]:focus, select:focus {
+            border-color: #189A3A;
+            box-shadow: 0 0 0 3px rgba(24, 154, 58, 0.1);
+            background: white;
+            outline: none;
+        }
+
+        /* Button styling */
         .button-link {
             display: inline-block;
             padding: 10px 20px;
@@ -35,22 +103,55 @@
             text-align: center;
             text-decoration: none;
             outline: none;
-            color: #fff;
-            background-color: #4CAF50;
+            color: white;
+            background-color: #189A3A;
             border: none;
-            border-radius: 15px;
-            box-shadow: 0 9px #999;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
         }
 
-            .button-link:hover {
-                background-color: #3e8e41
+        .button-link:hover {
+            background-color: #117a2d;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .button-link:active {
+            transform: translateY(0);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Section headers */
+        .section-header {
+            font-size: 1.8rem;
+            color: #189A3A;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #189A3A;
+            display: inline-block;
+        }
+
+        /* Responsive adjustments */
+        @@media (max-width: 768px) {
+            .container {
+                margin: 40px auto;
+                padding: 15px;
             }
 
-            .button-link:active {
-                background-color: #3e8e41;
-                box-shadow: 0 5px #666;
-                transform: translateY(4px);
+            h1 {
+                font-size: 2rem;
             }
+
+            table, th, td {
+                font-size: 14px;
+            }
+
+            .button-link {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
     </style>
     <script>
         async function addActivity(event) {
@@ -142,7 +243,6 @@
                 alert(result.message);
             }
         }
-        
 
         async function removeCourse(event) {
             event.preventDefault();
@@ -155,12 +255,14 @@
             const result = await response.json();
             alert(result.message);
         }
-        
     </script>
 </head>
 <body>
-    <h1>Add Activity</h1>
+<div class="container">
+    <h1>Course Catalog</h1>
 
+    <!-- Add Activity Section -->
+    <div class="section-header">Add Activity</div>
     <form asp-controller="LakshyInstructor" asp-action="AddActivity" method="post" onsubmit="addActivity(event)">
         <label for="courseId">Course ID:</label>
         <input type="text" id="courseId" name="courseId" required />
@@ -172,18 +274,17 @@
         <input type="text" id="details" name="details" required />
         <label for="maxPoints">Max Points:</label>
         <input type="text" id="maxPoints" name="maxPoints" required />
-        <button type="submit">Add</button>
+        <button type="submit" class="button-link">Add Activity</button>
     </form>
 
-    <h1>View Modules</h1>
-
+    <!-- View Modules Section -->
+    <div class="section-header">View Modules</div>
     <form asp-controller="LakshyInstructor" asp-action="ViewModules" method="post" onsubmit="viewModules(event)">
         <label for="courseId">Course ID:</label>
         <input type="text" id="courseId" name="courseId" required />
-        <button type="submit">View Modules</button>
+        <button type="submit" class="button-link">View Modules</button>
     </form>
-
-    <table id="modulesTable" border="1">
+    <table id="modulesTable">
         <tr>
             <th>Module ID</th>
             <th>Course ID</th>
@@ -193,16 +294,14 @@
         </tr>
     </table>
 
-
-    <h1>Previous Courses</h1>
-
+    <!-- Previous Courses Section -->
+    <div class="section-header">Previous Courses</div>
     <form asp-controller="LakshyInstructor" asp-action="ViewPreviousCourses" method="post" onsubmit="viewPreviousCourses(event)">
         <label for="learnerId">Learner ID:</label>
         <input type="text" id="learnerId" name="learnerId" required />
-        <button type="submit">View Previous Courses</button>
+        <button type="submit" class="button-link">View Previous Courses</button>
     </form>
-
-    <table id="previousCoursesTable" border="1">
+    <table id="previousCoursesTable">
         <tr>
             <th>Course ID</th>
             <th>Title</th>
@@ -213,29 +312,31 @@
         </tr>
     </table>
 
-    <h1>Check Prerequisites</h1>
-
+    <!-- Check Prerequisites Section -->
+    <div class="section-header">Check Prerequisites</div>
     <form asp-controller="LakshyInstructor" asp-action="CheckPrerequisites" method="post" onsubmit="checkPrerequisites(event)">
         <label for="learnerId">Learner ID:</label>
         <input type="text" id="learnerId" name="learnerId" required />
         <label for="courseId">Course ID:</label>
         <input type="text" id="courseId" name="courseId" required />
-        <button type="submit">Check Prerequisites</button>
+        <button type="submit" class="button-link">Check Prerequisites</button>
     </form>
 
-    <h1>Remove Course</h1>
-
+    <!-- Remove Course Section -->
+    <div class="section-header">Remove Course</div>
     <form asp-controller="LakshyInstructor" asp-action="RemoveCourse" method="post" onsubmit="removeCourse(event)">
         <label for="courseId">Course ID:</label>
         <input type="text" id="courseId" name="courseId" required />
-        <button type="submit">Remove Course</button>
+        <button type="submit" class="button-link">Remove Course</button>
     </form>
 
+    <!-- Error Message Display -->
     @if (ViewBag.ErrorMessage != null)
     {
         <div class="error-message">
             <p>@ViewBag.ErrorMessage</p>
         </div>
     }
+</div>
 </body>
 </html>

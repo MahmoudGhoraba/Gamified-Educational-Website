@@ -1,33 +1,127 @@
 ﻿@model IEnumerable<Spaghetti.Models.LearningPath>
 
 @{
-    ViewData["Title"] = "Current Paths";
+    ViewData["Title"] = "Current Learning Paths";
 }
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f2f5;
+        color: #333;
+        margin: 0;
+        padding: 0;
+    }
 
-<h2>Current Paths</h2>
+    .container {
+        max-width: 1200px;
+        margin: 50px auto;
+        padding: 20px;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
 
-<table class="table table-striped">
-    <thead>
+    h1 {
+        font-size: 32px;
+        text-align: center;
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    .table th, .table td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: center;
+    }
+
+    .table th {
+        background-color: #f8f9fa;
+        color: #333;
+        font-weight: bold;
+    }
+
+    .table tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    .table tr:hover {
+        background-color: #ddd;
+    }
+
+    .gold {
+        color: gold;
+        font-weight: bold;
+        font-size: 1.2em;  /* Increase font size for better visibility */
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* Add a shadow effect */
+    }
+
+    .silver {
+        color: silver;
+        font-weight: bold;
+        font-size: 1.2em;  /* Increase font size for better visibility */
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* Add a shadow effect */
+    }
+
+    .bronze {
+        color: #cd7f32;
+        font-weight: bold;
+        font-size: 1.2em;  /* Increase font size for better visibility */
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* Add a shadow effect */
+    }
+
+</style>
+<div class="container">
+
+<h2 class="mb-4">Current Learning Paths</h2>
+
+    <table class="table ">
+        <thead>
         <tr>
-            <th>PathID</th>
-            <th>LearnerID</th>
-            <th>ProfileID</th>
-            <th>Completion Status</th>
+            <th >Path ID</th>
+            <th >Learner ID</th>
+            <th >Profile ID</th>
+            <th >Status</th>
             <th>Custom Content</th>
             <th>Adaptive Rules</th>
         </tr>
-    </thead>
-    <tbody>
-        @foreach (var path in Model)
+        </thead>
+        <tbody>
+        @if (Model.Any())
+        {
+            foreach (var path in Model)
+            {
+                <tr>
+                    <td>@path.PathId</td>
+                    <td>@path.LearnerId</td>
+                    <td>@path.ProfileId</td>
+                    <td>
+                        @{
+                            var statusBadge = path.CompletionStatus;
+                            var statusText = path.CompletionStatus ;
+                        }
+                        <span class="badge bg-@statusBadge">@statusText</span>
+                    </td>
+                    <td style="max-width: 200px;" class="text-truncate" title="@path.CustomContent">
+                        @(path.CustomContent ?? "None")
+                    </td>
+                    <td style="max-width: 200px;" class="text-truncate" title="@path.AdaptiveRules">
+                        @(path.AdaptiveRules ?? "None")
+                    </td>
+                </tr>
+            }
+        }
+        else
         {
             <tr>
-                <td>@path.PathId</td>
-                <td>@path.LearnerId</td>
-                <td>@path.ProfileId</td>
-                <td>@path.CompletionStatus</td>
-                <td>@path.CustomContent</td>
-                <td>@path.AdaptiveRules</td>
+                <td colspan="6" class="text-center">No learning paths found</td>
             </tr>
         }
-    </tbody>
-</table>
+        </tbody>
+    </table>
+</div>

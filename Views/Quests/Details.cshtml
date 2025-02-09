@@ -4,42 +4,275 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<div class="details-container">
+    <!-- Header Section -->
+    <div class="header-section">
+        <h1 class="main-title">
+            <span class="icon">📜</span>
+            Quest Details
+            <span class="sub-header">#@Model.QuestId</span>
+        </h1>
+        <div class="stats-container">
+            <div class="stat-card difficulty">
+                <span class="stat-number">@Model.DifficultyLevel</span>
+                <span class="stat-label">Difficulty Level</span>
+            </div>
+        </div>
+    </div>
 
-<div>
-    <h4>Quest</h4>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.DifficultyLevel)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.DifficultyLevel)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Criteria)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Criteria)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Title)
-        </dd>
+    <!-- Quest Details Card -->
+    <div class="details-card">
+        <div class="card-header">
+            <h2>
+                <span class="icon">🗒️</span>
+                Quest Manuscript
+                <span class="sub-header">Ancient knowledge scroll</span>
+            </h2>
+        </div>
+        <div class="card-body">
+            <div class="quest-details-grid">
+                <div class="detail-item">
+                    <div class="detail-icon">🏷️</div>
+                    <div class="detail-content">
+                        <h3 class="detail-label">Title</h3>
+                        <p class="detail-value">@Model.Title</p>
+                    </div>
+                </div>
 
-    </dl>
+                <div class="detail-item">
+                    <div class="detail-icon">📝</div>
+                    <div class="detail-content">
+                        <h3 class="detail-label">Description</h3>
+                        <p class="detail-value">@Model.Description</p>
+                    </div>
+                </div>
+
+                <div class="detail-item">
+                    <div class="detail-icon">⚖️</div>
+                    <div class="detail-content">
+                        <h3 class="detail-label">Difficulty Level</h3>
+                        <p class="detail-value">@Model.DifficultyLevel</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Back Button -->
+    <div class="action-bar">
+        <a asp-action="AvailableQuests" asp-controller="Quests" class="btn back-button">
+            <span class="btn-icon">↩️</span>
+            Return to Quests
+        </a>
+    </div>
 </div>
 
-<div>
-    <!-- Back to Available Quests button -->
-    <a asp-action="AvailableQuests" asp-controller="Quests" class="btn btn-secondary">Back to Active Quests</a>
+<style>
+    /* Base Styles */
+    .details-container {
+        max-width: 1400px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+        font-family: 'Poppins', sans-serif;
+    }
 
-</div>
+    /* Header Section */
+    .header-section {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .main-title {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        color: #2d3436;
+    }
+
+    .sub-header {
+        font-size: 1.2rem;
+        color: #189A3A;
+        margin-left: 0.5rem;
+    }
+
+    /* Stats Container */
+    .stats-container {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    .stat-card {
+        padding: 1.5rem 3rem;
+        border-radius: 12px;
+        background: white;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        text-align: center;
+    }
+
+    .difficulty {
+        border: 2px solid #189A3A;
+    }
+
+    .criteria {
+        border: 2px solid #4a90e2;
+    }
+
+    .stat-number {
+        display: block;
+        font-size: 2rem;
+        font-weight: bold;
+        color: #2d3436;
+    }
+
+    .stat-label {
+        font-size: 0.9rem;
+        color: #7f8c8d;
+    }
+
+    /* Details Card */
+    .details-card {
+        background: white;
+        border-radius: 16px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        margin-bottom: 2rem;
+        overflow: hidden;
+    }
+
+    .card-header {
+        background: #189A3A;
+        padding: 2rem;
+        color: white;
+    }
+
+    .card-header h2 {
+        margin: 0;
+        font-size: 1.8rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    /* Details Grid */
+    .quest-details-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2rem;
+        padding: 2rem;
+    }
+
+    .detail-item {
+        display: flex;
+        gap: 1.5rem;
+        padding: 1.5rem;
+        border: 2px solid #eee;
+        border-radius: 12px;
+        transition: all 0.3s ease;
+    }
+
+    .detail-item:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+        border-color: #189A3A;
+    }
+
+    .detail-item.full-width {
+        grid-column: 1 / -1;
+    }
+
+    .detail-icon {
+        font-size: 2rem;
+        min-width: 50px;
+        text-align: center;
+    }
+
+    .detail-content {
+        flex: 1;
+    }
+
+    .detail-label {
+        margin: 0 0 0.5rem 0;
+        color: #2d3436;
+        font-size: 1.1rem;
+    }
+
+    .detail-value {
+        margin: 0;
+        color: #7f8c8d;
+        line-height: 1.6;
+    }
+
+    /* Criteria List */
+    .criteria-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .criterion-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.8rem;
+        background: #f8f9fa;
+        border-radius: 8px;
+    }
+
+    .criterion-icon {
+        color: #189A3A;
+        font-weight: bold;
+    }
+
+    /* Back Button */
+    .action-bar {
+        text-align: center;
+        margin: 2rem 0;
+    }
+
+    .back-button {
+        background: #189A3A;
+        color: white;
+        padding: 1rem 2rem;
+        border-radius: 8px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .back-button:hover {
+        background: #194318;
+        transform: translateY(-2px);
+    }
+
+    @@media (max-width: 768px) {
+        .stats-container {
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .main-title {
+            font-size: 2rem;
+            flex-direction: column;
+        }
+
+        .quest-details-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .detail-item {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .detail-icon {
+            margin-bottom: 1rem;
+        }
+    }
+</style>

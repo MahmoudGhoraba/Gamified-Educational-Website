@@ -2,17 +2,117 @@
     ViewData["Title"] = "Reminder";
 }
 
-<h2>Reminder</h2>
+<div class="container">
+    <h2 class="title">Reminder</h2>
 
-@if (ViewData["Error"] != null)
-{
-    <div class="alert alert-danger">
-        @ViewData["Error"]
-    </div>
-}
-else
-{
-    <div class="alert alert-info">
-        <p>@ViewData["Noti"]</p>
-    </div>
-}
+    @if (ViewData["Error"] != null)
+    {
+        <div class="alert alert-danger">
+            <div class="alert-icon">⚠️</div>
+            <div class="alert-content">
+                <p>@ViewData["Error"]</p>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-info">
+            <div class="alert-icon">🔔</div>
+            <div class="alert-content">
+                <p>@ViewData["Noti"]</p>
+            </div>
+        </div>
+    }
+</div>
+
+<style>
+    /* Modern Global Styles */
+    body {
+        font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        min-height: 100vh;
+        color: #2d3436;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container {
+        max-width: 600px;
+        margin: 2rem auto;
+        padding: 2rem;
+        background: white;
+        border-radius: 16px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        animation: fadeIn 0.6s ease;
+    }
+
+    h2.title {
+        font-size: 2rem;
+        color: #6c757d;
+        margin-bottom: 1rem;
+        position: relative;
+    }
+
+    h2.title::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        height: 3px;
+        background: #6c757d;
+        border-radius: 2px;
+    }
+
+    /* Alert Styles */
+    .alert {
+        border-radius: 16px;
+        padding: 1.5rem;
+        margin-top: 1.5rem;
+        font-size: 1.1rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+        border: none;
+        transition: transform 0.2s ease;
+    }
+
+    .alert:hover {
+        transform: translateY(-3px);
+    }
+
+    .alert-danger {
+        background: linear-gradient(135deg, #ff7675 0%, #d63031 100%);
+        color: white;
+    }
+
+    .alert-info {
+        background: linear-gradient(135deg, #194318 0%, #0984e3 100%);
+        color: white;
+    }
+
+    .alert-icon {
+        font-size: 2rem;
+        min-width: 50px;
+        text-align: center;
+    }
+
+    .alert-content {
+        flex: 1;
+    }
+
+    .alert-content p {
+        margin: 0;
+        font-size: 1.2rem;
+        line-height: 1.5;
+    }
+
+    @@keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+</style>

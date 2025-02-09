@@ -48,7 +48,7 @@ namespace Spaghetti.Controllers
             var learner = await _context.Learners.FindAsync(learnerId.Value);
             if (learner == null)
             {
-                ViewBag.ErrorMessage = "Learner not found.";
+                ViewBag.Message = "Learner not found.";
                 return View("PersonalChoose");
             }
             if(firstname != null)
@@ -60,11 +60,9 @@ namespace Spaghetti.Controllers
             if(cultural_background != null)
                 learner.CulturalBackground = cultural_background;
             
-            
+            ViewBag.Message = "Learner info updated successfully.";
             _context.Learners.Update(learner);
             await _context.SaveChangesAsync();
-
-            TempData["Message"] = "Learner info updated successfully.";
             return RedirectToAction("PersonalChoose");
         }
         
@@ -73,7 +71,7 @@ namespace Spaghetti.Controllers
         {
             if (!int.TryParse(id, out int profileId))
             {
-                ViewBag.ErrorMessage = "Invalid Profile ID.";
+                ViewBag.Message = "Invalid Profile ID.";
                 return View("PersonalChoose");
             }
 
@@ -82,7 +80,7 @@ namespace Spaghetti.Controllers
             {
                 _logger.LogInformation("Learner with prob.", learnerId);
 
-                ViewBag.ErrorMessage = "Invalid Learner ID.";
+                ViewBag.Message = "Invalid Learner ID.";
                 return View("Error");
             }
 
@@ -93,7 +91,7 @@ namespace Spaghetti.Controllers
 
             if (existingProfile != null)
             {
-                ViewBag.ErrorMessage = "Personal ID already exists.";
+                ViewBag.Message = "Personal ID already exists.";
                 return View("PersonalChoose");
             }
 
@@ -109,7 +107,7 @@ namespace Spaghetti.Controllers
 
             _context.PersonalizationProfiles.Add(newProfile);
             await _context.SaveChangesAsync();
-
+            TempData["profileId"] = profileId;
             return RedirectToAction("Personalized_Profile","LearnerPProfile");
         }
 
@@ -124,7 +122,7 @@ namespace Spaghetti.Controllers
 
             if (!int.TryParse(id, out int profileId))
             {
-                ViewBag.ErrorMessage = "Invalid Profile ID.";
+                ViewBag.Message = "Invalid Profile ID.";
                 return View("PersonalChoose");
             }
 
@@ -134,7 +132,7 @@ namespace Spaghetti.Controllers
 
             if (existingProfile == null)
             {
-                ViewBag.ErrorMessage = "Personal ID does not exist.";
+                ViewBag.Message = "Personal ID does not exist.";
                 return View("PersonalChoose");
             }
 
@@ -156,7 +154,7 @@ namespace Spaghetti.Controllers
 
             if (!int.TryParse(id, out int profileId))
             {
-                ViewBag.ErrorMessage = "Invalid Profile ID.";
+                ViewBag.Message = "Invalid Profile ID.";
                 return View("PersonalChoose");
             }
 
@@ -166,10 +164,10 @@ namespace Spaghetti.Controllers
 
             if (existingProfile == null)
             {
-                ViewBag.ErrorMessage = "Personal ID does not exist.";
+                ViewBag.Message = "Personal ID does not exist.";
                 return View("PersonalChoose");
             }
-
+            TempData["profileId"] = profileId;
             // Redirect to another controller/action
             return RedirectToAction("Personalized_Profile", "LearnerPProfile");
         }
@@ -278,7 +276,7 @@ namespace Spaghetti.Controllers
 
             if (result == 0)
             {
-                ViewBag.ErrorMessage = "Failed to update learner info.";
+                ViewBag.Message = "Failed to update learner info.";
                 return View("PersonalChoose");
             }
 
@@ -289,8 +287,9 @@ namespace Spaghetti.Controllers
         [HttpPost]
         public IActionResult Profile()
         {
+            
             // Redirect to another controller's action
-            return RedirectToAction("ProfileDetails", "LearnerProfile");
+            return RedirectToAction("ProfileDetails", "LearnerPProfile");
         }
 
         public IActionResult Error()
@@ -313,7 +312,7 @@ namespace Spaghetti.Controllers
             
             int rowsAffected = await _context.Database.ExecuteSqlRawAsync("EXEC GoalReminder @LearnerID = {0}", learnerId);
             
-            ViewData["Noti"] = rowsAffected > 0 
+            ViewBag.noti = rowsAffected > 0 
                 ? "Reminder notification sent successfully for your upcoming learning goals." 
                 : "All is fine! You are on track with your learning goals.";
             

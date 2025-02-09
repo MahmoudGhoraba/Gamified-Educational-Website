@@ -61,6 +61,28 @@
         .table tr:hover {
             background-color: #ddd;
         }
+
+        .gold {
+            color: gold;
+            font-weight: bold;
+            font-size: 1.2em;  /* Increase font size for better visibility */
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* Add a shadow effect */
+        }
+
+        .silver {
+            color: silver;
+            font-weight: bold;
+            font-size: 1.2em;  /* Increase font size for better visibility */
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* Add a shadow effect */
+        }
+
+        .bronze {
+            color: #cd7f32;
+            font-weight: bold;
+            font-size: 1.2em;  /* Increase font size for better visibility */
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* Add a shadow effect */
+        }
+
     </style>
 </head>
 <body>
@@ -70,10 +92,8 @@
     <table class="table">
         <thead>
         <tr>
-            <th>BoardID</th>
-            <th>LearnerID</th>
-            <th>CourseID</th>
             <th>Rank</th>
+            <th>LearnerID</th>
             <th>Total Points</th>
         </tr>
         </thead>
@@ -81,10 +101,10 @@
         @foreach (var rank in Model)
         {
             <tr>
-                <td>@rank.BoardId</td>
+                <td class="@(rank.Rank == 1 ? "gold" : rank.Rank == 2 ? "silver" : rank.Rank == 3 ? "bronze" : "")">
+                    @rank.Rank
+                </td>
                 <td>@rank.LearnerId</td>
-                <td>@rank.CourseId</td>
-                <td>@rank.Rank</td>
                 <td>@rank.TotalPoints</td>
             </tr>
         }

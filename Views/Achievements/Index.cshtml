@@ -4,40 +4,338 @@
     ViewData["Title"] = "Achievements";
 }
 
-<h1 class="text-center my-4">@ViewData["Title"]</h1>
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <style>
 
-<p>
-    <a class="btn btn-success" asp-action="Create">Create New Achievement</a>
-</p>
+        [data-theme="dark"] {
+            --background: radial-gradient(circle at top left, #1F2937, #111827);
+            --card-bg: rgba(31, 41, 55, 0.95);
+            --text-primary: #F9FAFB;
+            --text-secondary: #9CA3AF;
+        }
 
-<div class="table-responsive">
-    <table class="table table-bordered table-striped table-hover">
-        <thead class="table-dark">
-            <tr>
-                <th>@Html.DisplayNameFor(model => model.Description)</th>
-                <th>@Html.DisplayNameFor(model => model.DateEarned)</th>
-                <th>@Html.DisplayNameFor(model => model.Type)</th>
-                <th>@Html.DisplayNameFor(model => model.Badge)</th>
-                <th>@Html.DisplayNameFor(model => model.Learner)</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>@Html.DisplayFor(modelItem => item.Description)</td>
-                    <td>@Html.DisplayFor(modelItem => item.DateEarned)</td>
-                    <td>@Html.DisplayFor(modelItem => item.Type)</td>
-                    <td>@Html.DisplayFor(modelItem => item.Badge.Title)</td>
-                    <td>@Html.DisplayFor(modelItem => item.Learner.FirstName)</td>
-                    <td>
-                        <a class="btn btn-primary btn-sm" asp-action="Edit" asp-route-id="@item.AchievementId">Edit</a>
-                        <a class="btn btn-info btn-sm" asp-action="Details" asp-route-id="@item.AchievementId">Details</a>
-                        <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@item.AchievementId" onclick="return confirm('Are you sure you want to delete this achievement?');">Delete</a>
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
+        body {
+            background: radial-gradient(circle at top left, #F9FAFB, #F3F4F6);
+            font-family: 'Inter', sans-serif;
+            color: #1F2937;
+            min-height: 100vh;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glassmorphism {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+        }
+
+        .container-xl {
+            max-width: 1600px;
+            padding: 2rem;
+        }
+
+        .header-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .theme-toggle {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: rgba(255, 255, 255, 0.95);
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .achievement-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+            padding: 1rem;
+        }
+
+        .achievement-card {
+            position: relative;
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        .achievement-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #10B981 0%,#3B82F6 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-5px) scale(1.02);
+        }
+
+        .achievement-card:hover::before {
+            opacity: 0.1;
+        }
+
+        .badge-icon {
+            width: 56px;
+            height: 56px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 16px;
+            display: grid;
+            place-items: center;
+            font-size: 24px;
+            margin-bottom: 1.5rem;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .badge-icon::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 16px;
+            padding: 2px;
+            background: linear-gradient(45deg, #10B981, #3B82F6);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .achievement-card:hover .badge-icon::after {
+            opacity: 1;
+        }
+
+        .progress-ring {
+            position: absolute;
+            top: 3px;
+            right: 6px;
+            width: 48px;
+            height: 48px;
+        }
+
+        .progress-ring__circle {
+            stroke-dasharray: 100;
+            stroke-dashoffset: 100;
+            transition: stroke-dashoffset 0.5s ease;
+        }
+
+        .achievement-card:hover .progress-ring__circle {
+            stroke-dashoffset: 0;
+        }
+
+        .floating-actions {
+            position: fixed;
+            bottom: 2rem;
+            left: 2rem;
+            display: flex;
+            gap: 1rem;
+            z-index: 1000;
+        }
+
+        .action-button {
+            background: rgba(255, 255, 255, 0.95);
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .action-button:hover {
+            transform: scale(1.1) rotate(10deg);
+        }
+
+        .achievement-details {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.95);
+            width: 90%;
+            max-width: 800px;
+            opacity: 0;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            pointer-events: none;
+            z-index: 1001;
+        }
+
+        .achievement-details.active {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .particles {
+            position: fixed;
+            pointer-events: none;
+            z-index: 1002;
+        }
+
+        @@media (max-width: 768px) {
+        .achievement-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .achievement-card {
+            padding: 1.5rem;
+        }
+        }
+    </style>
+</head>
+<body>
+<div class="container-xl">
+    <div class="header-wrapper">
+        <h1 class="gradient-text">
+            <i class="fas fa-medal"></i>
+            @ViewData["Title"]
+        </h1>
+    </div>
+
+    <div class="achievement-grid">
+        @foreach (var item in Model)
+        {
+            <div class="achievement-card glassmorphism" data-id="@item.AchievementId">
+                <div class="badge-icon">
+                    <i class="fas fa-trophy"></i>
+                    <svg class="progress-ring" viewBox="0 0 100 100">
+                        <circle class="progress-ring__circle" stroke="#10B981" stroke-width="4" fill="transparent" r="48" cx="50" cy="50"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold mb-2">AchievementID: @item.AchievementId</h3>
+                <p class="text-sm text-secondary mb-4">@item.Description</p>
+                </div>
+        }
+    </div>
 </div>
+
+<div class="achievement-details glassmorphism">
+    <!-- Dynamic content loaded via AJAX -->
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script>
+    // Theme management
+    function toggleTheme() {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+    }
+
+    // Particle effect initialization
+    particlesJS('particles', {
+        particles: {
+            number: { value: 50 },
+            color: { value: "#10B981" },
+    shape: { type: 'circle' },
+    opacity: { value: 0.5 },
+    size: { value: 3 },
+    move: {
+        enable: true,
+            speed: 1,
+            direction: 'none',
+            random: true,
+            straight: false,
+            out_mode: 'out',
+    }
+    }
+    });
+
+    // Card interactions
+    document.querySelectorAll('.achievement-card').forEach(card => {
+        card.addEventListener('click', (e) => {
+            if (!e.target.closest('.action-button')) {
+                const id = card.dataset.id;
+                loadAchievementDetails(id);
+                createConfetti(e.clientX, e.clientY);
+            }
+        });
+    });
+
+    function createConfetti(x, y) {
+        const particles = document.createElement('div');
+        particles.className = 'particles';
+        document.body.appendChild(particles);
+
+        for (let i = 0; i < 30; i++) {
+            const confetti = document.createElement('div');
+            confetti.className = 'confetti';
+            confetti.style.left = x + 'px';
+            confetti.style.top = y + 'px';
+            confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 70%, 60%)`;
+            particles.appendChild(confetti);
+
+            anime({
+                targets: confetti,
+                translateX: () => anime.random(-100, 100),
+                translateY: () => anime.random(-100, 100),
+                scale: [0.5, 1],
+                opacity: [1, 0],
+                duration: 1000,
+                easing: 'easeOutExpo',
+                complete: () => particles.removeChild(confetti)
+            });
+        }
+    }
+    
+    // Dynamic detail loading
+    async function loadAchievementDetails(id) {
+        const detailsPanel = document.querySelector('.achievement-details');
+        detailsPanel.classList.add('active');
+
+        // Simulated API call
+        const response = await fetch(`/Achievements/Details/${id}`);
+        const html = await response.text();
+
+        detailsPanel.innerHTML = html;
+        anime({
+            targets: detailsPanel,
+            opacity: [0, 1],
+            scale: [0.95, 1],
+            duration: 300,
+            easing: 'easeOutExpo'
+        });
+    }
+
+    // Adaptive background
+    document.addEventListener('mousemove', (e) => {
+        const x = e.clientX / window.innerWidth;
+        const y = e.clientY / window.innerHeight;
+        document.documentElement.style.setProperty('--gradient-x', `${x * 100}%`);
+        document.documentElement.style.setProperty('--gradient-y', `${y * 100}%`);
+    });
+</script>
+</body>
+</html>
